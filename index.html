@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Chosen Palette: Midnight & Neon Cyan -->
     <!-- Application Structure Plan: A single-page portfolio with a narrative flow. The centerpiece is "MoodCraft – AI-Powered Living Portfolio," an advanced feature demonstrating dynamic UI generation via AI. This section allows users to change the entire site's theme, animations, and ambiance based on a text prompt, showcasing cutting-edge AI integration. -->
-    <!-- Visualization & Content Choices: The portfolio uses animated text, interactive project cards, and an AI chatbot. The new MoodCraft feature uses the Gemini API with structured JSON output to dynamically generate and apply CSS variables, animation classes, and select ambient sounds. This provides a highly interactive and personalized experience that directly reflects Samir's skills as an AI developer. -->
+    <!-- Visualization & Content Choices: The portfolio uses a combination of animated text, interactive project cards, and an AI chatbot. The new MoodCraft feature uses the Gemini API with structured JSON output to dynamically generate and apply CSS variables, animation classes, and select ambient sounds. This provides a highly interactive and personalized experience that directly reflects Samir's skills as an AI developer. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         :root {
@@ -63,7 +63,7 @@
             transform: translateY(-3px);
             box-shadow: 0 0 15px var(--primary-hover-color), 0 0 30px var(--primary-hover-color), 0 0 45px var(--primary-hover-color);
         }
-        .project-card, .skill-section, #moodcraft-section, footer, header, #ai-vibe-section {
+        .project-card, .skill-section, #moodcraft-section, footer, header, #my-vibe-section {
             background-color: var(--card-bg-color);
             border: 1px solid var(--border-color);
             transition: background-color 0.5s, border-color 0.5s;
@@ -258,11 +258,14 @@
             </div>
         </section>
 
-        <!-- AI Vibe Section -->
-        <section id="ai-vibe-section" class="py-20 fade-in-section rounded-lg my-10 p-8 hidden">
-            <h2 class="section-title text-3xl font-bold mb-8">AI-Curated Vibe</h2>
-            <div id="spotify-player-container" class="rounded-lg overflow-hidden">
-                <!-- Spotify player will be injected here -->
+        <!-- My Vibe Section -->
+        <section id="my-vibe-section" class="py-20 fade-in-section rounded-lg my-10 p-8">
+            <div class="text-center">
+                <h2 class="section-title text-3xl font-bold mb-4">Now Playing: My Vibe</h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-8">Here's a playlist that inspires me while I code and create.</p>
+            </div>
+            <div id="spotify-player-container" class="rounded-lg overflow-hidden shadow-lg" style="box-shadow: 0 0 30px var(--primary-color);">
+                 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6QDXdDPg2PGoW28tv0vfqd?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
         </section>
 
@@ -402,7 +405,11 @@
     </footer>
 
     <script>
+        let isAppInitialized = false;
         document.addEventListener('DOMContentLoaded', function() {
+            if (isAppInitialized) return;
+            isAppInitialized = true;
+
             let audioInitialized = false;
             let clickSound, openModalSound, ambiancePlayer;
 
@@ -819,4 +826,5 @@
     </script>
 </body>
 </html>
+
 
