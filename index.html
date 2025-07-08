@@ -8,9 +8,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Chosen Palette: Midnight & Neon Cyan -->
-    <!-- Application Structure Plan: A single-page portfolio with a narrative flow: Hero (introduction), About (personal story), Projects (proof of work), Skills (capabilities), a unique AI Assistant (interactive demo), and Contact (call to action). This structure is designed to guide a visitor, such as a potential employer or client, through Samir's journey and expertise logically. The interactive AI Assistant replaces a generic lab, offering a personalized and memorable engagement that directly showcases his skills. -->
-    <!-- Visualization & Content Choices: The portfolio uses a combination of animated text, interactive project cards, and a custom-built AI chatbot. The hero section's typing animation immediately establishes his identity as an AI developer. Project cards use a hover effect to reveal more information, encouraging interaction. The AI Assistant is the centerpiece, using the Gemini API to answer questions based on a provided context about Samir, demonstrating practical AI integration. This is more impactful than static text. -->
+    <!-- Application Structure Plan: A single-page portfolio with a narrative flow. The "Dream Room" has been replaced by "MoodCraft – AI-Powered Living Portfolio," an advanced feature demonstrating dynamic UI generation via AI. This section allows users to change the entire site's theme, animations, and ambiance based on a text prompt, showcasing cutting-edge AI integration. -->
+    <!-- Visualization & Content Choices: The portfolio uses a combination of animated text, interactive project cards, and an AI chatbot. The new MoodCraft feature uses the Gemini API with structured JSON output to dynamically generate and apply CSS variables, animation classes, and select ambient sounds. This provides a highly interactive and personalized experience that directly reflects Samir's skills as an AI developer. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         :root {
@@ -28,7 +30,7 @@
             font-family: 'Poppins', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            transition: background-color 0.5s, color 0.5s;
+            transition: background-color 0.8s, color 0.8s;
         }
         .text-cyan { color: var(--primary-color); }
         .bg-cyan { background-color: var(--primary-color); }
@@ -61,14 +63,14 @@
             transform: translateY(-3px);
             box-shadow: 0 0 15px var(--primary-hover-color), 0 0 30px var(--primary-hover-color), 0 0 45px var(--primary-hover-color);
         }
-        .project-card, .skill-section, #ai-theme-customizer, footer, header {
+        .project-card, .skill-section, #moodcraft-section, footer, header {
             background-color: var(--card-bg-color);
             border: 1px solid var(--border-color);
             transition: background-color 0.5s, border-color 0.5s;
         }
         .project-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+            box-shadow: 0 0 20px var(--primary-color);
         }
         .skill-pill {
             background-color: rgba(34, 211, 238, 0.1);
@@ -131,6 +133,26 @@
         .chat-window-container {
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
         }
+
+        /* Animation styles */
+        .anim-float { animation: float 6s ease-in-out infinite; }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .anim-flicker { animation: flicker 1.5s infinite alternate; }
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow:
+                0 0 4px var(--primary-color),
+                0 0 11px var(--primary-color),
+                0 0 19px var(--primary-color),
+                0 0 40px var(--primary-color),
+                0 0 80px var(--primary-color);
+            }
+            20%, 24%, 55% { text-shadow: none; }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -143,7 +165,7 @@
                 <a href="#about" class="nav-link">About</a>
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#skills" class="nav-link">Skills</a>
-                <a href="#ai-sathi" id="nav-ai-sathi" class="nav-link cursor-pointer">AI Sathi</a>
+                <a href="#moodcraft" class="nav-link">MoodCraft</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="md:hidden">
@@ -154,11 +176,11 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden">
-            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-800">About</a>
-            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-800">Projects</a>
-            <a href="#skills" class="block py-2 px-4 text-sm hover:bg-gray-800">Skills</a>
-            <a href="#ai-sathi" class="block py-2 px-4 text-sm hover:bg-gray-800 nav-ai-sathi-mobile">AI Sathi</a>
-            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-800">Contact</a>
+            <a href="#about" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">About</a>
+            <a href="#projects" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">Projects</a>
+            <a href="#skills" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">Skills</a>
+            <a href="#moodcraft" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">MoodCraft</a>
+            <a href="#contact" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">Contact</a>
         </div>
     </header>
 
@@ -261,22 +283,31 @@
             </div>
         </section>
 
-        <!-- AI Theme Customizer -->
-        <section id="ai-theme-customizer" class="py-20 fade-in-section rounded-lg my-10 p-8">
+        <!-- MoodCraft Section -->
+        <section id="moodcraft" class="py-20 fade-in-section rounded-lg my-10 p-8" style="background-color: var(--card-bg-color); border: 1px solid var(--border-color);">
             <div class="text-center">
-                <h2 class="section-title text-3xl font-bold mb-4">🎨 AI Theme Customizer</h2>
-                <p class="text-lg text-gray-400 max-w-2xl mx-auto">Describe a theme, and let AI change the look of this website. Try "calm forest" or "vibrant sunset".</p>
+                <h2 class="section-title text-3xl font-bold mb-4">✨ MoodCraft AI</h2>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">Describe a mood or a theme, and watch my portfolio transform. This feature uses AI to dynamically change the site's colors, fonts, animations, and even ambient sounds.</p>
                 <p class="text-xs text-gray-500 mt-2">(Note: This feature is experimental and may produce unexpected results.)</p>
             </div>
-            <div class="mt-10 max-w-xl mx-auto">
+            <div class="mt-10 max-w-2xl mx-auto">
                 <div class="flex flex-col sm:flex-row gap-2">
-                    <input type="text" id="theme-input" placeholder="e.g., a futuristic neon city..." class="flex-grow w-full bg-[#0D1117] px-4 py-3 border border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan text-white">
-                    <button id="theme-generate-btn" class="btn-primary font-semibold py-3 px-6 rounded-full">Generate</button>
-                    <button id="theme-reset-btn" class="bg-gray-700 text-white font-semibold py-3 px-6 rounded-full">Reset</button>
+                    <input type="text" id="moodcraft-input" placeholder="e.g., Peaceful night in Kathmandu..." class="flex-grow w-full bg-[#0D1117] px-4 py-3 border border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan text-white">
+                    <button id="moodcraft-generate-btn" class="btn-primary font-semibold py-3 px-6 rounded-full">Craft</button>
                 </div>
-                <div id="theme-loading" class="hidden mt-4 text-center text-cyan">Generating theme...</div>
+                 <div class="mt-4 flex flex-wrap justify-center gap-2">
+                    <button class="vibe-btn text-sm py-1 px-3 rounded-full border border-cyan opacity-70 hover:opacity-100 transition">Midnight Coder</button>
+                    <button class="vibe-btn text-sm py-1 px-3 rounded-full border border-cyan opacity-70 hover:opacity-100 transition">Nepali Roots</button>
+                    <button class="vibe-btn text-sm py-1 px-4 rounded-full border border-cyan opacity-70 hover:opacity-100 transition">Cyber Love</button>
+                     <button id="moodcraft-reset-btn" class="text-sm py-1 px-3 rounded-full bg-gray-700 text-white">Reset</button>
+                </div>
+                <div id="moodcraft-loading" class="hidden mt-4 text-center text-cyan">Crafting your vibe...</div>
             </div>
         </section>
+        
+        <!-- AI Generated Quote Bar -->
+        <div id="ai-quote-bar" class="text-center py-4 text-gray-400 italic text-sm transition-opacity duration-500 opacity-0"></div>
+
 
         <!-- Contact Section -->
         <section id="contact" class="py-20 text-center fade-in-section">
@@ -347,6 +378,23 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            let audioInitialized = false;
+            let clickSound, hoverSound, openModalSound, ambiancePlayer;
+
+            function initAudio() {
+                if (audioInitialized || typeof Tone === 'undefined') return;
+                Tone.start();
+                clickSound = new Tone.Synth({ oscillator: { type: 'sine' }, envelope: { attack: 0.005, decay: 0.1, sustain: 0.3, release: 1 }, volume: -20 }).toDestination();
+                hoverSound = new Tone.MembraneSynth({ pitchDecay: 0.008, octaves: 2, envelope: { attack: 0.001, decay: 0.5, sustain: 0 }, volume: -25 }).toDestination();
+                openModalSound = new Tone.PluckSynth({ attackNoise: 0.5, dampening: 4000, resonance: 0.9, volume: -15 }).toDestination();
+                ambiancePlayer = new Tone.Player().toDestination();
+                ambiancePlayer.loop = true;
+                ambiancePlayer.fadeOut = 2;
+                audioInitialized = true;
+                document.body.removeEventListener('click', initAudio, true);
+            }
+            document.body.addEventListener('click', initAudio, true);
+        
             // State for image data
             let uploadedImageBase64 = null;
 
@@ -359,6 +407,7 @@
             document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
+                    if(audioInitialized) clickSound.triggerAttackRelease("C5", "8n");
                     if(mobileMenu && !mobileMenu.classList.contains('hidden')) {
                        mobileMenu.classList.add('hidden');
                     }
@@ -379,10 +428,9 @@
             const chatModal = document.getElementById('chat-modal');
             const chatWindowContainer = document.getElementById('chat-window-container');
             const closeChatBtn = document.getElementById('close-chat-btn');
-            const navAiSathi = document.getElementById('nav-ai-sathi');
-            const navAiSathiMobile = document.querySelector('.nav-ai-sathi-mobile');
-
+            
             function openChat() {
+                if(audioInitialized) openModalSound.triggerAttack("C4", Tone.now());
                 chatModal.classList.remove('hidden');
                 setTimeout(() => {
                     chatModal.classList.remove('opacity-0');
@@ -399,17 +447,6 @@
             }
 
             chatBubbleToggle.addEventListener('click', openChat);
-            navAiSathi.addEventListener('click', (e) => {
-                e.preventDefault();
-                openChat();
-            });
-            navAiSathiMobile.addEventListener('click', (e) => {
-                e.preventDefault();
-                if(mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                   mobileMenu.classList.add('hidden');
-                }
-                openChat();
-            });
             closeChatBtn.addEventListener('click', closeChat);
             chatModal.addEventListener('click', (e) => {
                 if (e.target === chatModal) {
@@ -491,6 +528,7 @@
             const handleChatSubmit = async () => {
                 const userMessage = chatInput.value.trim();
                 if (!userMessage && !uploadedImageBase64) return;
+                if(audioInitialized) clickSound.triggerAttackRelease("E5", "8n");
 
                 appendMessage(userMessage, 'user', uploadedImageBase64 ? imagePreview.src : null);
                 chatInput.value = '';
@@ -567,14 +605,11 @@
             }
 
             async function callChatbotApi(userInput, imageBase64) {
-                // IMPORTANT: For production, use a server-side proxy (like a Cloudflare Worker) to hide your API key.
-                // This direct API call is for local testing only.
-                const apiKey = "AIzaSyBZ4QSKK_xSuPo_kiGD6OjqOCuiZqkqGlg"; 
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                const proxyUrl = "https://samir-ai-proxy.devsamirx.workers.dev"; // Using the Cloudflare Worker
                 
                 const samirContext = `You are a helpful and professional AI assistant for Samir Puri (DevSamirX), a 19-year-old AI App and Web Developer from Nepal, currently studying IT in Australia. Your purpose is to answer questions about Samir based ONLY on the information provided here. Do not invent information. If a question is outside this scope, answer it using your general knowledge but politely state that it's outside your scope of information about Samir. Be friendly and professional.
                 **About Samir:** Name: Samir Puri (DevSamirX), Age: 19, From: Chitwan, Nepal (Born in Bajura), Current Location: Australia, Profession: IT student, AI App/Web Developer, part-time Real Estate Agent. Passion: Using technology for social good.
-                **Skills:** Mobile & Web (Flutter, Dart, Responsive Design, HTML, CSS), Backend & Cloud (Firebase, Firestore, Authentication, Cloudflare), AI & APIs (Gemini API, OpenAI GPT-4o), Claude AI, REST API).
+                **Skills:** Mobile & Web (Flutter, Dart, Responsive Design, HTML, CSS), Backend & Cloud (Firebase, Firestore, Authentication, Cloudflare), AI & APIs (Gemini API, OpenAI GPT-4o, Claude AI, REST API).
                 **Key Projects:** 1. NepMind: Offline-first mental wellness app for Nepal. 2. AI Chat Apps: Flutter apps using GPT-4o/Claude with emotion detection. 3. Nepali Lines App: Flutter app with 5000+ categorized lines and neon UI.
                 **Business Interests:** Real Estate, TikTok Monetization, future interest in a poultry farm in Nepal.`;
 
@@ -599,81 +634,7 @@
                     contents: [{ parts: parts }]
                 };
 
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) throw new Error(`API Error: ${response.status}`);
-                
-                const data = await response.json();
-                if (data.candidates && data.candidates.length > 0 && data.candidates[0].content.parts.length > 0) {
-                    return data.candidates[0].content.parts[0].text;
-                } else {
-                    return "I'm sorry, I couldn't generate a response right now.";
-                }
-            }
-            
-            // AI Theme Customizer Logic
-            const themeGenerateBtn = document.getElementById('theme-generate-btn');
-            const themeResetBtn = document.getElementById('theme-reset-btn');
-            const themeInput = document.getElementById('theme-input');
-            const themeLoading = document.getElementById('theme-loading');
-
-            themeGenerateBtn.addEventListener('click', async () => {
-                const description = themeInput.value.trim();
-                if (!description) return;
-
-                themeLoading.style.display = 'block';
-                try {
-                    const themeCss = await generateTheme(description);
-                    applyTheme(themeCss);
-                } catch (error) {
-                    console.error("Theme generation error:", error);
-                    alert("Sorry, I couldn't generate a theme. Please try a different description.");
-                } finally {
-                    themeLoading.style.display = 'none';
-                }
-            });
-
-            themeResetBtn.addEventListener('click', () => {
-                document.documentElement.style.cssText = '';
-            });
-
-            function applyTheme(css) {
-                // A simple parser to extract CSS variables
-                const root = document.documentElement;
-                const rules = css.match(/--[\w-]+: *#[0-9a-fA-F]{3,6};/g);
-                if (rules) {
-                    rules.forEach(rule => {
-                        const [key, value] = rule.split(':');
-                        root.style.setProperty(key.trim(), value.trim().slice(0, -1));
-                    });
-                }
-            }
-            
-            async function generateTheme(description) {
-                const apiKey = "AIzaSyBZ4QSKK_xSuPo_kiGD6OjqOCuiZqkqGlg";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                
-                const prompt = `Based on the theme "${description}", generate a color palette for a professional portfolio website. The website has a dark background. Provide ONLY a block of CSS variables for the following properties: --bg-color (dark), --card-bg-color (slightly lighter than bg), --border-color (subtle), --text-color (light), --text-muted-color (dimmer text), --primary-color (the main accent/neon color), --primary-text-color (text color on primary buttons, should be dark), --primary-hover-color (a lighter version of primary). Do not include any other text or explanation. Example format:
-                :root {
-                    --bg-color: #0A192F;
-                    --card-bg-color: #112240;
-                    --border-color: #233554;
-                    --text-color: #CCD6F6;
-                    --text-muted-color: #8892B0;
-                    --primary-color: #64FFDA;
-                    --primary-text-color: #0A192F;
-                    --primary-hover-color: #A7FFF6;
-                }`;
-
-                 const payload = {
-                    contents: [{ parts: [{ text: prompt }] }]
-                };
-
-                const response = await fetch(apiUrl, {
+                const response = await fetch(proxyUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
@@ -683,10 +644,130 @@
                 
                 const data = await response.json();
                 if (data.candidates && data.candidates.length > 0) {
-                    // Clean up the response to get only the CSS block
+                    return data.candidates[0].content.parts[0].text;
+                } else {
+                    return "I'm sorry, I couldn't generate a response right now.";
+                }
+            }
+            
+            // AI Theme Customizer Logic
+            const themeGenerateBtn = document.getElementById('moodcraft-generate-btn');
+            const themeResetBtn = document.getElementById('moodcraft-reset-btn');
+            const themeInput = document.getElementById('moodcraft-input');
+            const themeLoading = document.getElementById('moodcraft-loading');
+            const aiQuoteBar = document.getElementById('ai-quote-bar');
+
+            const handleThemeGeneration = async (description) => {
+                 if (!description) return;
+                if(audioInitialized) clickSound.triggerAttackRelease("C5", "8n");
+
+                themeLoading.style.display = 'block';
+                try {
+                    const themeData = await generateTheme(description);
+                    applyTheme(themeData);
+                } catch (error) {
+                    console.error("Theme generation error:", error);
+                    alert("Sorry, I couldn't generate a theme. Please try a different description.");
+                } finally {
+                    themeLoading.style.display = 'none';
+                }
+            };
+
+            themeGenerateBtn.addEventListener('click', () => handleThemeGeneration(themeInput.value.trim()));
+            document.querySelectorAll('.vibe-btn').forEach(btn => {
+                btn.addEventListener('click', () => handleThemeGeneration(btn.textContent));
+            });
+
+            themeResetBtn.addEventListener('click', () => {
+                if(audioInitialized) {
+                    clickSound.triggerAttackRelease("A4", "8n");
+                    if (ambiancePlayer.state === 'started') {
+                        ambiancePlayer.stop();
+                    }
+                }
+                document.documentElement.style.cssText = '';
+                document.body.style.fontFamily = 'Poppins, sans-serif';
+                document.getElementById('hero').classList.remove('anim-float', 'anim-flicker');
+                aiQuoteBar.classList.add('opacity-0');
+            });
+
+            function applyTheme(data) {
+                const root = document.documentElement;
+                Object.keys(data.colors).forEach(key => {
+                    root.style.setProperty(key, data.colors[key]);
+                });
+
+                // Apply font
+                const fontLink = document.createElement('link');
+                fontLink.href = `https://fonts.googleapis.com/css2?family=${data.font.replace(/ /g, '+')}:wght@400;500;600;700&display=swap`;
+                fontLink.rel = 'stylesheet';
+                document.head.appendChild(fontLink);
+                document.body.style.fontFamily = `'${data.font}', sans-serif`;
+
+                // Apply animation
+                const hero = document.getElementById('hero');
+                hero.classList.remove('anim-float', 'anim-flicker');
+                if (data.animation === 'float') {
+                    hero.classList.add('anim-float');
+                } else if (data.animation === 'flicker') {
+                    hero.classList.add('anim-flicker');
+                }
+
+                // Apply quote
+                aiQuoteBar.innerHTML = `<i class="fa-solid fa-${data.icon} mr-2"></i> ${data.quote}`;
+                aiQuoteBar.classList.remove('opacity-0');
+                
+                // Apply ambiance
+                if (audioInitialized && data.ambiance) {
+                    if (ambiancePlayer.state === 'started') {
+                        ambiancePlayer.stop();
+                    }
+                    const soundMap = {
+                        rain: 'https://cdn.pixabay.com/audio/2022/08/11/audio_1343463773.mp3',
+                        fire: 'https://cdn.pixabay.com/audio/2022/03/16/audio_f54911763c.mp3',
+                        forest: 'https://cdn.pixabay.com/audio/2022/11/17/audio_88c724c295.mp3',
+                        night: 'https://cdn.pixabay.com/audio/2022/02/01/audio_eb36943134.mp3',
+                        cyber: 'https://cdn.pixabay.com/audio/2023/04/20/audio_51c409c298.mp3'
+                    };
+                    if (soundMap[data.ambiance]) {
+                        ambiancePlayer.load(soundMap[data.ambiance]).then(() => {
+                            ambiancePlayer.start();
+                        });
+                    }
+                }
+            }
+            
+            async function generateTheme(description) {
+                const proxyUrl = "https://samir-ai-proxy.devsamirx.workers.dev";
+                
+                const prompt = `Based on the theme "${description}", generate a JSON object for a website's UI.
+                Provide a JSON object with the following keys: "colors", "font", "animation", "ambiance", "icon", "quote".
+                - "colors": An object with CSS variables as keys: --bg-color (dark), --card-bg-color, --border-color, --text-color (light), --text-muted-color, --primary-color (accent), --primary-text-color (for text on primary color), --primary-hover-color.
+                - "font": A single, appropriate Google Font name (e.g., "Roboto Mono").
+                - "animation": Choose one: "float" (for calm themes) or "flicker" (for energetic/tech themes) or "none".
+                - "ambiance": Choose one keyword for background sound: "rain", "fire", "forest", "night", "cyber", or "none".
+                - "icon": A single Font Awesome v6 free solid icon name (e.g., "fa-leaf", "fa-bolt").
+                - "quote": A very short, one-line inspirational quote related to the theme.
+                Respond with ONLY the raw JSON object, nothing else.`;
+
+                 const payload = {
+                    contents: [{ parts: [{ text: prompt }] }]
+                };
+
+                const response = await fetch(proxyUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) throw new Error(`API Error: ${response.status}`);
+                
+                const data = await response.json();
+                if (data.candidates && data.candidates.length > 0) {
                     const rawText = data.candidates[0].content.parts[0].text;
-                    const cssBlock = rawText.match(/{([^}]+)}/);
-                    return cssBlock ? cssBlock[1] : '';
+                    // Clean the response to ensure it's valid JSON
+                    const jsonString = rawText.replace(/```json/g, '').replace(/```/g, '').trim();
+                    return JSON.parse(jsonString);
                 } else {
                     throw new Error("Invalid response from theme API");
                 }
@@ -696,4 +777,5 @@
 
 </body>
 </html>
+
 
