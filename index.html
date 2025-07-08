@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -567,7 +567,7 @@
             }
 
             async function callChatbotApi(userInput, imageBase64) {
-                const apiKey = "";
+                const apiKey = "AIzaSyD5me9s7-3PRi9QnU-3rIXszoGPzmU7mj0";
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
                 
                 const samirContext = `You are a helpful and professional AI assistant for Samir Puri (DevSamirX), a 19-year-old AI App and Web Developer from Nepal, currently studying IT in Australia. Your purpose is to answer questions about Samir based ONLY on the information provided here. Do not invent information. If a question is outside this scope, answer it using your general knowledge but politely state that it's outside your scope of information about Samir. Be friendly and professional.
@@ -652,7 +652,7 @@
             }
             
             async function generateTheme(description) {
-                const apiKey = "";
+                const apiKey = "AIzaSyD5me9s7-3PRi9QnU-3rIXszoGPzmU7mj0";
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
                 
                 const prompt = `Based on the theme "${description}", generate a color palette for a professional portfolio website. The website has a dark background. Provide ONLY a block of CSS variables for the following properties: --bg-color (dark), --card-bg-color (slightly lighter than bg), --border-color (subtle), --text-color (light), --text-muted-color (dimmer text), --primary-color (the main accent/neon color), --primary-text-color (text color on primary buttons, should be dark), --primary-hover-color (a lighter version of primary). Do not include any other text or explanation. Example format:
