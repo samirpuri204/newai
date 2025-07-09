@@ -10,10 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Chosen Palette: Midnight & Neon Cyan -->
-    <!-- Application Structure Plan: A single-page portfolio with a narrative flow. The centerpiece is "MoodCraft – AI-Powered Living Portfolio," an advanced feature demonstrating dynamic UI generation via AI. This section allows users to change the entire site's theme, animations, and ambiance based on a text prompt, showcasing cutting-edge AI integration. -->
-    <!-- Visualization & Content Choices: The portfolio uses a combination of animated text, interactive project cards, and an AI chatbot. The new MoodCraft feature uses the Gemini API with structured JSON output to dynamically generate and apply CSS variables, animation classes, and select ambient sounds. This provides a highly interactive and personalized experience that directly reflects Samir's skills as an AI developer. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/jDXKZdcd/favicon.png">
+    <link rel="apple-touch-icon" href="https://i.postimg.cc/jDXKZdcd/favicon.png">
+
     <style>
         :root {
             --bg-color: #0D1117;
@@ -212,7 +213,7 @@
             <div class="grid md:grid-cols-5 gap-12 items-center">
                 <div class="md:col-span-3 text-lg text-gray-400 leading-relaxed">
                     <p>
-                        As a 19-year-old IT student from Nepal, currently based in Australia, I am deeply passionate about leveraging technology to create impactful solutions. My journey is fueled by a desire to bridge gaps and build tools that matter, particularly for communities like my own.
+                        As a <span id="age"></span>-year-old IT student from Nepal, currently based in Australia, I am deeply passionate about leveraging technology to create impactful solutions. My journey is fueled by a desire to bridge gaps and build tools that matter, particularly for communities like my own.
                     </p>
                     <p class="mt-4">
                         I specialize in Flutter development, using AI-assisted coding to build beautiful, intuitive, and highly functional mobile apps. From mental wellness platforms like **NepMind** to creative content apps, my work is driven by a blend of technical curiosity and a commitment to social good. Beyond coding, I'm an active real estate agent and explore entrepreneurial ventures, always seeking new ways to innovate and grow.
@@ -231,6 +232,14 @@
         <section id="projects" class="py-20 fade-in-section">
             <h2 class="section-title text-3xl font-bold mb-12">Featured Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <!-- MoodCraft Project -->
+                <div class="project-card rounded-lg border-2 border-cyan shadow-lg" style="box-shadow: 0 0 30px var(--primary-color);">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-cyan">MoodCraft AI</h3>
+                        <p class="text-gray-400 mt-1 text-sm">A Generative UI Experience (My Invention)</p>
+                        <p class="mt-4 text-gray-400 text-sm">A first-of-its-kind feature where users can change the entire website's UI, including colors, fonts, animations, and ambient sound, just by describing a mood.</p>
+                    </div>
+                </div>
                 <!-- NepMind Project -->
                 <div class="project-card rounded-lg">
                     <div class="p-6">
@@ -245,14 +254,6 @@
                         <h3 class="text-xl font-bold text-cyan">AI Chat Applications</h3>
                         <p class="text-gray-400 mt-1 text-sm">Flutter-based Chatbots</p>
                         <p class="mt-4 text-gray-400 text-sm">A series of apps using GPT-4o and Claude AI, featuring emotion detection, neon UIs, and Firestore-backed chat history.</p>
-                    </div>
-                </div>
-                <!-- Nepali Lines App Project -->
-                <div class="project-card rounded-lg">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-cyan">Nepali Lines App</h3>
-                        <p class="text-gray-400 mt-1 text-sm">Content & Animation Showcase</p>
-                        <p class="mt-4 text-gray-400 text-sm">A Flutter app featuring over 5000 categorized Nepali lines with an animated, neon-themed user interface.</p>
                     </div>
                 </div>
             </div>
@@ -327,7 +328,7 @@
                  <div class="mt-4 flex flex-wrap justify-center gap-2">
                      <button id="moodcraft-reset-btn" class="text-sm py-1 px-3 rounded-full bg-gray-700 text-white">Reset Theme</button>
                 </div>
-                <div id="moodcraft-loading" class="hidden mt-4 text-center text-cyan">Crafting your vibe...</div>
+                <div id="moodcraft-loading" class="hidden mt-4 text-center text-neon">Crafting your vibe...</div>
             </div>
         </section>
         
@@ -355,8 +356,8 @@
     </main>
 
     <!-- AI Sathi Bubble -->
-    <button id="chat-bubble-toggle" class="fixed bottom-5 right-5 bg-cyan text-black w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform z-50">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+    <button id="chat-bubble-toggle" class="fixed bottom-5 right-5 bg-cyan text-black w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform z-50">
+        <i class="fa-solid fa-comment-dots text-2xl"></i>
     </button>
 
     <!-- AI Sathi Modal -->
@@ -377,18 +378,8 @@
                     </div>
                 </div>
             </div>
-            <div id="image-preview-container" class="hidden p-2 border-t border-gray-700">
-                <div class="relative w-24">
-                    <img id="image-preview" src="" alt="Image preview" class="rounded-md w-full">
-                    <button id="remove-image-btn" class="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs">&times;</button>
-                </div>
-            </div>
             <div class="p-4 border-t border-gray-700 flex gap-2 items-center">
-                <input type="file" id="image-input" accept="image/*" class="hidden">
-                <button id="upload-btn" title="Upload Image" class="bg-gray-600 text-white p-3 rounded-full hover:bg-gray-500 transition-all">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.25 13.25a.75.75 0 001.5 0V4.636l2.955 3.129a.75.75 0 001.09-1.03l-4.25-4.5a.75.75 0 00-1.09 0l-4.25 4.5a.75.75 0 101.09 1.03L9.25 4.636V13.25z"></path><path d="M3.5 12.75a.75.75 0 00-1.5 0v2.5A2.75 2.75 0 004.75 18h10.5A2.75 2.75 0 0018 15.25v-2.5a.75.75 0 00-1.5 0v2.5c0 .69-.56 1.25-1.25 1.25H4.75c-.69 0-1.25-.56-1.25-1.25v-2.5z"></path></svg>
-                </button>
-                <input type="text" id="chat-input" placeholder="Ask about Samir or an image..." class="flex-grow w-full bg-[#0D1117] px-4 py-2 border border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan text-white">
+                <input type="text" id="chat-input" placeholder="Ask about Samir..." class="flex-grow w-full bg-[#0D1117] px-4 py-2 border border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan text-white">
                 <button id="mic-btn" title="Speak your question" class="bg-gray-600 text-white p-3 rounded-full hover:bg-gray-500 transition-all"><i class="fa-solid fa-microphone"></i></button>
                 <button id="chat-send-btn" class="bg-cyan text-black font-bold p-3 rounded-full hover:bg-cyan-300 transition-all">
                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M3.105 2.289a.75.75 0 00-.826.95l1.414 4.925A1.5 1.5 0 005.135 9.25h6.115a.75.75 0 010 1.5H5.135a1.5 1.5 0 00-1.442 1.086L1.279 16.76a.75.75 0 00.95.826l16-5.333a.75.75 0 000-1.482l-16-5.333z" clip-rule="evenodd"></path></svg>
@@ -400,7 +391,7 @@
     <!-- Footer -->
     <footer class="bg-[#161B22] border-t border-gray-800">
         <div class="container mx-auto px-6 py-6 text-center text-gray-500">
-            <p>&copy; 2025 Samir Puri (DevSamirX). All Rights Reserved.</p>
+            <p>&copy; <span id="copyright-year">2025</span> Samir Puri (DevSamirX). All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -430,7 +421,6 @@
             }
             document.body.addEventListener('click', initAudio, true);
         
-            let uploadedImageBase64 = null;
             let isListening = false;
             let ttsEnabled = false;
             let recognition;
@@ -445,11 +435,6 @@
             const chatWindow = document.getElementById('chat-window');
             const chatInput = document.getElementById('chat-input');
             const chatSendBtn = document.getElementById('chat-send-btn');
-            const uploadBtn = document.getElementById('upload-btn');
-            const imageInput = document.getElementById('image-input');
-            const imagePreviewContainer = document.getElementById('image-preview-container');
-            const imagePreview = document.getElementById('image-preview');
-            const removeImageBtn = document.getElementById('remove-image-btn');
             const micBtn = document.getElementById('mic-btn');
             const ttsToggleBtn = document.getElementById('tts-toggle-btn');
             const moodcraftGenerateBtn = document.getElementById('moodcraft-generate-btn');
@@ -458,9 +443,31 @@
             const moodcraftLoading = document.getElementById('moodcraft-loading');
             const aiQuoteBar = document.getElementById('ai-quote-bar');
             
+            // Age Calculation
+            function calculateAge(birthDate) {
+                const today = new Date();
+                const birth = new Date(birthDate);
+                let age = today.getFullYear() - birth.getFullYear();
+                const monthDifference = today.getMonth() - birth.getMonth();
+                if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birth.getDate())) {
+                    age--;
+                }
+                return age;
+            }
+            const ageSpan = document.getElementById('age');
+            if (ageSpan) {
+                ageSpan.textContent = calculateAge('2005-06-01');
+            }
+
+            // Copyright Year
+            const copyrightYearSpan = document.getElementById('copyright-year');
+            if (copyrightYearSpan) {
+                copyrightYearSpan.textContent = new Date().getFullYear();
+            }
+
             menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
 
-            document.querySelectorAll('a.nav-link[href^="#"]').forEach(anchor => {
+            document.querySelectorAll('a.nav-link').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     if(audioInitialized) clickSound.triggerAttackRelease("C5", "8n");
@@ -562,44 +569,17 @@
                 if (!ttsEnabled) window.speechSynthesis.cancel();
             });
 
-            uploadBtn.addEventListener('click', () => imageInput.click());
-            
-            imageInput.addEventListener('change', (event) => {
-                const file = event.target.files[0];
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        uploadedImageBase64 = e.target.result.split(',')[1];
-                        imagePreview.src = e.target.result;
-                        imagePreviewContainer.classList.remove('hidden');
-                    };
-                    reader.readAsDataURL(file);
-                }
-            });
-            
-            removeImageBtn.addEventListener('click', () => {
-                uploadedImageBase64 = null;
-                imageInput.value = '';
-                imagePreviewContainer.classList.add('hidden');
-            });
-
             const handleChatSubmit = async () => {
                 const userMessage = chatInput.value.trim();
-                if (!userMessage && !uploadedImageBase64) return;
+                if (!userMessage) return;
                 if(audioInitialized) clickSound.triggerAttackRelease("E5", "8n");
 
-                appendMessage(userMessage, 'user', uploadedImageBase64 ? imagePreview.src : null);
+                appendMessage(userMessage, 'user');
                 chatInput.value = '';
-                const tempUploadedImage = uploadedImageBase64; 
-                
-                uploadedImageBase64 = null;
-                imageInput.value = '';
-                imagePreviewContainer.classList.add('hidden');
-
-                const aiBubble = appendMessage('', 'ai', null, true);
+                const aiBubble = appendMessage('', 'ai', true);
 
                 try {
-                    const aiResponse = await callChatbotApi(userMessage, tempUploadedImage);
+                    const aiResponse = await callChatbotApi(userMessage);
                     typeAiResponse(aiBubble, aiResponse);
                 } catch (error) {
                     console.error("Chatbot Error:", error);
@@ -612,20 +592,12 @@
                 if (e.key === 'Enter') handleChatSubmit();
             });
 
-            function appendMessage(text, sender, imgSrc = null, isLoading = false) {
+            function appendMessage(text, sender, isLoading = false) {
                 const messageWrapper = document.createElement('div');
                 messageWrapper.className = `flex w-full mt-2 space-x-3 max-w-xs ${sender === 'user' ? 'ml-auto justify-end' : ''}`;
-                
                 const bubble = document.createElement('div');
                 bubble.className = `p-3 rounded-lg ${sender === 'user' ? 'user-bubble' : 'ai-bubble'}`;
                 
-                if (imgSrc) {
-                    const img = document.createElement('img');
-                    img.src = imgSrc;
-                    img.className = 'rounded-lg mb-2 max-w-full h-auto';
-                    bubble.appendChild(img);
-                }
-
                 if (text) {
                     const textNode = document.createElement('p');
                     textNode.textContent = text;
@@ -691,26 +663,21 @@
                 }
             }
             
-            async function callChatbotApi(userInput, imageBase64) {
-                const samirContext = `You are a helpful and professional AI assistant for Samir Puri (DevSamirX), a 19-year-old AI App and Web Developer from Nepal, currently studying IT in Australia. Your purpose is to answer questions about Samir based ONLY on the information provided here. Do not invent information. If a question is outside this scope, answer it using your general knowledge but politely state that it's outside your scope of information about Samir. Be friendly and professional.
-                **About Samir:** Name: Samir Puri (DevSamirX), Age: 19, From: Chitwan, Nepal (Born in Bajura), Current Location: Australia, Profession: IT student, AI App/Web Developer, part-time Real Estate Agent. Passion: Using technology for social good.
+            async function callChatbotApi(userInput) {
+                const age = calculateAge('2005-06-01');
+                const samirContext = `You are a helpful and professional AI assistant for Samir Puri (DevSamirX), a ${age}-year-old AI App and Web Developer from Nepal, currently studying IT in Australia. Your purpose is to answer questions about Samir based ONLY on the information provided here. Do not invent information. If a question is outside this scope, answer it using your general knowledge but politely state that it's outside your scope of information about Samir. Be friendly and professional.
+                **About Samir:** Name: Samir Puri (DevSamirX), Age: ${age}, From: Chitwan, Nepal (Born in Bajura), Current Location: Australia, Profession: IT student, AI App/Web Developer, part-time Real Estate Agent. Passion: Using technology for social good.
                 **Skills:** Mobile & Web (Flutter, Dart, Responsive Design, HTML, CSS), Backend & Cloud (Firebase, Firestore, Authentication, Cloudflare), AI & APIs (Gemini API, OpenAI GPT-4o, Claude AI, REST API).
                 **Key Projects:** 1. NepMind: Offline-first mental wellness app for Nepal. 2. AI Chat Apps: Flutter apps using GPT-4o/Claude with emotion detection. 3. Nepali Lines App: Flutter app with 5000+ categorized lines and neon UI.
                 **Business Interests:** Real Estate, TikTok Monetization, future interest in a poultry farm in Nepal.`;
 
-                const parts = [];
-                if (imageBase64) {
-                    const prompt = userInput || "Describe this image in detail.";
-                    parts.push({ text: prompt });
-                    parts.push({ inlineData: { mimeType: "image/jpeg", data: imageBase64 } });
-                } else {
-                    const prompt = `${samirContext}\n\nQuestion: ${userInput}\n\nAnswer:`;
-                    parts.push({ text: prompt });
-                }
-                return callApi({ contents: [{ parts }] });
+                const prompt = `${samirContext}\n\nQuestion: ${userInput}\n\nAnswer:`;
+                const payload = {
+                    contents: [{ parts: [{ text: prompt }] }]
+                };
+                return callApi(payload);
             }
             
-            // MoodCraft Logic
             const handleThemeGeneration = async (description) => {
                  if (!description) return;
                 if(audioInitialized) clickSound.triggerAttackRelease("C5", "8n");
@@ -806,7 +773,7 @@
                 - "ambiance": Choose one keyword for background sound: "rain", "fire", "forest", "night", "cyber", or "none".
                 - "icon": A single Font Awesome v6 free solid icon name (e.g., "fa-leaf", "fa-bolt").
                 - "quote": A very short, one-line inspirational quote related to the theme.
-                Respond with ONLY the raw JSON object, nothing else.`;
+                Respond with ONLY the raw JSON object.`;
 
                  const payload = {
                     contents: [{ parts: [{ text: prompt }] }],
