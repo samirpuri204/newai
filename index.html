@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta name="google-adsense-account" content="ca-pub-4590847087721354">    <meta charset="UTF-8">
@@ -167,6 +167,14 @@
             50% { transform: scale(1.2); }
             100% { transform: scale(1); }
         }
+        .hire-me-pulse {
+            animation: hire-pulse 2s infinite;
+        }
+        @keyframes hire-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -180,6 +188,7 @@
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#skills" class="nav-link">Skills</a>
                 <a href="#moodcraft" class="nav-link">MoodCraft</a>
+                <a href="#cv" class="nav-link">CV</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
             <div class="md:hidden">
@@ -194,6 +203,7 @@
             <a href="#projects" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">Projects</a>
             <a href="#skills" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">Skills</a>
             <a href="#moodcraft" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">MoodCraft</a>
+            <a href="#cv" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">CV</a>
             <a href="#contact" class="nav-link block py-2 px-4 text-sm hover:bg-gray-800">Contact</a>
         </div>
     </header>
@@ -217,7 +227,7 @@
             <div class="grid md:grid-cols-5 gap-12 items-center">
                 <div class="md:col-span-3 text-lg text-gray-400 leading-relaxed">
                     <p>
-                        As a <span id="age"></span>-year-old IT student from Nepal, currently based in Australia, I am deeply passionate about leveraging technology to create impactful solutions. My journey is fueled by a desire to bridge gaps and build tools that matter, particularly for communities like my own.
+                        As an IT student from Nepal, currently based in Australia, I am deeply passionate about leveraging technology to create impactful solutions. My journey is fueled by a desire to bridge gaps and build tools that matter, particularly for communities like my own.
                     </p>
                     <p class="mt-4">
                         I specialize in Flutter development, using AI-assisted coding to build beautiful, intuitive, and highly functional mobile apps. From mental wellness platforms like **NepMind** to creative content apps, my work is driven by a blend of technical curiosity and a commitment to social good. Beyond coding, I'm an active real estate agent and explore entrepreneurial ventures, always seeking new ways to innovate and grow.
@@ -235,29 +245,82 @@
         <!-- Projects Section -->
         <section id="projects" class="py-20 fade-in-section">
             <h2 class="section-title text-3xl font-bold mb-12">Featured Projects</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
                  <!-- MoodCraft Project -->
-                <div class="project-card rounded-lg border-2 border-cyan shadow-lg" style="box-shadow: 0 0 30px var(--primary-color);">
+                <div class="project-card rounded-lg border-2 border-cyan shadow-lg cursor-pointer" style="box-shadow: 0 0 30px var(--primary-color);" onclick="document.getElementById('moodcraft').scrollIntoView({behavior: 'smooth'});">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-cyan">MoodCraft AI</h3>
-                        <p class="text-gray-400 mt-1 text-sm">A Generative UI Experience (My Invention)</p>
-                        <p class="mt-4 text-gray-400 text-sm">A first-of-its-kind feature where users can change the entire website's UI, including colors, fonts, animations, and ambient sound, just by describing a mood.</p>
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold text-cyan">MoodCraft AI</h3>
+                            <span class="bg-cyan text-black text-xs px-2 py-1 rounded-full font-semibold">FEATURED</span>
+                        </div>
+                        <p class="text-gray-300 mt-1 text-sm font-medium">Generative UI Experience</p>
+                        <p class="mt-4 text-gray-400 leading-relaxed">Revolutionary web feature enabling dynamic UI transformation through natural language. Users can modify colors, fonts, animations, and ambient sounds by simply describing their desired mood or theme.</p>
+                        <div class="mt-4">
+                            <p class="text-xs text-gray-500 mb-2">Technologies:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">JavaScript</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">Gemini AI</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">Tone.js</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">CSS3</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- NepMind Project -->
                 <div class="project-card rounded-lg">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-cyan">NepMind</h3>
-                        <p class="text-gray-400 mt-1 text-sm">Mental Wellness Toolkit for Nepal</p>
-                        <p class="mt-4 text-gray-400 text-sm">An offline-first app providing accessible mental health tools like a mood tracker, journal, breathing exercises, and offline articles.</p>
+                        <p class="text-gray-300 mt-1 text-sm font-medium">Mental Wellness Platform</p>
+                        <p class="mt-4 text-gray-400 leading-relaxed">Comprehensive offline-first mental health application designed specifically for Nepal. Features mood tracking, journaling, guided breathing exercises, and curated wellness articles accessible without internet connectivity.</p>
+                        <div class="mt-4">
+                            <p class="text-xs text-gray-500 mb-2">Technologies:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">Flutter</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">Dart</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">SQLite</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">Firebase</span>
+                            </div>
+                        </div>
+                        <a href="https://play.google.com/store/apps/details?id=com.devsamirx.nepmind&pcampaignid=web_share" target="_blank" class="mt-4 inline-flex items-center gap-2 text-cyan hover:text-cyan-300 transition">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="h-8">
+                        </a>
+                    </div>
+                </div>
+                <!-- Mannko Boli Project -->
+                <div class="project-card rounded-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-cyan">Mannko Boli</h3>
+                        <p class="text-gray-300 mt-1 text-sm font-medium">Interactive Web Experience</p>
+                        <p class="mt-4 text-gray-400 leading-relaxed">A beautifully crafted web application showcasing creative design and interactive elements. Built with attention to detail and user experience, demonstrating proficiency in modern web development practices.</p>
+                        <div class="mt-4">
+                            <p class="text-xs text-gray-500 mb-2">Technologies:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">HTML5</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">CSS3</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">JavaScript</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">Responsive Design</span>
+                            </div>
+                        </div>
+                        <a href="https://mannkoboli.life" target="_blank" class="mt-4 inline-block text-cyan hover:text-cyan-300 transition font-medium">
+                            Visit Live Site →
+                        </a>
                     </div>
                 </div>
                 <!-- AI Chat Apps Project -->
                 <div class="project-card rounded-lg">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-cyan">AI Chat Applications</h3>
-                        <p class="text-gray-400 mt-1 text-sm">Flutter-based Chatbots</p>
-                        <p class="mt-4 text-gray-400 text-sm">A series of apps using GPT-4o and Claude AI, featuring emotion detection, neon UIs, and Firestore-backed chat history.</p>
+                        <p class="text-gray-300 mt-1 text-sm font-medium">Intelligent Conversational Interfaces</p>
+                        <p class="mt-4 text-gray-400 leading-relaxed">Suite of advanced Flutter applications integrating multiple AI models including GPT-4o and Claude AI. Features real-time emotion detection, modern neon UI design, and persistent chat history with Firestore backend.</p>
+                        <div class="mt-4">
+                            <p class="text-xs text-gray-500 mb-2">Technologies:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">Flutter</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">OpenAI API</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">Claude AI</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">Firestore</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -340,19 +403,97 @@
         <div id="ai-quote-bar" class="text-center py-4 text-gray-400 italic text-sm transition-opacity duration-500 opacity-0"></div>
 
 
+        <!-- CV Section -->
+        <section id="cv" class="py-20 fade-in-section">
+            <div class="text-center mb-12">
+                <h2 class="section-title text-3xl font-bold mb-4">Professional CV</h2>
+                <p class="text-lg text-gray-400 max-w-2xl mx-auto">Download my comprehensive CV or view my professional profile below</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <!-- CV Preview -->
+                <div class="project-card rounded-lg p-8">
+                    <div class="text-center mb-6">
+                        <div class="w-24 h-24 mx-auto mb-4 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-3xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-cyan">Samir Puri</h3>
+                        <p class="text-gray-400">AI App & Web Developer</p>
+                        <p class="text-sm text-gray-500">Nepal/Australia</p>
+                    </div>
+                    
+                    <div class="space-y-4 text-sm">
+                        <div>
+                            <h4 class="font-semibold text-cyan mb-2">Core Expertise</h4>
+                            <ul class="text-gray-400 space-y-1">
+                                <li>• Flutter Mobile Development</li>
+                                <li>• AI Integration (GPT-4o, Claude, Gemini)</li>
+                                <li>• Firebase & Cloud Services</li>
+                                <li>• Generative UI Development</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-cyan mb-2">Key Projects</h4>
+                            <ul class="text-gray-400 space-y-1">
+                                <li>• MoodCraft AI - Generative UI</li>
+                                <li>• NepMind - Mental Wellness App</li>
+                                <li>• AI Chat Applications Suite</li>
+                                <li>• Mannko Boli - Interactive Web App</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-cyan mb-2">Education & Background</h4>
+                            <p class="text-gray-400">IT Student | Real Estate Agent | Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Action Buttons -->
+                <div class="flex flex-col justify-center space-y-6">
+                    <a href="mailto:samirpuri1204@gmail.com?subject=CV Request&body=Hi Samir, I would like to request your CV." class="btn-primary font-bold py-4 px-8 rounded-full text-lg flex items-center justify-center gap-3">
+                        <i class="fas fa-envelope"></i>
+                        Request CV
+                    </a>
+                    
+                    <button id="hire-me-btn" class="bg-cyan hover:bg-cyan-300 text-black font-bold py-4 px-8 rounded-full text-lg flex items-center justify-center gap-3 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        <i class="fas fa-handshake"></i>
+                        Hire Me Now
+                    </button>
+                    
+                    <div class="text-center">
+                        <p class="text-gray-400 mb-4">Available for:</p>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="bg-cyan/20 text-cyan px-3 py-1 rounded-full text-sm">Freelance Projects</span>
+                            <span class="bg-cyan/20 text-cyan px-3 py-1 rounded-full text-sm">Full-time Roles</span>
+                            <span class="bg-cyan/20 text-cyan px-3 py-1 rounded-full text-sm">Consulting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="py-20 text-center fade-in-section">
             <h2 class="section-title text-3xl font-bold mb-4">Get In Touch</h2>
-            <p class="text-lg text-gray-400 mb-8">I'm currently available for freelance projects and partnership opportunities.</p>
-            <div class="flex justify-center items-center gap-4">
+            <p class="text-lg text-gray-400 mb-8">Ready to hire me? I'm available for freelance projects, full-time roles, and partnership opportunities.</p>
+            <div class="flex justify-center items-center gap-4 flex-wrap">
                 <a href="mailto:samirpuri1204@gmail.com" class="btn-primary font-bold py-3 px-8 rounded-full">
-                    Email Me
+                    <i class="fas fa-envelope mr-2"></i>Email Me
                 </a>
-                <a href="https://www.facebook.com/samir.puri.204" target="_blank" class="text-gray-500 hover:text-cyan p-2">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path></svg>
+                
+                <a href="https://wa.me/9779821246792" target="_blank" class="bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-8 rounded-full transition-all flex items-center gap-2">
+                    <i class="fab fa-whatsapp text-xl"></i>
+                    WhatsApp
                 </a>
-                 <a href="https://github.com/DevSamirX" target="_blank" class="text-gray-500 hover:text-cyan p-2">
-                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.491.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.942.359.308.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd"></path></svg>
+                
+                <a href="https://www.facebook.com/samir.puri.204" target="_blank" class="text-gray-500 hover:text-cyan p-3 transition-all">
+                    <i class="fab fa-facebook text-2xl"></i>
+                </a>
+                
+                <a href="https://github.com/samirpuri204/newai" target="_blank" class="text-gray-500 hover:text-cyan p-3 transition-all">
+                    <i class="fab fa-github text-2xl"></i>
                 </a>
             </div>
         </section>
@@ -447,26 +588,19 @@
             const moodcraftLoading = document.getElementById('moodcraft-loading');
             const aiQuoteBar = document.getElementById('ai-quote-bar');
             
-            // Age Calculation
-            function calculateAge(birthDate) {
-                const today = new Date();
-                const birth = new Date(birthDate);
-                let age = today.getFullYear() - birth.getFullYear();
-                const monthDifference = today.getMonth() - birth.getMonth();
-                if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birth.getDate())) {
-                    age--;
-                }
-                return age;
-            }
-            const ageSpan = document.getElementById('age');
-            if (ageSpan) {
-                ageSpan.textContent = calculateAge('2005-06-01');
-            }
-
             // Copyright Year
             const copyrightYearSpan = document.getElementById('copyright-year');
             if (copyrightYearSpan) {
                 copyrightYearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Hire Me Button
+            const hireMeBtn = document.getElementById('hire-me-btn');
+            if (hireMeBtn) {
+                hireMeBtn.addEventListener('click', function() {
+                    if(audioInitialized) clickSound.triggerAttackRelease("A5", "8n");
+                    document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
+                });
             }
 
             menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
@@ -668,9 +802,9 @@
             }
             
             async function callChatbotApi(userInput) {
-                const age = calculateAge('2005-06-01');
-                const samirContext = `You are a helpful and professional AI assistant for Samir Puri (DevSamirX), a ${age}-year-old AI App and Web Developer from Nepal, currently studying IT in Australia. Your purpose is to answer questions about Samir based ONLY on the information provided here. Do not invent information. If a question is outside this scope, answer it using your general knowledge but politely state that it's outside your scope of information about Samir. Be friendly and professional.
-                **About Samir:** Name: Samir Puri (DevSamirX), Age: ${age}, From: Chitwan, Nepal (Born in Bajura), Current Location: Australia, Profession: IT student, AI App/Web Developer, part-time Real Estate Agent. Passion: Using technology for social good.
+
+                const samirContext = `You are a helpful and professional AI assistant for Samir Puri (DevSamirX), an AI App and Web Developer from Nepal, currently studying IT in Australia. Your purpose is to answer questions about Samir based ONLY on the information provided here. Do not invent information. If a question is outside this scope, answer it using your general knowledge but politely state that it's outside your scope of information about Samir. Be friendly and professional.
+                **About Samir:** Name: Samir Puri (DevSamirX), From: Chitwan, Nepal (Born in Bajura), Current Location: Australia, Profession: IT student, AI App/Web Developer, part-time Real Estate Agent. Passion: Using technology for social good.
                 **Skills:** Mobile & Web (Flutter, Dart, Responsive Design, HTML, CSS), Backend & Cloud (Firebase, Firestore, Authentication, Cloudflare), AI & APIs (Gemini API, OpenAI GPT-4o, Claude AI, REST API).
                 **Key Projects:** 1. NepMind: Offline-first mental wellness app for Nepal. 2. AI Chat Apps: Flutter apps using GPT-4o/Claude with emotion detection. 3. Nepali Lines App: Flutter app with 5000+ categorized lines and neon UI.
                 **Business Interests:** Real Estate, TikTok Monetization, future interest in a poultry farm in Nepal.`;
