@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta name="google-adsense-account" content="ca-pub-4590847087721354">    <meta charset="UTF-8">
@@ -246,6 +246,29 @@
         <section id="projects" class="py-20 fade-in-section">
             <h2 class="section-title text-3xl font-bold mb-12">Featured Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <!-- NEP-EDITS Project -->
+                <div class="project-card rounded-lg border-2 border-cyan shadow-lg" style="box-shadow: 0 0 30px var(--primary-color);">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-bold text-cyan">NEP-EDITS</h3>
+                            <span class="bg-cyan text-black text-xs px-2 py-1 rounded-full font-semibold">FEATURED</span>
+                        </div>
+                        <p class="text-gray-300 mt-1 text-sm font-medium">AI-Powered Photo Editing Tool</p>
+                        <p class="mt-4 text-gray-400 leading-relaxed">Advanced photo editing platform built with Google Nano Banana technology. Create trending photo edits, apply professional filters, and transform images with AI-powered tools. Features MoodCraft AI integration for dynamic editing experiences.</p>
+                        <div class="mt-4">
+                            <p class="text-xs text-gray-500 mb-2">Technologies:</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">Google Nano Banana</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">AI Image Processing</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">MoodCraft AI</span>
+                                <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">Cloud Computing</span>
+                            </div>
+                        </div>
+                        <a href="https://pixshop-455841553199.us-west1.run.app/" target="_blank" class="mt-4 inline-block text-cyan hover:text-cyan-300 transition font-medium">
+                            Launch NEP-EDITS →
+                        </a>
+                    </div>
+                </div>
                  <!-- MoodCraft Project -->
                 <div class="project-card rounded-lg border-2 border-cyan shadow-lg cursor-pointer" style="box-shadow: 0 0 30px var(--primary-color);" onclick="document.getElementById('moodcraft').scrollIntoView({behavior: 'smooth'});">
                     <div class="p-6">
@@ -321,6 +344,21 @@
                                 <span class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded">Firestore</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Projects Row -->
+            <div class="grid md:grid-cols-1 gap-8 mt-8">
+                <!-- NEP-EDITS Additional Info -->
+                <div class="project-card rounded-lg">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold text-cyan mb-4">🎨 Experience NEP-EDITS</h3>
+                        <p class="text-gray-400 leading-relaxed mb-6">Transform your photos with cutting-edge AI technology. Create trending edits, apply professional filters, and unleash your creativity with our intuitive photo editing platform.</p>
+                        <a href="https://pixshop-455841553199.us-west1.run.app/" target="_blank" class="btn-primary font-bold py-3 px-8 rounded-full text-lg inline-flex items-center gap-2">
+                            <i class="fas fa-magic"></i>
+                            Start Editing Now
+                        </a>
                     </div>
                 </div>
             </div>
@@ -436,6 +474,7 @@
                         <div>
                             <h4 class="font-semibold text-cyan mb-2">Key Projects</h4>
                             <ul class="text-gray-400 space-y-1">
+                                <li>• NEP-EDITS - AI Photo Editing Platform</li>
                                 <li>• MoodCraft AI - Generative UI</li>
                                 <li>• NepMind - Mental Wellness App</li>
                                 <li>• AI Chat Applications Suite</li>
@@ -806,7 +845,7 @@
                 const samirContext = `You are a helpful and professional AI assistant for Samir Puri (DevSamirX), an AI App and Web Developer from Nepal, currently studying IT in Australia. Your purpose is to answer questions about Samir based ONLY on the information provided here. Do not invent information. If a question is outside this scope, answer it using your general knowledge but politely state that it's outside your scope of information about Samir. Be friendly and professional.
                 **About Samir:** Name: Samir Puri (DevSamirX), From: Chitwan, Nepal (Born in Bajura), Current Location: Australia, Profession: IT student, AI App/Web Developer, part-time Real Estate Agent. Passion: Using technology for social good.
                 **Skills:** Mobile & Web (Flutter, Dart, Responsive Design, HTML, CSS), Backend & Cloud (Firebase, Firestore, Authentication, Cloudflare), AI & APIs (Gemini API, OpenAI GPT-4o, Claude AI, REST API).
-                **Key Projects:** 1. NepMind: Offline-first mental wellness app for Nepal. 2. AI Chat Apps: Flutter apps using GPT-4o/Claude with emotion detection. 3. Nepali Lines App: Flutter app with 5000+ categorized lines and neon UI.
+                **Key Projects:** 1. NEP-EDITS: AI-powered photo editing platform built with Google Nano Banana technology, featuring trending photo edits, professional filters, and MoodCraft AI integration (https://pixshop-455841553199.us-west1.run.app/). 2. NepMind: Offline-first mental wellness app for Nepal. 3. AI Chat Apps: Flutter apps using GPT-4o/Claude with emotion detection. 4. Nepali Lines App: Flutter app with 5000+ categorized lines and neon UI.
                 **Business Interests:** Real Estate, TikTok Monetization, future interest in a poultry farm in Nepal.`;
 
                 const prompt = `${samirContext}\n\nQuestion: ${userInput}\n\nAnswer:`;
@@ -931,5 +970,3 @@
     </script>
 </body>
 </html>
-
-
