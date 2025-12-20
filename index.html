@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta name="google-adsense-account" content="ca-pub-4590847087721354">    <meta charset="UTF-8">
@@ -17,7 +17,7 @@
 
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763236728395939"
-     crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script>
 
     <style>
         :root {
@@ -816,10 +816,11 @@
             }
 
             async function callApi(payload) {
-                const apiKey = "AIzaSyDU1Wrn51gVxat1uoA1wFtaG7IvlD7QgdY";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                // SECURITY UPDATE: Use the Cloudflare Worker URL
+                // Ensure GEMINI_API_KEY is set in your Cloudflare Worker variables
+                const workerUrl = "https://samir-worker.samirpuri204.workers.dev";
 
-                const response = await fetch(apiUrl, {
+                const response = await fetch(workerUrl, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
