@@ -9,9 +9,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        Samir Puri (DevSamirX) - App & Web Developer
-    </title>
+    <title>Samir Puri (DevSamirX) - App & Web Developer</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -32,8 +30,8 @@
     >
 
     <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.min.js">
-    </script>
+        src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.min.js"
+    ></script>
 
     <link
         rel="stylesheet"
@@ -52,6 +50,7 @@
     >
 
     <style>
+
         :root {
             --bg-color: #0D1117;
             --text-color: #C9D1D9;
@@ -65,64 +64,91 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+
+            background-color:
+                var(--bg-color);
+
+            color:
+                var(--text-color);
 
             transition:
                 background-color 0.8s,
                 color 0.8s;
         }
 
+
         .text-cyan {
-            color: var(--primary-color);
+            color:
+                var(--primary-color);
         }
+
 
         .bg-cyan {
-            background-color: var(--primary-color);
+            background-color:
+                var(--primary-color);
         }
 
+
         .border-cyan {
-            border-color: var(--primary-color);
+            border-color:
+                var(--primary-color);
         }
+
 
         .nav-link {
             position: relative;
-            transition: color 0.3s;
+
+            transition:
+                color 0.3s;
         }
 
+
         .nav-link:after {
+
             content: '';
 
             position: absolute;
 
             width: 0;
+
             height: 2px;
 
             bottom: -4px;
+
             left: 50%;
 
-            transform: translateX(-50%);
+            transform:
+                translateX(-50%);
 
-            background-color: var(--primary-color);
+            background-color:
+                var(--primary-color);
 
-            transition: width 0.3s;
+            transition:
+                width 0.3s;
         }
+
 
         .nav-link:hover {
-            color: var(--primary-color);
+            color:
+                var(--primary-color);
         }
+
 
         .nav-link:hover:after {
             width: 100%;
         }
 
+
         .btn-primary {
-            background-color: var(--primary-color);
+
+            background-color:
+                var(--primary-color);
 
             color:
                 var(--primary-text-color);
 
-            transition: all 0.3s;
+            transition:
+                all 0.3s;
 
             box-shadow:
                 0 0 10px var(--primary-color),
@@ -130,7 +156,9 @@
                 0 0 30px var(--primary-color);
         }
 
+
         .btn-primary:hover {
+
             background-color:
                 var(--primary-hover-color);
 
@@ -143,12 +171,13 @@
                 0 0 45px var(--primary-hover-color);
         }
 
+
         .project-card,
         .skill-section,
-        #moodcraft-section,
         footer,
         header,
         #my-vibe-section {
+
             background-color:
                 var(--card-bg-color);
 
@@ -160,13 +189,17 @@
                 border-color 0.5s;
         }
 
+
         .project-card {
+
             transition:
                 transform 0.3s,
                 box-shadow 0.3s;
         }
 
+
         .project-card:hover {
+
             transform:
                 translateY(-8px);
 
@@ -174,7 +207,9 @@
                 0 0 20px var(--primary-color);
         }
 
+
         .skill-pill {
+
             background-color:
                 rgba(34, 211, 238, 0.1);
 
@@ -182,15 +217,12 @@
                 var(--primary-hover-color);
 
             border:
-                1px solid rgba(
-                    34,
-                    211,
-                    238,
-                    0.3
-                );
+                1px solid rgba(34, 211, 238, 0.3);
         }
 
+
         .section-title {
+
             border-bottom:
                 3px solid var(--primary-color);
 
@@ -201,7 +233,9 @@
                 inline-block;
         }
 
+
         .fade-in-section {
+
             opacity: 0;
 
             transform:
@@ -212,27 +246,18 @@
                 transform 0.6s ease-out;
         }
 
+
         .fade-in-section.is-visible {
+
             opacity: 1;
 
             transform:
                 translateY(0);
         }
 
-        .chat-bubble {
-            max-width: 80%;
-
-            padding:
-                10px 15px;
-
-            border-radius:
-                15px;
-
-            word-wrap:
-                break-word;
-        }
 
         .user-bubble {
+
             background-color:
                 var(--primary-color);
 
@@ -243,7 +268,9 @@
                 2px;
         }
 
+
         .ai-bubble {
+
             background-color:
                 var(--border-color);
 
@@ -254,18 +281,22 @@
                 2px;
         }
 
+
         .typing-indicator {
+
             display: flex;
 
-            align-items:
-                center;
+            align-items: center;
 
             padding:
                 10px 0;
         }
 
+
         .typing-indicator span {
+
             height: 8px;
+
             width: 8px;
 
             margin:
@@ -284,15 +315,18 @@
                 pulse 1.4s infinite ease-in-out both;
         }
 
+
         .typing-indicator span:nth-child(1) {
             animation-delay:
                 -0.32s;
         }
 
+
         .typing-indicator span:nth-child(2) {
             animation-delay:
                 -0.16s;
         }
+
 
         @keyframes pulse {
 
@@ -309,21 +343,28 @@
             }
         }
 
+
         .chat-modal {
+
             transition:
                 opacity 0.3s ease-in-out;
         }
 
+
         .chat-window-container {
+
             transition:
                 transform 0.3s ease-in-out,
                 opacity 0.3s ease-in-out;
         }
 
+
         .anim-float {
+
             animation:
                 float 6s ease-in-out infinite;
         }
+
 
         @keyframes float {
 
@@ -343,10 +384,13 @@
             }
         }
 
+
         .anim-flicker {
+
             animation:
                 flicker 1.5s infinite alternate;
         }
+
 
         @keyframes flicker {
 
@@ -357,6 +401,7 @@
             53%,
             57%,
             100% {
+
                 text-shadow:
                     0 0 4px var(--primary-color),
                     0 0 11px var(--primary-color),
@@ -365,20 +410,26 @@
                     0 0 80px var(--primary-color);
             }
 
+
             20%,
             24%,
             55% {
+
                 text-shadow:
                     none;
             }
         }
 
+
         .mic-listening {
-            color: #ef4444;
+
+            color:
+                #ef4444;
 
             animation:
                 mic-pulse 1.5s infinite;
         }
+
 
         @keyframes mic-pulse {
 
@@ -398,13 +449,28 @@
             }
         }
 
+
         .ai-online {
-            color: #4ade80;
+            color:
+                #4ade80;
         }
 
-        .ai-offline {
-            color: #f87171;
+
+        .ai-error {
+            color:
+                #f87171;
         }
+
+
+        #chat-send-btn:disabled {
+
+            opacity:
+                0.5;
+
+            cursor:
+                not-allowed;
+        }
+
     </style>
 
 </head>
@@ -412,6 +478,10 @@
 
 <body class="antialiased">
 
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
 <header
     class="bg-opacity-80 backdrop-blur-lg sticky top-0 z-50"
@@ -498,8 +568,8 @@
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         stroke-width="2"
-                        d="M4 6h16M4 12h16m-7 6h7">
-                    </path>
+                        d="M4 6h16M4 12h16m-7 6h7"
+                    ></path>
 
                 </svg>
 
@@ -522,12 +592,14 @@
             About
         </a>
 
+
         <a
             href="#projects"
             class="nav-link block py-2 px-4 text-sm hover:bg-gray-800"
         >
             Projects
         </a>
+
 
         <a
             href="#skills"
@@ -536,6 +608,7 @@
             Skills
         </a>
 
+
         <a
             href="#moodcraft"
             class="nav-link block py-2 px-4 text-sm hover:bg-gray-800"
@@ -543,12 +616,14 @@
             MoodCraft
         </a>
 
+
         <a
             href="#cv"
             class="nav-link block py-2 px-4 text-sm hover:bg-gray-800"
         >
             CV
         </a>
+
 
         <a
             href="#contact"
@@ -562,108 +637,1158 @@
 </header>
 
 
+
 <main
     class="container mx-auto px-6"
 >
 
 
-    <section
-        id="hero"
-        class="text-center py-24 md:py-40"
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section
+    id="hero"
+    class="text-center py-24 md:py-40"
+>
+
+    <h1
+        class="text-4xl md:text-6xl font-bold leading-tight"
+    >
+        SAMIR
+    </h1>
+
+
+    <p
+        class="mt-4 text-xl md:text-2xl text-gray-400"
     >
 
-        <h1
-            class="text-4xl md:text-6xl font-bold leading-tight"
+        I am an
+
+        <span
+            id="typing-effect"
+            class="text-cyan font-semibold"
+        ></span>
+
+    </p>
+
+
+    <a
+        href="#projects"
+        class="mt-10 inline-block btn-primary font-bold py-3 px-8 rounded-full text-lg"
+    >
+        Explore My Work
+    </a>
+
+</section>
+
+
+
+<!-- =========================================================
+     ABOUT
+========================================================= -->
+
+<section
+    id="about"
+    class="py-20 fade-in-section"
+>
+
+    <h2
+        class="section-title text-3xl font-bold mb-8"
+    >
+        About Me
+    </h2>
+
+
+    <div
+        class="grid md:grid-cols-5 gap-12 items-center"
+    >
+
+        <div
+            class="md:col-span-3 text-lg text-gray-400 leading-relaxed"
         >
-            SAMIR
-        </h1>
+
+            <p>
+
+                As an IT student from Nepal, currently based in Australia,
+                I am deeply passionate about leveraging technology to create
+                impactful solutions.
+
+                My journey is fueled by a desire to bridge gaps and build
+                tools that matter, particularly for communities like my own.
+
+            </p>
+
+
+            <p
+                class="mt-4"
+            >
+
+                I specialize in Flutter development, using AI-assisted
+                coding to build beautiful, intuitive, and highly functional
+                mobile apps.
+
+                From mental wellness platforms like NepMind to creative
+                content applications, my work combines technical curiosity
+                with a commitment to social good.
+
+                Beyond coding, I'm active in real estate and explore
+                entrepreneurial ventures.
+
+            </p>
+
+        </div>
+
+
+        <div
+            class="md:col-span-2 text-center"
+        >
+
+            <div
+                class="relative inline-block"
+            >
+
+                <div
+                    class="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full blur-lg opacity-75"
+                ></div>
+
+
+                <img
+                    src="https://i.postimg.cc/5YQdx63W/nepal-flag.png"
+                    alt="Nepal Flag"
+                    class="relative w-48 h-48 mx-auto rounded-full shadow-lg border-4 border-gray-800"
+                >
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section
+    id="projects"
+    class="py-20 fade-in-section"
+>
+
+    <h2
+        class="section-title text-3xl font-bold mb-12"
+    >
+        Featured Projects
+    </h2>
+
+
+    <div
+        class="grid md:grid-cols-2 gap-8"
+    >
+
+
+        <!-- NEP EDITS -->
+
+        <div
+            class="project-card rounded-lg border-2 border-cyan shadow-lg"
+            style="box-shadow:0 0 30px var(--primary-color);"
+        >
+
+            <div
+                class="p-6"
+            >
+
+                <div
+                    class="flex items-center justify-between mb-3"
+                >
+
+                    <h3
+                        class="text-xl font-bold text-cyan"
+                    >
+                        NEP-EDITS
+                    </h3>
+
+
+                    <span
+                        class="bg-cyan text-black text-xs px-2 py-1 rounded-full font-semibold"
+                    >
+                        FEATURED
+                    </span>
+
+                </div>
+
+
+                <p
+                    class="text-gray-300 mt-1 text-sm font-medium"
+                >
+                    AI-Powered Photo Editing Tool
+                </p>
+
+
+                <p
+                    class="mt-4 text-gray-400 leading-relaxed"
+                >
+
+                    Advanced photo editing platform built with AI image
+                    processing technology.
+
+                    Create trending photo edits, apply professional filters,
+                    and transform images with AI-powered tools.
+
+                </p>
+
+
+                <div
+                    class="mt-4"
+                >
+
+                    <p
+                        class="text-xs text-gray-500 mb-2"
+                    >
+                        Technologies:
+                    </p>
+
+
+                    <div
+                        class="flex flex-wrap gap-2"
+                    >
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            Google Nano Banana
+                        </span>
+
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            AI Image Processing
+                        </span>
+
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            MoodCraft AI
+                        </span>
+
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            Cloud Computing
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://pixshop-455841553199.us-west1.run.app/"
+                    target="_blank"
+                    class="mt-4 inline-block text-cyan hover:text-cyan-300 transition font-medium"
+                >
+                    Launch NEP-EDITS →
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MOODCRAFT -->
+
+        <div
+            class="project-card rounded-lg border-2 border-cyan shadow-lg cursor-pointer"
+            style="box-shadow:0 0 30px var(--primary-color);"
+            onclick="document.getElementById('moodcraft').scrollIntoView({behavior:'smooth'});"
+        >
+
+            <div
+                class="p-6"
+            >
+
+                <div
+                    class="flex items-center justify-between mb-3"
+                >
+
+                    <h3
+                        class="text-xl font-bold text-cyan"
+                    >
+                        MoodCraft AI
+                    </h3>
+
+
+                    <span
+                        class="bg-cyan text-black text-xs px-2 py-1 rounded-full font-semibold"
+                    >
+                        FEATURED
+                    </span>
+
+                </div>
+
+
+                <p
+                    class="text-gray-300 mt-1 text-sm font-medium"
+                >
+                    Generative UI Experience
+                </p>
+
+
+                <p
+                    class="mt-4 text-gray-400 leading-relaxed"
+                >
+
+                    A generative user interface system that dynamically
+                    transforms website colors, fonts, animations and
+                    visual atmosphere using natural-language instructions.
+
+                </p>
+
+
+                <div
+                    class="mt-4"
+                >
+
+                    <p
+                        class="text-xs text-gray-500 mb-2"
+                    >
+                        Technologies:
+                    </p>
+
+
+                    <div
+                        class="flex flex-wrap gap-2"
+                    >
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            JavaScript
+                        </span>
+
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            Gemini AI
+                        </span>
+
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            Tone.js
+                        </span>
+
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            CSS3
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- NEPMIND -->
+
+        <div
+            class="project-card rounded-lg"
+        >
+
+            <div
+                class="p-6"
+            >
+
+                <h3
+                    class="text-xl font-bold text-cyan"
+                >
+                    NepMind
+                </h3>
+
+
+                <p
+                    class="text-gray-300 mt-1 text-sm font-medium"
+                >
+                    Mental Wellness Platform
+                </p>
+
+
+                <p
+                    class="mt-4 text-gray-400 leading-relaxed"
+                >
+
+                    Comprehensive offline-first mental wellness application
+                    designed for Nepal.
+
+                    Features mood tracking, journaling, guided breathing
+                    exercises, and curated wellness content.
+
+                </p>
+
+
+                <div
+                    class="mt-4"
+                >
+
+                    <div
+                        class="flex flex-wrap gap-2"
+                    >
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            Flutter
+                        </span>
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            Dart
+                        </span>
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            SQLite
+                        </span>
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            Firebase
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://play.google.com/store/apps/details?id=com.devsamirx.nepmind&pcampaignid=web_share"
+                    target="_blank"
+                    class="mt-4 inline-flex items-center gap-2 text-cyan"
+                >
+
+                    <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                        alt="Get it on Google Play"
+                        class="h-8"
+                    >
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MANNKO BOLI -->
+
+        <div
+            class="project-card rounded-lg"
+        >
+
+            <div
+                class="p-6"
+            >
+
+                <h3
+                    class="text-xl font-bold text-cyan"
+                >
+                    Mannko Boli
+                </h3>
+
+
+                <p
+                    class="text-gray-300 mt-1 text-sm font-medium"
+                >
+                    Interactive Web Experience
+                </p>
+
+
+                <p
+                    class="mt-4 text-gray-400 leading-relaxed"
+                >
+
+                    A modern interactive web project showcasing creative
+                    design, responsive development and polished user
+                    experiences.
+
+                </p>
+
+
+                <div
+                    class="mt-4"
+                >
+
+                    <div
+                        class="flex flex-wrap gap-2"
+                    >
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            HTML5
+                        </span>
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            CSS3
+                        </span>
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            JavaScript
+                        </span>
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            Responsive Design
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://mannkoboli.life"
+                    target="_blank"
+                    class="mt-4 inline-block text-cyan"
+                >
+                    Visit Live Site →
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- AI -->
+
+        <div
+            class="project-card rounded-lg"
+        >
+
+            <div
+                class="p-6"
+            >
+
+                <h3
+                    class="text-xl font-bold text-cyan"
+                >
+                    AI Chat Applications
+                </h3>
+
+
+                <p
+                    class="text-gray-300 mt-1 text-sm font-medium"
+                >
+                    Intelligent Conversational Interfaces
+                </p>
+
+
+                <p
+                    class="mt-4 text-gray-400 leading-relaxed"
+                >
+
+                    AI-powered conversational applications using modern
+                    language models, mobile interfaces, cloud services and
+                    self-hosted AI infrastructure.
+
+                </p>
+
+
+                <div
+                    class="mt-4"
+                >
+
+                    <div
+                        class="flex flex-wrap gap-2"
+                    >
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            Ollama
+                        </span>
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            Qwen
+                        </span>
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            Flutter
+                        </span>
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            REST API
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SPOTIFY
+========================================================= -->
+
+<section
+    id="my-vibe-section"
+    class="py-20 fade-in-section rounded-lg my-10 p-8"
+>
+
+    <div
+        class="text-center"
+    >
+
+        <h2
+            class="section-title text-3xl font-bold mb-4"
+        >
+            Now Playing: My Vibe
+        </h2>
 
 
         <p
-            class="mt-4 text-xl md:text-2xl text-gray-400"
+            class="text-lg text-gray-400 max-w-2xl mx-auto mb-8"
+        >
+            Here's a playlist that inspires me while I code and create.
+        </p>
+
+    </div>
+
+
+    <div
+        id="spotify-player-container"
+        class="rounded-lg overflow-hidden shadow-lg"
+        style="box-shadow:0 0 30px var(--primary-color);"
+    >
+
+        <iframe
+            style="border-radius:12px"
+            src="https://open.spotify.com/embed/playlist/6QDXdDPg2PGoW28tv0vfqd?utm_source=generator&theme=0"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     SKILLS
+========================================================= -->
+
+<section
+    id="skills"
+    class="py-20 fade-in-section"
+>
+
+    <h2
+        class="section-title text-3xl font-bold mb-8"
+    >
+        Skills & Expertise
+    </h2>
+
+
+    <div
+        class="space-y-6"
+    >
+
+
+        <div
+            class="skill-section p-6 rounded-lg"
         >
 
-            I am an
+            <h3
+                class="text-xl font-semibold mb-3 text-cyan"
+            >
+                Mobile & Web
+            </h3>
 
-            <span
-                id="typing-effect"
-                class="text-cyan font-semibold"
-            ></span>
+
+            <div
+                class="flex flex-wrap gap-3"
+            >
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    Flutter
+                </span>
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    Dart
+                </span>
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    HTML
+                </span>
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    CSS
+                </span>
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    JavaScript
+                </span>
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    Responsive Design
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="skill-section p-6 rounded-lg"
+        >
+
+            <h3
+                class="text-xl font-semibold mb-3 text-cyan"
+            >
+                Backend & Cloud
+            </h3>
+
+
+            <div
+                class="flex flex-wrap gap-3"
+            >
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    Firebase
+                </span>
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    Firestore
+                </span>
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    Authentication
+                </span>
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    Cloudflare
+                </span>
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    REST APIs
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <div
+            class="skill-section p-6 rounded-lg"
+        >
+
+            <h3
+                class="text-xl font-semibold mb-3 text-cyan"
+            >
+                AI & APIs
+            </h3>
+
+
+            <div
+                class="flex flex-wrap gap-3"
+            >
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    Ollama
+                </span>
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    Qwen
+                </span>
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    Gemini
+                </span>
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    OpenAI
+                </span>
+
+                <span
+                    class="skill-pill py-2 px-4 rounded-full"
+                >
+                    Claude
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MOODCRAFT
+========================================================= -->
+
+<section
+    id="moodcraft"
+    class="py-20 fade-in-section rounded-lg my-10 p-8"
+>
+
+    <div
+        class="text-center"
+    >
+
+        <h2
+            class="section-title text-3xl font-bold mb-4"
+        >
+            ✨ MoodCraft AI
+        </h2>
+
+
+        <p
+            class="text-lg text-gray-400 max-w-3xl mx-auto"
+        >
+
+            Describe a mood or theme and watch my portfolio transform.
 
         </p>
 
 
-        <a
-            href="#projects"
-            class="mt-10 inline-block btn-primary font-bold py-3 px-8 rounded-full text-lg"
+        <p
+            class="text-xs text-gray-500 mt-2"
         >
-            Explore My Work
-        </a>
+            Experimental feature.
+        </p>
 
-    </section>
+    </div>
 
 
-    <section
-        id="about"
-        class="py-20 fade-in-section"
+    <div
+        class="mt-10 max-w-2xl mx-auto"
     >
 
-        <h2
-            class="section-title text-3xl font-bold mb-8"
+        <div
+            class="mb-6"
         >
-            About Me
-        </h2>
+
+            <p
+                class="text-center text-gray-400 mb-2"
+            >
+                Discover a Vibe
+            </p>
+
+
+            <div
+                class="flex flex-wrap justify-center gap-2"
+            >
+
+                <button
+                    class="vibe-btn text-sm py-1 px-3 rounded-full border border-cyan opacity-70 hover:opacity-100 transition"
+                >
+                    Midnight Coder
+                </button>
+
+
+                <button
+                    class="vibe-btn text-sm py-1 px-3 rounded-full border border-cyan opacity-70 hover:opacity-100 transition"
+                >
+                    Nepali Roots
+                </button>
+
+
+                <button
+                    class="vibe-btn text-sm py-1 px-4 rounded-full border border-cyan opacity-70 hover:opacity-100 transition"
+                >
+                    Cyber Love
+                </button>
+
+            </div>
+
+        </div>
 
 
         <div
-            class="grid md:grid-cols-5 gap-12 items-center"
+            class="flex flex-col sm:flex-row gap-2"
+        >
+
+            <input
+                type="text"
+                id="moodcraft-input"
+                placeholder="Or type your own theme..."
+                class="flex-grow w-full bg-[#0D1117] px-4 py-3 border border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan text-white"
+            >
+
+
+            <button
+                id="moodcraft-generate-btn"
+                class="btn-primary font-semibold py-3 px-6 rounded-full"
+            >
+                Craft
+            </button>
+
+        </div>
+
+
+        <div
+            class="mt-4 flex flex-wrap justify-center gap-2"
+        >
+
+            <button
+                id="moodcraft-reset-btn"
+                class="text-sm py-1 px-3 rounded-full bg-gray-700 text-white"
+            >
+                Reset Theme
+            </button>
+
+        </div>
+
+
+        <div
+            id="moodcraft-loading"
+            class="hidden mt-4 text-center text-cyan"
+        >
+            Crafting your vibe...
+        </div>
+
+    </div>
+
+</section>
+
+
+<div
+    id="ai-quote-bar"
+    class="text-center py-4 text-gray-400 italic text-sm transition-opacity duration-500 opacity-0"
+></div>
+
+
+
+<!-- =========================================================
+     CV
+========================================================= -->
+
+<section
+    id="cv"
+    class="py-20 fade-in-section"
+>
+
+    <div
+        class="text-center mb-12"
+    >
+
+        <h2
+            class="section-title text-3xl font-bold mb-4"
+        >
+            Professional CV
+        </h2>
+
+
+        <p
+            class="text-lg text-gray-400 max-w-2xl mx-auto"
+        >
+            View my professional profile or contact me for my CV.
+        </p>
+
+    </div>
+
+
+    <div
+        class="grid md:grid-cols-2 gap-8 mb-12"
+    >
+
+        <div
+            class="project-card rounded-lg p-8"
         >
 
             <div
-                class="md:col-span-3 text-lg text-gray-400 leading-relaxed"
+                class="text-center mb-6"
             >
 
-                <p>
-                    As an IT student from Nepal, currently based in Australia,
-                    I am deeply passionate about leveraging technology to create
-                    impactful solutions. My journey is fueled by a desire to
-                    bridge gaps and build tools that matter, particularly for
-                    communities like my own.
+                <div
+                    class="w-24 h-24 mx-auto mb-4 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center"
+                >
+
+                    <i
+                        class="fas fa-user text-3xl text-white"
+                    ></i>
+
+                </div>
+
+
+                <h3
+                    class="text-2xl font-bold text-cyan"
+                >
+                    Samir Puri
+                </h3>
+
+
+                <p
+                    class="text-gray-400"
+                >
+                    AI App & Web Developer
                 </p>
 
 
                 <p
-                    class="mt-4"
+                    class="text-sm text-gray-500"
                 >
-                    I specialize in Flutter development, using AI-assisted
-                    coding to build beautiful, intuitive, and highly functional
-                    mobile apps. From mental wellness platforms like NepMind
-                    to creative content apps, my work is driven by a blend of
-                    technical curiosity and a commitment to social good.
-                    Beyond coding, I'm an active real estate agent and explore
-                    entrepreneurial ventures.
+                    Nepal / Australia
                 </p>
 
             </div>
 
 
             <div
-                class="md:col-span-2 text-center"
+                class="space-y-4 text-sm"
             >
 
-                <div
-                    class="relative inline-block"
-                >
+                <div>
 
-                    <div
-                        class="absolute -inset-1.5 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full blur-lg opacity-75"
-                    ></div>
-
-                    <img
-                        src="https://i.postimg.cc/5YQdx63W/nepal-flag.png"
-                        alt="Nepal Flag"
-                        class="relative w-48 h-48 mx-auto rounded-full shadow-lg border-4 border-gray-800"
+                    <h4
+                        class="font-semibold text-cyan mb-2"
                     >
+                        Core Expertise
+                    </h4>
+
+
+                    <ul
+                        class="text-gray-400 space-y-1"
+                    >
+
+                        <li>
+                            • Flutter Mobile Development
+                        </li>
+
+                        <li>
+                            • AI Integration
+                        </li>
+
+                        <li>
+                            • Firebase & Cloud Services
+                        </li>
+
+                        <li>
+                            • Generative UI Development
+                        </li>
+
+                        <li>
+                            • Self-hosted AI
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div>
+
+                    <h4
+                        class="font-semibold text-cyan mb-2"
+                    >
+                        Key Projects
+                    </h4>
+
+
+                    <ul
+                        class="text-gray-400 space-y-1"
+                    >
+
+                        <li>
+                            • NEP-EDITS
+                        </li>
+
+                        <li>
+                            • MoodCraft AI
+                        </li>
+
+                        <li>
+                            • NepMind
+                        </li>
+
+                        <li>
+                            • AI Chat Applications
+                        </li>
+
+                        <li>
+                            • Mannko Boli
+                        </li>
+
+                    </ul>
 
                 </div>
 
@@ -671,574 +1796,47 @@
 
         </div>
 
-    </section>
-
-
-    <section
-        id="projects"
-        class="py-20 fade-in-section"
-    >
-
-        <h2
-            class="section-title text-3xl font-bold mb-12"
-        >
-            Featured Projects
-        </h2>
-
 
         <div
-            class="grid md:grid-cols-2 lg:grid-cols-2 gap-8"
+            class="flex flex-col justify-center space-y-6"
         >
 
-
-            <div
-                class="project-card rounded-lg border-2 border-cyan shadow-lg"
-                style="box-shadow: 0 0 30px var(--primary-color);"
+            <a
+                href="mailto:samirpuri1204@gmail.com?subject=CV Request&body=Hi Samir, I would like to request your CV."
+                class="btn-primary font-bold py-4 px-8 rounded-full text-lg flex items-center justify-center gap-3"
             >
 
-                <div
-                    class="p-6"
-                >
+                <i
+                    class="fas fa-envelope"
+                ></i>
 
-                    <div
-                        class="flex items-center justify-between mb-3"
-                    >
+                Request CV
 
-                        <h3
-                            class="text-xl font-bold text-cyan"
-                        >
-                            NEP-EDITS
-                        </h3>
+            </a>
 
 
-                        <span
-                            class="bg-cyan text-black text-xs px-2 py-1 rounded-full font-semibold"
-                        >
-                            FEATURED
-                        </span>
+            <button
+                id="hire-me-btn"
+                class="bg-cyan hover:bg-cyan-300 text-black font-bold py-4 px-8 rounded-full text-lg flex items-center justify-center gap-3 transition-all transform hover:scale-105"
+            >
 
-                    </div>
+                <i
+                    class="fas fa-handshake"
+                ></i>
 
+                Hire Me Now
 
-                    <p
-                        class="text-gray-300 mt-1 text-sm font-medium"
-                    >
-                        AI-Powered Photo Editing Tool
-                    </p>
-
-
-                    <p
-                        class="mt-4 text-gray-400 leading-relaxed"
-                    >
-                        Advanced photo editing platform built with Google
-                        Nano Banana technology. Create trending photo edits,
-                        apply professional filters, and transform images
-                        with AI-powered tools.
-                    </p>
-
-
-                    <div
-                        class="mt-4"
-                    >
-
-                        <p
-                            class="text-xs text-gray-500 mb-2"
-                        >
-                            Technologies:
-                        </p>
-
-
-                        <div
-                            class="flex flex-wrap gap-2"
-                        >
-
-                            <span
-                                class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                            >
-                                Google Nano Banana
-                            </span>
-
-                            <span
-                                class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                            >
-                                AI Image Processing
-                            </span>
-
-                            <span
-                                class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                            >
-                                MoodCraft AI
-                            </span>
-
-                            <span
-                                class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                            >
-                                Cloud Computing
-                            </span>
-
-                        </div>
-
-                    </div>
-
-
-                    <a
-                        href="https://pixshop-455841553199.us-west1.run.app/"
-                        target="_blank"
-                        class="mt-4 inline-block text-cyan hover:text-cyan-300 transition font-medium"
-                    >
-                        Launch NEP-EDITS →
-                    </a>
-
-                </div>
-
-            </div>
+            </button>
 
 
             <div
-                class="project-card rounded-lg border-2 border-cyan shadow-lg cursor-pointer"
-                style="box-shadow: 0 0 30px var(--primary-color);"
-                onclick="document.getElementById('moodcraft').scrollIntoView({behavior:'smooth'});"
-            >
-
-                <div
-                    class="p-6"
-                >
-
-                    <div
-                        class="flex items-center justify-between mb-3"
-                    >
-
-                        <h3
-                            class="text-xl font-bold text-cyan"
-                        >
-                            MoodCraft AI
-                        </h3>
-
-
-                        <span
-                            class="bg-cyan text-black text-xs px-2 py-1 rounded-full font-semibold"
-                        >
-                            FEATURED
-                        </span>
-
-                    </div>
-
-
-                    <p
-                        class="text-gray-300 mt-1 text-sm font-medium"
-                    >
-                        Generative UI Experience
-                    </p>
-
-
-                    <p
-                        class="mt-4 text-gray-400 leading-relaxed"
-                    >
-                        A generative website experience that can dynamically
-                        modify colors, fonts, animations, and ambience using
-                        natural language.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="project-card rounded-lg"
-            >
-
-                <div
-                    class="p-6"
-                >
-
-                    <h3
-                        class="text-xl font-bold text-cyan"
-                    >
-                        NepMind
-                    </h3>
-
-
-                    <p
-                        class="text-gray-300 mt-1 text-sm font-medium"
-                    >
-                        Mental Wellness Platform
-                    </p>
-
-
-                    <p
-                        class="mt-4 text-gray-400 leading-relaxed"
-                    >
-                        Comprehensive offline-first mental health application
-                        designed specifically for Nepal. Features mood tracking,
-                        journaling, guided breathing exercises, and curated
-                        wellness content.
-                    </p>
-
-
-                    <a
-                        href="https://play.google.com/store/apps/details?id=com.devsamirx.nepmind&pcampaignid=web_share"
-                        target="_blank"
-                        class="mt-4 inline-flex items-center gap-2 text-cyan"
-                    >
-
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                            alt="Get it on Google Play"
-                            class="h-8"
-                        >
-
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="project-card rounded-lg"
-            >
-
-                <div
-                    class="p-6"
-                >
-
-                    <h3
-                        class="text-xl font-bold text-cyan"
-                    >
-                        Mannko Boli
-                    </h3>
-
-
-                    <p
-                        class="text-gray-300 mt-1 text-sm font-medium"
-                    >
-                        Interactive Web Experience
-                    </p>
-
-
-                    <p
-                        class="mt-4 text-gray-400 leading-relaxed"
-                    >
-                        A modern interactive web application showcasing
-                        creative design, responsive development, and polished
-                        user experiences.
-                    </p>
-
-
-                    <a
-                        href="https://mannkoboli.life"
-                        target="_blank"
-                        class="mt-4 inline-block text-cyan"
-                    >
-                        Visit Live Site →
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="project-card rounded-lg"
-            >
-
-                <div
-                    class="p-6"
-                >
-
-                    <h3
-                        class="text-xl font-bold text-cyan"
-                    >
-                        AI Chat Applications
-                    </h3>
-
-
-                    <p
-                        class="text-gray-300 mt-1 text-sm font-medium"
-                    >
-                        Intelligent Conversational Interfaces
-                    </p>
-
-
-                    <p
-                        class="mt-4 text-gray-400 leading-relaxed"
-                    >
-                        AI-powered conversational applications using
-                        modern language models, Flutter interfaces,
-                        cloud services, and intelligent assistants.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section
-        id="my-vibe-section"
-        class="py-20 fade-in-section rounded-lg my-10 p-8"
-    >
-
-        <div
-            class="text-center"
-        >
-
-            <h2
-                class="section-title text-3xl font-bold mb-4"
-            >
-                Now Playing: My Vibe
-            </h2>
-
-
-            <p
-                class="text-lg text-gray-400 max-w-2xl mx-auto mb-8"
-            >
-                Here's a playlist that inspires me while I code and create.
-            </p>
-
-        </div>
-
-
-        <div
-            id="spotify-player-container"
-            class="rounded-lg overflow-hidden shadow-lg"
-            style="box-shadow: 0 0 30px var(--primary-color);"
-        >
-
-            <iframe
-                style="border-radius:12px"
-                src="https://open.spotify.com/embed/playlist/6QDXdDPg2PGoW28tv0vfqd?utm_source=generator&theme=0"
-                width="100%"
-                height="352"
-                frameborder="0"
-                allowfullscreen
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy">
-            </iframe>
-
-        </div>
-
-    </section>
-
-
-    <section
-        id="skills"
-        class="py-20 fade-in-section"
-    >
-
-        <h2
-            class="section-title text-3xl font-bold mb-8"
-        >
-            Skills & Expertise
-        </h2>
-
-
-        <div
-            class="space-y-6"
-        >
-
-            <div
-                class="skill-section p-6 rounded-lg"
-            >
-
-                <h3
-                    class="text-xl font-semibold mb-3 text-cyan"
-                >
-                    Mobile & Web
-                </h3>
-
-
-                <div
-                    class="flex flex-wrap gap-3"
-                >
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        Flutter
-                    </span>
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        Dart
-                    </span>
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        Responsive Design
-                    </span>
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        HTML & CSS
-                    </span>
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        JavaScript
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="skill-section p-6 rounded-lg"
-            >
-
-                <h3
-                    class="text-xl font-semibold mb-3 text-cyan"
-                >
-                    Backend & Cloud
-                </h3>
-
-
-                <div
-                    class="flex flex-wrap gap-3"
-                >
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        Firebase
-                    </span>
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        Firestore
-                    </span>
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        Authentication
-                    </span>
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        Cloudflare
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="skill-section p-6 rounded-lg"
-            >
-
-                <h3
-                    class="text-xl font-semibold mb-3 text-cyan"
-                >
-                    AI & APIs
-                </h3>
-
-
-                <div
-                    class="flex flex-wrap gap-3"
-                >
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        Ollama
-                    </span>
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        Qwen
-                    </span>
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        Gemini
-                    </span>
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        OpenAI
-                    </span>
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        Claude
-                    </span>
-
-                    <span
-                        class="skill-pill py-2 px-4 rounded-full"
-                    >
-                        REST APIs
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section
-        id="moodcraft"
-        class="py-20 fade-in-section rounded-lg my-10 p-8"
-    >
-
-        <div
-            class="text-center"
-        >
-
-            <h2
-                class="section-title text-3xl font-bold mb-4"
-            >
-                ✨ MoodCraft AI
-            </h2>
-
-
-            <p
-                class="text-lg text-gray-400 max-w-3xl mx-auto"
-            >
-                Describe a mood or a theme, and watch my portfolio transform.
-            </p>
-
-
-            <p
-                class="text-xs text-gray-500 mt-2"
-            >
-                Experimental feature.
-            </p>
-
-        </div>
-
-
-        <div
-            class="mt-10 max-w-2xl mx-auto"
-        >
-
-            <div
-                class="mb-6"
+                class="text-center"
             >
 
                 <p
-                    class="text-center text-gray-400 mb-2"
+                    class="text-gray-400 mb-4"
                 >
-                    Discover a Vibe
+                    Available for:
                 </p>
 
 
@@ -1246,322 +1844,139 @@
                     class="flex flex-wrap justify-center gap-2"
                 >
 
-                    <button
-                        class="vibe-btn text-sm py-1 px-3 rounded-full border border-cyan opacity-70 hover:opacity-100 transition"
+                    <span
+                        class="bg-cyan/20 text-cyan px-3 py-1 rounded-full text-sm"
                     >
-                        Midnight Coder
-                    </button>
+                        Freelance Projects
+                    </span>
 
-                    <button
-                        class="vibe-btn text-sm py-1 px-3 rounded-full border border-cyan opacity-70 hover:opacity-100 transition"
-                    >
-                        Nepali Roots
-                    </button>
 
-                    <button
-                        class="vibe-btn text-sm py-1 px-4 rounded-full border border-cyan opacity-70 hover:opacity-100 transition"
+                    <span
+                        class="bg-cyan/20 text-cyan px-3 py-1 rounded-full text-sm"
                     >
-                        Cyber Love
-                    </button>
+                        Full-time Roles
+                    </span>
+
+
+                    <span
+                        class="bg-cyan/20 text-cyan px-3 py-1 rounded-full text-sm"
+                    >
+                        Consulting
+                    </span>
 
                 </div>
 
             </div>
 
-
-            <div
-                class="flex flex-col sm:flex-row gap-2"
-            >
-
-                <input
-                    type="text"
-                    id="moodcraft-input"
-                    placeholder="Or type your own theme..."
-                    class="flex-grow w-full bg-[#0D1117] px-4 py-3 border border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan text-white"
-                >
-
-
-                <button
-                    id="moodcraft-generate-btn"
-                    class="btn-primary font-semibold py-3 px-6 rounded-full"
-                >
-                    Craft
-                </button>
-
-            </div>
-
-
-            <div
-                class="mt-4 flex flex-wrap justify-center gap-2"
-            >
-
-                <button
-                    id="moodcraft-reset-btn"
-                    class="text-sm py-1 px-3 rounded-full bg-gray-700 text-white"
-                >
-                    Reset Theme
-                </button>
-
-            </div>
-
-
-            <div
-                id="moodcraft-loading"
-                class="hidden mt-4 text-center text-cyan"
-            >
-                Crafting your vibe...
-            </div>
-
         </div>
 
-    </section>
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+    id="contact"
+    class="py-20 text-center fade-in-section"
+>
+
+    <h2
+        class="section-title text-3xl font-bold mb-4"
+    >
+        Get In Touch
+    </h2>
+
+
+    <p
+        class="text-lg text-gray-400 mb-8"
+    >
+
+        Ready to hire me? I'm available for freelance projects,
+        full-time roles and partnership opportunities.
+
+    </p>
 
 
     <div
-        id="ai-quote-bar"
-        class="text-center py-4 text-gray-400 italic text-sm transition-opacity duration-500 opacity-0"
-    ></div>
-
-
-    <section
-        id="cv"
-        class="py-20 fade-in-section"
+        class="flex justify-center items-center gap-4 flex-wrap"
     >
 
-        <div
-            class="text-center mb-12"
+        <a
+            href="mailto:samirpuri1204@gmail.com"
+            class="btn-primary font-bold py-3 px-8 rounded-full"
         >
 
-            <h2
-                class="section-title text-3xl font-bold mb-4"
-            >
-                Professional CV
-            </h2>
+            <i
+                class="fas fa-envelope mr-2"
+            ></i>
+
+            Email Me
+
+        </a>
 
 
-            <p
-                class="text-lg text-gray-400 max-w-2xl mx-auto"
-            >
-                View my professional profile or contact me for my CV.
-            </p>
-
-        </div>
-
-
-        <div
-            class="grid md:grid-cols-2 gap-8 mb-12"
+        <a
+            href="https://wa.me/9779821246792"
+            target="_blank"
+            class="bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-8 rounded-full transition-all flex items-center gap-2"
         >
 
-            <div
-                class="project-card rounded-lg p-8"
-            >
+            <i
+                class="fab fa-whatsapp text-xl"
+            ></i>
 
-                <div
-                    class="text-center mb-6"
-                >
+            WhatsApp
 
-                    <div
-                        class="w-24 h-24 mx-auto mb-4 bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full flex items-center justify-center"
-                    >
-
-                        <i
-                            class="fas fa-user text-3xl text-white"
-                        ></i>
-
-                    </div>
+        </a>
 
 
-                    <h3
-                        class="text-2xl font-bold text-cyan"
-                    >
-                        Samir Puri
-                    </h3>
-
-
-                    <p
-                        class="text-gray-400"
-                    >
-                        AI App & Web Developer
-                    </p>
-
-
-                    <p
-                        class="text-sm text-gray-500"
-                    >
-                        Nepal/Australia
-                    </p>
-
-                </div>
-
-
-                <div
-                    class="space-y-4 text-sm"
-                >
-
-                    <div>
-
-                        <h4
-                            class="font-semibold text-cyan mb-2"
-                        >
-                            Core Expertise
-                        </h4>
-
-
-                        <ul
-                            class="text-gray-400 space-y-1"
-                        >
-
-                            <li>
-                                • Flutter Mobile Development
-                            </li>
-
-                            <li>
-                                • AI Integration
-                            </li>
-
-                            <li>
-                                • Firebase & Cloud Services
-                            </li>
-
-                            <li>
-                                • Generative UI Development
-                            </li>
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div
-                class="flex flex-col justify-center space-y-6"
-            >
-
-                <a
-                    href="mailto:samirpuri1204@gmail.com?subject=CV Request"
-                    class="btn-primary font-bold py-4 px-8 rounded-full text-lg flex items-center justify-center gap-3"
-                >
-
-                    <i
-                        class="fas fa-envelope"
-                    ></i>
-
-                    Request CV
-
-                </a>
-
-
-                <button
-                    id="hire-me-btn"
-                    class="bg-cyan hover:bg-cyan-300 text-black font-bold py-4 px-8 rounded-full text-lg flex items-center justify-center gap-3 transition-all transform hover:scale-105"
-                >
-
-                    <i
-                        class="fas fa-handshake"
-                    ></i>
-
-                    Hire Me Now
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section
-        id="contact"
-        class="py-20 text-center fade-in-section"
-    >
-
-        <h2
-            class="section-title text-3xl font-bold mb-4"
-        >
-            Get In Touch
-        </h2>
-
-
-        <p
-            class="text-lg text-gray-400 mb-8"
-        >
-            Ready to hire me? I'm available for freelance projects,
-            full-time roles, and partnership opportunities.
-        </p>
-
-
-        <div
-            class="flex justify-center items-center gap-4 flex-wrap"
+        <a
+            href="https://www.facebook.com/samir.puri.204"
+            target="_blank"
+            class="text-gray-500 hover:text-cyan p-3 transition-all"
         >
 
-            <a
-                href="mailto:samirpuri1204@gmail.com"
-                class="btn-primary font-bold py-3 px-8 rounded-full"
-            >
+            <i
+                class="fab fa-facebook text-2xl"
+            ></i>
 
-                <i
-                    class="fas fa-envelope mr-2"
-                ></i>
-
-                Email Me
-
-            </a>
+        </a>
 
 
-            <a
-                href="https://wa.me/9779821246792"
-                target="_blank"
-                class="bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-8 rounded-full transition-all flex items-center gap-2"
-            >
+        <a
+            href="https://github.com/samirpuri204/newai"
+            target="_blank"
+            class="text-gray-500 hover:text-cyan p-3 transition-all"
+        >
 
-                <i
-                    class="fab fa-whatsapp text-xl"
-                ></i>
+            <i
+                class="fab fa-github text-2xl"
+            ></i>
 
-                WhatsApp
+        </a>
 
-            </a>
+    </div>
 
+</section>
 
-            <a
-                href="https://www.facebook.com/samir.puri.204"
-                target="_blank"
-                class="text-gray-500 hover:text-cyan p-3 transition-all"
-            >
-
-                <i
-                    class="fab fa-facebook text-2xl"
-                ></i>
-
-            </a>
-
-
-            <a
-                href="https://github.com/samirpuri204/newai"
-                target="_blank"
-                class="text-gray-500 hover:text-cyan p-3 transition-all"
-            >
-
-                <i
-                    class="fab fa-github text-2xl"
-                ></i>
-
-            </a>
-
-        </div>
-
-    </section>
 
 </main>
 
 
+
+<!-- =========================================================
+     CHAT BUTTON
+========================================================= -->
+
 <button
     id="chat-bubble-toggle"
     class="fixed bottom-5 right-5 bg-cyan text-black w-16 h-16 rounded-full flex items-center justify-center shadow-lg transform z-50"
+    aria-label="Open AI chat"
 >
 
     <i
@@ -1570,6 +1985,11 @@
 
 </button>
 
+
+
+<!-- =========================================================
+     CHAT MODAL
+========================================================= -->
 
 <div
     id="chat-modal"
@@ -1598,7 +2018,7 @@
                     id="ai-status"
                     class="text-xs text-gray-500"
                 >
-                    Connecting...
+                    Connecting to AI...
                 </p>
 
             </div>
@@ -1611,6 +2031,7 @@
                 <button
                     id="tts-toggle-btn"
                     class="text-gray-400 hover:text-white"
+                    title="Text to speech"
                 >
 
                     <i
@@ -1623,6 +2044,7 @@
                 <button
                     id="close-chat-btn"
                     class="text-gray-400 hover:text-white text-2xl"
+                    title="Close"
                 >
                     ×
                 </button>
@@ -1653,7 +2075,7 @@
                 >
 
                     <p>
-                        Hello! I'm AI Sathi. Ask me anything, or ask about Samir.
+                        Hello! I'm AI Sathi. Ask me anything, or ask me about Samir.
                     </p>
 
                 </div>
@@ -1678,6 +2100,7 @@
 
             <button
                 id="mic-btn"
+                title="Speak your question"
                 class="bg-gray-600 text-white p-3 rounded-full hover:bg-gray-500 transition-all"
             >
 
@@ -1690,6 +2113,7 @@
 
             <button
                 id="chat-send-btn"
+                title="Send message"
                 class="bg-cyan text-black font-bold p-3 rounded-full hover:bg-cyan-300 transition-all"
             >
 
@@ -1706,6 +2130,11 @@
 </div>
 
 
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer
     class="bg-[#161B22] border-t border-gray-800"
 >
@@ -1716,10 +2145,7 @@
 
         <p>
             ©
-            <span
-                id="copyright-year"
-            ></span>
-
+            <span id="copyright-year"></span>
             Samir Puri (DevSamirX).
             All Rights Reserved.
         </p>
@@ -1727,6 +2153,7 @@
     </div>
 
 </footer>
+
 
 
 <script>
@@ -1737,7 +2164,7 @@ document.addEventListener(
 
 
         /* =====================================================
-           OLLAMA SETTINGS
+           OLLAMA CONFIGURATION
         ===================================================== */
 
         const OLLAMA_BASE_URL =
@@ -1753,65 +2180,41 @@ document.addEventListener(
 
 
         /*
-            Much stronger than qwen3:0.6b
-        */
+         * Your installed powerful general model.
+         */
 
         const OLLAMA_MODEL =
-            "qwen3:8b";
+            "hf.co/unsloth/Qwen3-30B-A3B-Thinking-2507-GGUF:Q5_K_M";
+
 
 
         /* =====================================================
-           AI SYSTEM PROMPT
+           SYSTEM PROMPT
         ===================================================== */
 
         const AI_SYSTEM_PROMPT = `
-You are AI Sathi, a general-purpose AI assistant on Samir Puri's website.
+You are AI Sathi, a helpful general-purpose AI assistant running on Samir Puri's personal website.
 
-You are NOT Samir Puri.
-
+IDENTITY:
 Your name is AI Sathi.
-
+You are an AI assistant.
+You are NOT Samir Puri.
 Samir Puri is a separate human person.
+Never pretend to be Samir.
 
-You can answer normal questions using your general knowledge.
+GENERAL BEHAVIOR:
+Answer the user's actual question naturally.
+You are allowed to use your general knowledge.
+You can discuss programming, technology, Nepal, science, education, AI, coding, software, mobile apps, websites and normal everyday topics.
 
-Topics you can answer include:
-- programming
-- technology
-- Nepal
-- science
-- education
-- general knowledge
-- casual conversation
-- AI
-- coding
-- software
-- websites
-- mobile apps
-
-You can also answer questions specifically about Samir using the profile below.
-
-Do NOT treat every question as a question about Samir.
-
-If somebody asks:
-"What is Nepal?"
-answer normally about Nepal.
-
-If somebody asks:
-"How are you?"
-respond naturally.
-
-If somebody asks:
-"Can you be my friend?"
-respond naturally.
-
-Do not repeat canned responses.
-
+Do not assume every question is about Samir.
 Do not repeatedly introduce yourself.
+Do not give canned responses.
+Do not repeat the same answer unnecessarily.
 
-SAMIR PURI PROFILE
+SAMIR PURI INFORMATION:
 
-Name:
+Full name:
 Samir Puri
 
 Developer identity:
@@ -1833,6 +2236,15 @@ Background:
 - AI-assisted developer
 - Part-time real estate agent
 - Entrepreneur
+
+Interests:
+- Artificial Intelligence
+- Technology
+- Mobile application development
+- Web development
+- Entrepreneurship
+- Real estate
+- Technology for social good
 
 Skills:
 - Flutter
@@ -1858,7 +2270,7 @@ NEP-EDITS:
 AI-powered photo editing platform.
 
 MoodCraft AI:
-Generative user-interface project.
+Generative user-interface system that can dynamically change website appearance from natural-language themes.
 
 NepMind:
 Offline-first mental wellness application designed for Nepal.
@@ -1867,30 +2279,29 @@ Mannko Boli:
 Interactive web application.
 
 AI Chat Applications:
-AI conversational application projects.
+AI-powered conversational applications and experiments.
 
-RULES FOR SAMIR-SPECIFIC QUESTIONS
+WHEN TALKING ABOUT SAMIR:
+Refer to Samir as "Samir", "he", "him" or "his".
+Never describe Samir's biography as if it is your biography.
+Never say "I am Samir".
 
-When discussing Samir:
-- call him Samir
-- use he/him/his
-- never say you are Samir
-- never invent personal facts
+If the user asks for a personal fact about Samir that is not provided here, say that you do not have that information.
 
-If a user asks for a personal fact about Samir that is not included above,
-say you do not have that information.
+Do not invent personal facts about Samir.
 
-Do not claim access to:
+Never claim access to Samir's:
 - passwords
 - API keys
 - private messages
 - financial information
-- private accounts
+- account credentials
 - private databases
 - personal secrets
 
-Respond naturally and directly to the user's actual message.
+Answer naturally and directly.
 `.trim();
+
 
 
         /* =====================================================
@@ -1907,8 +2318,9 @@ Respond naturally and directly to the user's actual message.
         ];
 
 
+
         /* =====================================================
-           ELEMENTS
+           ELEMENT REFERENCES
         ===================================================== */
 
         const menuBtn =
@@ -2025,23 +2437,160 @@ Respond naturally and directly to the user's actual message.
             );
 
 
-        document.getElementById(
-            "copyright-year"
-        ).textContent =
-            new Date()
-                .getFullYear();
+
+        /* =====================================================
+           COPYRIGHT
+        ===================================================== */
+
+        const yearElement =
+            document.getElementById(
+                "copyright-year"
+            );
+
+
+        if (yearElement) {
+
+            yearElement.textContent =
+                new Date()
+                    .getFullYear();
+
+        }
+
 
 
         /* =====================================================
-           MENU
+           AUDIO
+        ===================================================== */
+
+        let audioInitialized =
+            false;
+
+
+        let clickSound;
+
+        let openModalSound;
+
+        let ambiancePlayer;
+
+
+        function initializeAudio() {
+
+            if (
+                audioInitialized ||
+                typeof Tone === "undefined"
+            ) {
+
+                return;
+
+            }
+
+
+            try {
+
+                Tone.start();
+
+
+                clickSound =
+                    new Tone.Synth({
+
+                        oscillator: {
+                            type:
+                                "sine"
+                        },
+
+                        envelope: {
+
+                            attack:
+                                0.005,
+
+                            decay:
+                                0.1,
+
+                            sustain:
+                                0.3,
+
+                            release:
+                                1
+                        },
+
+                        volume:
+                            -20
+
+                    }).toDestination();
+
+
+                openModalSound =
+                    new Tone.PluckSynth({
+
+                        attackNoise:
+                            0.5,
+
+                        dampening:
+                            4000,
+
+                        resonance:
+                            0.9,
+
+                        volume:
+                            -15
+
+                    }).toDestination();
+
+
+                ambiancePlayer =
+                    new Tone.Player()
+                        .toDestination();
+
+
+                ambiancePlayer.loop =
+                    true;
+
+
+                ambiancePlayer.fadeOut =
+                    2;
+
+
+                audioInitialized =
+                    true;
+
+
+            } catch (error) {
+
+                console.warn(
+                    "Audio initialization error:",
+                    error
+                );
+
+            }
+
+
+            document.body.removeEventListener(
+                "click",
+                initializeAudio,
+                true
+            );
+
+        }
+
+
+        document.body.addEventListener(
+            "click",
+            initializeAudio,
+            true
+        );
+
+
+
+        /* =====================================================
+           MOBILE MENU
         ===================================================== */
 
         menuBtn?.addEventListener(
             "click",
-            () => {
+            function () {
 
                 mobileMenu
-                    .classList
+                    ?.classList
                     .toggle(
                         "hidden"
                     );
@@ -2050,16 +2599,17 @@ Respond naturally and directly to the user's actual message.
         );
 
 
+
         document
             .querySelectorAll(
                 "a.nav-link"
             )
             .forEach(
-                link => {
+                function (link) {
 
                     link.addEventListener(
                         "click",
-                        event => {
+                        function (event) {
 
                             event.preventDefault();
 
@@ -2071,20 +2621,20 @@ Respond naturally and directly to the user's actual message.
                                 );
 
 
-                            const id =
+                            const target =
                                 link.getAttribute(
                                     "href"
                                 );
 
 
                             if (
-                                id &&
-                                id !== "#"
+                                target &&
+                                target !== "#"
                             ) {
 
                                 document
                                     .querySelector(
-                                        id
+                                        target
                                     )
                                     ?.scrollIntoView({
 
@@ -2102,6 +2652,7 @@ Respond naturally and directly to the user's actual message.
             );
 
 
+
         /* =====================================================
            HERO TYPING
         ===================================================== */
@@ -2117,9 +2668,13 @@ Respond naturally and directly to the user's actual message.
         ];
 
 
-        let roleIndex = 0;
+        let roleIndex =
+            0;
 
-        let charIndex = 0;
+
+        let charIndex =
+            0;
+
 
 
         function typeRole() {
@@ -2135,10 +2690,11 @@ Respond naturally and directly to the user's actual message.
             ) {
 
                 typingElement.textContent +=
-                    roles[roleIndex]
-                        .charAt(
-                            charIndex
-                        );
+                    roles[
+                        roleIndex
+                    ].charAt(
+                        charIndex
+                    );
 
 
                 charIndex++;
@@ -2148,6 +2704,7 @@ Respond naturally and directly to the user's actual message.
                     typeRole,
                     100
                 );
+
 
             } else {
 
@@ -2161,6 +2718,7 @@ Respond naturally and directly to the user's actual message.
         }
 
 
+
         function eraseRole() {
 
             if (
@@ -2168,11 +2726,12 @@ Respond naturally and directly to the user's actual message.
             ) {
 
                 typingElement.textContent =
-                    roles[roleIndex]
-                        .substring(
-                            0,
-                            charIndex - 1
-                        );
+                    roles[
+                        roleIndex
+                    ].substring(
+                        0,
+                        charIndex - 1
+                    );
 
 
                 charIndex--;
@@ -2182,6 +2741,7 @@ Respond naturally and directly to the user's actual message.
                     eraseRole,
                     50
                 );
+
 
             } else {
 
@@ -2205,17 +2765,18 @@ Respond naturally and directly to the user's actual message.
         typeRole();
 
 
+
         /* =====================================================
-           FADE SECTIONS
+           SCROLL ANIMATIONS
         ===================================================== */
 
         const observer =
             new IntersectionObserver(
 
-                entries => {
+                function (entries) {
 
                     entries.forEach(
-                        entry => {
+                        function (entry) {
 
                             if (
                                 entry.isIntersecting
@@ -2247,7 +2808,7 @@ Respond naturally and directly to the user's actual message.
                 ".fade-in-section"
             )
             .forEach(
-                section => {
+                function (section) {
 
                     observer.observe(
                         section
@@ -2257,13 +2818,14 @@ Respond naturally and directly to the user's actual message.
             );
 
 
+
         /* =====================================================
            HIRE BUTTON
         ===================================================== */
 
         hireMeBtn?.addEventListener(
             "click",
-            () => {
+            function () {
 
                 document
                     .getElementById(
@@ -2280,31 +2842,50 @@ Respond naturally and directly to the user's actual message.
         );
 
 
+
         /* =====================================================
-           CHAT MODAL
+           CHAT OPEN / CLOSE
         ===================================================== */
 
         function openChat() {
 
+            if (
+                audioInitialized &&
+                openModalSound
+            ) {
+
+                try {
+
+                    openModalSound
+                        .triggerAttack(
+                            "C4",
+                            Tone.now()
+                        );
+
+                } catch (_) {}
+
+            }
+
+
             chatModal
-                .classList
+                ?.classList
                 .remove(
                     "hidden"
                 );
 
 
             setTimeout(
-                () => {
+                function () {
 
                     chatModal
-                        .classList
+                        ?.classList
                         .remove(
                             "opacity-0"
                         );
 
 
                     chatWindowContainer
-                        .classList
+                        ?.classList
                         .remove(
                             "opacity-0",
                             "translate-y-8"
@@ -2316,10 +2897,10 @@ Respond naturally and directly to the user's actual message.
 
 
             setTimeout(
-                () => {
+                function () {
 
                     chatInput
-                        .focus();
+                        ?.focus();
 
                 },
                 300
@@ -2328,17 +2909,18 @@ Respond naturally and directly to the user's actual message.
         }
 
 
+
         function closeChat() {
 
             chatModal
-                .classList
+                ?.classList
                 .add(
                     "opacity-0"
                 );
 
 
             chatWindowContainer
-                .classList
+                ?.classList
                 .add(
                     "opacity-0",
                     "translate-y-8"
@@ -2346,10 +2928,10 @@ Respond naturally and directly to the user's actual message.
 
 
             setTimeout(
-                () => {
+                function () {
 
                     chatModal
-                        .classList
+                        ?.classList
                         .add(
                             "hidden"
                         );
@@ -2359,6 +2941,7 @@ Respond naturally and directly to the user's actual message.
             );
 
         }
+
 
 
         chatBubbleToggle
@@ -2378,7 +2961,7 @@ Respond naturally and directly to the user's actual message.
         chatModal
             ?.addEventListener(
                 "click",
-                event => {
+                function (event) {
 
                     if (
                         event.target ===
@@ -2393,8 +2976,9 @@ Respond naturally and directly to the user's actual message.
             );
 
 
+
         /* =====================================================
-           AI SERVER STATUS
+           SERVER STATUS
         ===================================================== */
 
         async function checkAIStatus() {
@@ -2403,14 +2987,14 @@ Respond naturally and directly to the user's actual message.
 
                 const response =
                     await fetch(
-
                         OLLAMA_VERSION_URL,
-
                         {
+                            method:
+                                "GET",
+
                             cache:
                                 "no-store"
                         }
-
                     );
 
 
@@ -2427,32 +3011,42 @@ Respond naturally and directly to the user's actual message.
                     await response.json();
 
 
-                aiStatus.textContent =
-                    `Online • Ollama ${data.version || ""}`;
+                if (aiStatus) {
+
+                    aiStatus.textContent =
+                        `Online • Ollama ${data.version || ""}`;
 
 
-                aiStatus.className =
-                    "text-xs ai-online";
+                    aiStatus.className =
+                        "text-xs ai-online";
+
+                }
 
 
             } catch (error) {
 
                 console.warn(
-                    "Status request failed:",
+                    "Ollama health check failed:",
                     error
                 );
 
 
                 /*
-                    Don't claim offline just because
-                    browser health checking failed.
-                */
+                 * Do not incorrectly claim that the server
+                 * is offline only because a browser health
+                 * check failed.
+                 */
 
-                aiStatus.textContent =
-                    "AI Sathi";
+                if (aiStatus) {
 
-                aiStatus.className =
-                    "text-xs text-gray-500";
+                    aiStatus.textContent =
+                        "AI Sathi";
+
+
+                    aiStatus.className =
+                        "text-xs text-gray-500";
+
+                }
 
             }
 
@@ -2462,8 +3056,9 @@ Respond naturally and directly to the user's actual message.
         checkAIStatus();
 
 
+
         /* =====================================================
-           MESSAGE DISPLAY
+           CHAT MESSAGE UI
         ===================================================== */
 
         function appendMessage(
@@ -2502,18 +3097,18 @@ Respond naturally and directly to the user's actual message.
 
             if (text) {
 
-                const p =
+                const paragraph =
                     document.createElement(
                         "p"
                     );
 
 
-                p.textContent =
+                paragraph.textContent =
                     text;
 
 
                 bubble.appendChild(
-                    p
+                    paragraph
                 );
 
             }
@@ -2521,17 +3116,17 @@ Respond naturally and directly to the user's actual message.
 
             if (loading) {
 
-                const typing =
+                const indicator =
                     document.createElement(
                         "div"
                     );
 
 
-                typing.className =
+                indicator.className =
                     "typing-indicator";
 
 
-                typing.innerHTML =
+                indicator.innerHTML =
                     `
                     <span></span>
                     <span></span>
@@ -2540,7 +3135,7 @@ Respond naturally and directly to the user's actual message.
 
 
                 bubble.appendChild(
-                    typing
+                    indicator
                 );
 
             }
@@ -2551,13 +3146,18 @@ Respond naturally and directly to the user's actual message.
             );
 
 
-            chatWindow.appendChild(
-                wrapper
-            );
+            chatWindow
+                ?.appendChild(
+                    wrapper
+                );
 
 
-            chatWindow.scrollTop =
-                chatWindow.scrollHeight;
+            if (chatWindow) {
+
+                chatWindow.scrollTop =
+                    chatWindow.scrollHeight;
+
+            }
 
 
             return bubble;
@@ -2565,23 +3165,26 @@ Respond naturally and directly to the user's actual message.
         }
 
 
+
         /* =====================================================
            IDENTITY FILTER
         ===================================================== */
 
-        function sanitizeIdentity(
+        function sanitizeAIIdentity(
             text
         ) {
 
             if (!text) {
+
                 return text;
+
             }
 
 
             return text
 
                 .replace(
-                    /\bI'm Samir Puri\b/gi,
+                    /\bI['’]?m Samir Puri\b/gi,
                     "I'm AI Sathi"
                 )
 
@@ -2591,13 +3194,18 @@ Respond naturally and directly to the user's actual message.
                 )
 
                 .replace(
-                    /\bI'm Samir\b/gi,
+                    /\bI['’]?m Samir\b/gi,
                     "I'm AI Sathi"
                 )
 
                 .replace(
                     /\bI am Samir\b/gi,
                     "I am AI Sathi"
+                )
+
+                .replace(
+                    /\bMy name is Samir Puri\b/gi,
+                    "My name is AI Sathi"
                 )
 
                 .replace(
@@ -2608,8 +3216,9 @@ Respond naturally and directly to the user's actual message.
         }
 
 
+
         /* =====================================================
-           REAL OLLAMA REQUEST
+           REAL OLLAMA AI REQUEST
         ===================================================== */
 
         async function callAI(
@@ -2628,8 +3237,9 @@ Respond naturally and directly to the user's actual message.
 
 
             /*
-                System + recent conversation.
-            */
+             * Keep the system prompt plus the most recent
+             * conversation turns.
+             */
 
             const messages = [
 
@@ -2637,7 +3247,7 @@ Respond naturally and directly to the user's actual message.
 
                 ...chatHistory
                     .slice(1)
-                    .slice(-24)
+                    .slice(-30)
 
             ];
 
@@ -2646,14 +3256,19 @@ Respond naturally and directly to the user's actual message.
                 new AbortController();
 
 
+            /*
+             * 30B model can take longer to load
+             * if it was unloaded from GPU memory.
+             */
+
             const timeout =
                 setTimeout(
-                    () => {
+                    function () {
 
                         controller.abort();
 
                     },
-                    240000
+                    300000
                 );
 
 
@@ -2661,9 +3276,7 @@ Respond naturally and directly to the user's actual message.
 
                 const response =
                     await fetch(
-
                         OLLAMA_CHAT_URL,
-
                         {
 
                             method:
@@ -2694,13 +3307,22 @@ Respond naturally and directly to the user's actual message.
 
 
                                     /*
-                                        Qwen3 8B supports thinking,
-                                        but disabling it gives a
-                                        faster website chat.
-                                    */
+                                     * Thinking model, but thinking
+                                     * disabled for faster website chat.
+                                     */
 
                                     think:
                                         false,
+
+
+                                    /*
+                                     * Keep the model loaded after
+                                     * each request to speed up the
+                                     * next visitor message.
+                                     */
+
+                                    keep_alive:
+                                        "15m",
 
 
                                     options: {
@@ -2710,6 +3332,9 @@ Respond naturally and directly to the user's actual message.
 
                                         top_p:
                                             0.9,
+
+                                        top_k:
+                                            40,
 
                                         num_ctx:
                                             8192,
@@ -2729,7 +3354,6 @@ Respond naturally and directly to the user's actual message.
                                 controller.signal
 
                         }
-
                     );
 
 
@@ -2745,14 +3369,14 @@ Respond naturally and directly to the user's actual message.
 
 
                     console.error(
-                        "Ollama response:",
+                        "OLLAMA HTTP ERROR:",
                         response.status,
                         errorText
                     );
 
 
                     throw new Error(
-                        `HTTP ${response.status}`
+                        `Ollama returned HTTP ${response.status}`
                     );
 
                 }
@@ -2777,14 +3401,19 @@ Respond naturally and directly to the user's actual message.
                 if (!answer) {
 
                     throw new Error(
-                        "Empty AI response"
+                        "Ollama returned an empty response."
                     );
 
                 }
 
 
+                /*
+                 * Only perform a small identity correction.
+                 * No mock answer replacements.
+                 */
+
                 answer =
-                    sanitizeIdentity(
+                    sanitizeAIIdentity(
                         answer
                     );
 
@@ -2810,6 +3439,10 @@ Respond naturally and directly to the user's actual message.
                 );
 
 
+                /*
+                 * Remove failed message from history.
+                 */
+
                 const last =
                     chatHistory[
                         chatHistory.length - 1
@@ -2817,8 +3450,9 @@ Respond naturally and directly to the user's actual message.
 
 
                 if (
-                    last?.role ===
-                    "user"
+                    last &&
+                    last.role === "user" &&
+                    last.content === userMessage
                 ) {
 
                     chatHistory.pop();
@@ -2845,15 +3479,17 @@ Respond naturally and directly to the user's actual message.
         }
 
 
+
         /* =====================================================
-           TYPE RESPONSE
+           TYPE AI RESPONSE
         ===================================================== */
 
         let ttsEnabled =
             false;
 
 
-        function typeResponse(
+
+        function typeAIResponse(
             bubble,
             text
         ) {
@@ -2877,12 +3513,13 @@ Respond naturally and directly to the user's actual message.
             );
 
 
-            let index = 0;
+            let index =
+                0;
 
 
             const interval =
                 setInterval(
-                    () => {
+                    function () {
 
                         if (
                             index <
@@ -2890,14 +3527,21 @@ Respond naturally and directly to the user's actual message.
                         ) {
 
                             paragraph.textContent +=
-                                text[index];
+                                text[
+                                    index
+                                ];
 
 
                             index++;
 
 
-                            chatWindow.scrollTop =
-                                chatWindow.scrollHeight;
+                            if (chatWindow) {
+
+                                chatWindow.scrollTop =
+                                    chatWindow.scrollHeight;
+
+                            }
+
 
                         } else {
 
@@ -2907,8 +3551,14 @@ Respond naturally and directly to the user's actual message.
 
 
                             if (
-                                ttsEnabled
+                                ttsEnabled &&
+                                window.speechSynthesis
                             ) {
+
+                                window
+                                    .speechSynthesis
+                                    .cancel();
+
 
                                 const speech =
                                     new SpeechSynthesisUtterance(
@@ -2927,10 +3577,11 @@ Respond naturally and directly to the user's actual message.
                         }
 
                     },
-                    5
+                    4
                 );
 
         }
+
 
 
         /* =====================================================
@@ -2941,15 +3592,17 @@ Respond naturally and directly to the user's actual message.
             false;
 
 
+
         async function sendChat() {
 
-            const text =
-                chatInput.value
+            const userMessage =
+                chatInput
+                    ?.value
                     .trim();
 
 
             if (
-                !text ||
+                !userMessage ||
                 requestRunning
             ) {
 
@@ -2959,7 +3612,7 @@ Respond naturally and directly to the user's actual message.
 
 
             if (
-                text.length >
+                userMessage.length >
                 8000
             ) {
 
@@ -2982,13 +3635,8 @@ Respond naturally and directly to the user's actual message.
                 true;
 
 
-            chatSendBtn.classList.add(
-                "opacity-50"
-            );
-
-
             appendMessage(
-                text,
+                userMessage,
                 "user"
             );
 
@@ -3005,15 +3653,39 @@ Respond naturally and directly to the user's actual message.
                 );
 
 
+            if (aiStatus) {
+
+                aiStatus.textContent =
+                    "Thinking...";
+
+
+                aiStatus.className =
+                    "text-xs text-yellow-400";
+
+            }
+
+
             try {
 
                 const answer =
                     await callAI(
-                        text
+                        userMessage
                     );
 
 
-                typeResponse(
+                if (aiStatus) {
+
+                    aiStatus.textContent =
+                        "Online • Qwen3 30B";
+
+
+                    aiStatus.className =
+                        "text-xs ai-online";
+
+                }
+
+
+                typeAIResponse(
                     aiBubble,
                     answer
                 );
@@ -3022,7 +3694,7 @@ Respond naturally and directly to the user's actual message.
             } catch (error) {
 
                 console.error(
-                    "AI request error:",
+                    "AI CHAT ERROR:",
                     error
                 );
 
@@ -3031,33 +3703,45 @@ Respond naturally and directly to the user's actual message.
                     "";
 
 
-                const p =
+                const errorParagraph =
                     document.createElement(
                         "p"
                     );
 
 
                 if (
-                    error.message
-                        .includes(
-                            "timed out"
-                        )
+                    error.message.includes(
+                        "timed out"
+                    )
                 ) {
 
-                    p.textContent =
-                        "The AI took too long to answer. Please try again.";
+                    errorParagraph.textContent =
+                        "The AI took too long to respond. Please try again.";
+
 
                 } else {
 
-                    p.textContent =
-                        "I couldn't reach the AI server. Please try again.";
+                    errorParagraph.textContent =
+                        "I couldn't get a response from the AI model. Please try again.";
 
                 }
 
 
                 aiBubble.appendChild(
-                    p
+                    errorParagraph
                 );
+
+
+                if (aiStatus) {
+
+                    aiStatus.textContent =
+                        "Request failed";
+
+
+                    aiStatus.className =
+                        "text-xs ai-error";
+
+                }
 
 
             } finally {
@@ -3070,13 +3754,13 @@ Respond naturally and directly to the user's actual message.
                     false;
 
 
-                chatSendBtn.classList.remove(
-                    "opacity-50"
-                );
+                chatInput
+                    ?.focus();
 
             }
 
         }
+
 
 
         chatSendBtn
@@ -3089,7 +3773,7 @@ Respond naturally and directly to the user's actual message.
         chatInput
             ?.addEventListener(
                 "keydown",
-                event => {
+                function (event) {
 
                     if (
                         event.key ===
@@ -3107,14 +3791,15 @@ Respond naturally and directly to the user's actual message.
             );
 
 
+
         /* =====================================================
-           TTS
+           TEXT TO SPEECH
         ===================================================== */
 
         ttsToggleBtn
             ?.addEventListener(
                 "click",
-                () => {
+                function () {
 
                     ttsEnabled =
                         !ttsEnabled;
@@ -3129,7 +3814,8 @@ Respond naturally and directly to the user's actual message.
 
 
                     if (
-                        !ttsEnabled
+                        !ttsEnabled &&
+                        window.speechSynthesis
                     ) {
 
                         window
@@ -3142,8 +3828,9 @@ Respond naturally and directly to the user's actual message.
             );
 
 
+
         /* =====================================================
-           SPEECH INPUT
+           SPEECH RECOGNITION
         ===================================================== */
 
         const SpeechRecognition =
@@ -3157,10 +3844,6 @@ Respond naturally and directly to the user's actual message.
                 new SpeechRecognition();
 
 
-            recognition.lang =
-                "en-US";
-
-
             recognition.continuous =
                 false;
 
@@ -3169,11 +3852,15 @@ Respond naturally and directly to the user's actual message.
                 false;
 
 
+            recognition.lang =
+                "en-US";
+
+
             recognition.onstart =
-                () => {
+                function () {
 
                     micBtn
-                        .classList
+                        ?.classList
                         .add(
                             "mic-listening"
                         );
@@ -3182,10 +3869,10 @@ Respond naturally and directly to the user's actual message.
 
 
             recognition.onend =
-                () => {
+                function () {
 
                     micBtn
-                        .classList
+                        ?.classList
                         .remove(
                             "mic-listening"
                         );
@@ -3193,8 +3880,26 @@ Respond naturally and directly to the user's actual message.
                 };
 
 
+            recognition.onerror =
+                function (error) {
+
+                    console.warn(
+                        "Speech recognition error:",
+                        error
+                    );
+
+                };
+
+
             recognition.onresult =
-                event => {
+                function (event) {
+
+                    if (!chatInput) {
+
+                        return;
+
+                    }
+
 
                     chatInput.value =
                         event
@@ -3210,9 +3915,13 @@ Respond naturally and directly to the user's actual message.
             micBtn
                 ?.addEventListener(
                     "click",
-                    () => {
+                    function () {
 
-                        recognition.start();
+                        try {
+
+                            recognition.start();
+
+                        } catch (_) {}
 
                     }
                 );
@@ -3230,23 +3939,25 @@ Respond naturally and directly to the user's actual message.
         }
 
 
+
         /* =====================================================
-           MOODCRAFT
+           MOODCRAFT API
+
+           MoodCraft still uses your existing Cloudflare Worker.
+           AI Sathi uses Ollama.
         ===================================================== */
 
-        async function callMoodCraft(
+        async function callMoodCraftAPI(
             payload
         ) {
 
-            const workerUrl =
+            const workerURL =
                 "https://samir-worker.samirpuri204.workers.dev";
 
 
             const response =
                 await fetch(
-
-                    workerUrl,
-
+                    workerURL,
                     {
 
                         method:
@@ -3267,14 +3978,23 @@ Respond naturally and directly to the user's actual message.
                             )
 
                     }
-
                 );
 
 
             if (!response.ok) {
 
+                const errorBody =
+                    await response.text();
+
+
+                console.error(
+                    "MoodCraft API error:",
+                    errorBody
+                );
+
+
                 throw new Error(
-                    `MoodCraft HTTP ${response.status}`
+                    `MoodCraft returned ${response.status}`
                 );
 
             }
@@ -3284,60 +4004,78 @@ Respond naturally and directly to the user's actual message.
                 await response.json();
 
 
-            if (
-                data.candidates?.[0]
-                    ?.content?.parts?.[0]
-                    ?.text
-            ) {
+            const text =
+                data
+                    ?.candidates?.[0]
+                    ?.content
+                    ?.parts?.[0]
+                    ?.text;
 
-                return data
-                    .candidates[0]
-                    .content
-                    .parts[0]
-                    .text;
+
+            if (!text) {
+
+                throw new Error(
+                    "Invalid MoodCraft response."
+                );
 
             }
 
 
-            throw new Error(
-                "Invalid MoodCraft response"
-            );
+            return text;
 
         }
+
 
 
         async function generateTheme(
             description
         ) {
 
-            const prompt = `
-Create a JSON website theme for:
+            const prompt =
+                `
+Create a JSON website theme based on this description:
+
 "${description}"
 
-Return only JSON:
+Return ONLY valid JSON.
+
+Use this structure:
 
 {
-  "colors": {
-    "--bg-color": "",
-    "--card-bg-color": "",
-    "--border-color": "",
-    "--text-color": "",
-    "--text-muted-color": "",
-    "--primary-color": "",
-    "--primary-text-color": "",
-    "--primary-hover-color": ""
-  },
-  "font": "",
-  "animation": "float | flicker | none",
-  "ambiance": "rain | fire | forest | night | cyber | none",
-  "icon": "",
-  "quote": ""
+    "colors": {
+        "--bg-color": "",
+        "--card-bg-color": "",
+        "--border-color": "",
+        "--text-color": "",
+        "--text-muted-color": "",
+        "--primary-color": "",
+        "--primary-text-color": "",
+        "--primary-hover-color": ""
+    },
+
+    "font": "",
+
+    "animation": "float",
+
+    "icon": "",
+
+    "quote": ""
 }
-            `.trim();
+
+animation must be:
+"float"
+"flicker"
+or
+"none"
+
+font should be a Google Font name.
+
+icon should be a Font Awesome solid icon name.
+                `.trim();
 
 
             const raw =
-                await callMoodCraft({
+                await callMoodCraftAPI({
 
                     contents: [
 
@@ -3385,23 +4123,36 @@ Return only JSON:
         }
 
 
+
         function applyTheme(
             data
         ) {
+
+            if (
+                !data ||
+                typeof data !== "object"
+            ) {
+
+                return;
+
+            }
+
 
             const root =
                 document.documentElement;
 
 
             if (
-                data.colors
+                data.colors &&
+                typeof data.colors === "object"
             ) {
 
                 Object.entries(
                     data.colors
                 ).forEach(
-
-                    ([key, value]) => {
+                    function (
+                        [key, value]
+                    ) {
 
                         root.style
                             .setProperty(
@@ -3410,7 +4161,6 @@ Return only JSON:
                             );
 
                     }
-
                 );
 
             }
@@ -3420,17 +4170,17 @@ Return only JSON:
                 data.font
             ) {
 
-                const link =
+                const fontLink =
                     document.createElement(
                         "link"
                     );
 
 
-                link.rel =
+                fontLink.rel =
                     "stylesheet";
 
 
-                link.href =
+                fontLink.href =
                     `https://fonts.googleapis.com/css2?family=${
                         data.font
                             .replace(
@@ -3442,12 +4192,11 @@ Return only JSON:
 
                 document.head
                     .appendChild(
-                        link
+                        fontLink
                     );
 
 
-                document.body.style
-                    .fontFamily =
+                document.body.style.fontFamily =
                     `'${data.font}', sans-serif`;
 
             }
@@ -3459,32 +4208,36 @@ Return only JSON:
                 );
 
 
-            hero.classList.remove(
-                "anim-float",
-                "anim-flicker"
-            );
+            hero
+                ?.classList
+                .remove(
+                    "anim-float",
+                    "anim-flicker"
+                );
 
 
             if (
-                data.animation ===
-                "float"
+                data.animation === "float"
             ) {
 
-                hero.classList.add(
-                    "anim-float"
-                );
+                hero
+                    ?.classList
+                    .add(
+                        "anim-float"
+                    );
 
             }
 
 
             if (
-                data.animation ===
-                "flicker"
+                data.animation === "flicker"
             ) {
 
-                hero.classList.add(
-                    "anim-flicker"
-                );
+                hero
+                    ?.classList
+                    .add(
+                        "anim-flicker"
+                    );
 
             }
 
@@ -3497,7 +4250,8 @@ Return only JSON:
                     data.quote;
 
 
-                aiQuoteBar.classList
+                aiQuoteBar
+                    ?.classList
                     .remove(
                         "opacity-0"
                     );
@@ -3507,17 +4261,20 @@ Return only JSON:
         }
 
 
+
         async function runMoodCraft(
             description
         ) {
 
             if (!description) {
+
                 return;
+
             }
 
 
             moodcraftLoading
-                .classList
+                ?.classList
                 .remove(
                     "hidden"
                 );
@@ -3539,19 +4296,20 @@ Return only JSON:
             } catch (error) {
 
                 console.error(
+                    "MoodCraft error:",
                     error
                 );
 
 
                 alert(
-                    "Could not generate the theme."
+                    "Could not generate the theme. Please try again."
                 );
 
 
             } finally {
 
                 moodcraftLoading
-                    .classList
+                    ?.classList
                     .add(
                         "hidden"
                     );
@@ -3561,14 +4319,15 @@ Return only JSON:
         }
 
 
+
         moodcraftGenerateBtn
             ?.addEventListener(
                 "click",
-                () => {
+                function () {
 
                     runMoodCraft(
                         moodcraftInput
-                            .value
+                            ?.value
                             .trim()
                     );
 
@@ -3576,16 +4335,17 @@ Return only JSON:
             );
 
 
+
         document
             .querySelectorAll(
                 ".vibe-btn"
             )
             .forEach(
-                button => {
+                function (button) {
 
                     button.addEventListener(
                         "click",
-                        () => {
+                        function () {
 
                             runMoodCraft(
                                 button
@@ -3600,16 +4360,17 @@ Return only JSON:
             );
 
 
+
         moodcraftResetBtn
             ?.addEventListener(
                 "click",
-                () => {
+                function () {
 
                     const root =
                         document.documentElement;
 
 
-                    const defaults = {
+                    const defaultTheme = {
 
                         "--bg-color":
                             "#0D1117",
@@ -3639,10 +4400,11 @@ Return only JSON:
 
 
                     Object.entries(
-                        defaults
+                        defaultTheme
                     ).forEach(
-
-                        ([key, value]) => {
+                        function (
+                            [key, value]
+                        ) {
 
                             root.style
                                 .setProperty(
@@ -3651,12 +4413,10 @@ Return only JSON:
                                 );
 
                         }
-
                     );
 
 
-                    document.body.style
-                        .fontFamily =
+                    document.body.style.fontFamily =
                         "'Poppins', sans-serif";
 
 
@@ -3672,7 +4432,7 @@ Return only JSON:
 
 
                     aiQuoteBar
-                        .classList
+                        ?.classList
                         .add(
                             "opacity-0"
                         );
@@ -3681,11 +4441,10 @@ Return only JSON:
             );
 
     }
-
 );
 
 </script>
 
-</body>
 
+</body>
 </html>
