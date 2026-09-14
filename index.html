@@ -9,7 +9,9 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Samir Puri (DevSamirX) - App & Web Developer</title>
+    <title>
+        Samir Puri (DevSamirX) - App & Web Developer
+    </title>
 
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -62,8 +64,18 @@
             --primary-hover-color: #67e8f9;
         }
 
+
+        * {
+            box-sizing: border-box;
+        }
+
+
         body {
-            font-family: 'Poppins', sans-serif;
+            margin: 0;
+
+            font-family:
+                'Poppins',
+                sans-serif;
 
             background-color:
                 var(--bg-color);
@@ -103,19 +115,16 @@
         }
 
 
-        .nav-link:after {
-
+        .nav-link::after {
             content: '';
 
             position: absolute;
 
             width: 0;
-
             height: 2px;
 
-            bottom: -4px;
-
             left: 50%;
+            bottom: -4px;
 
             transform:
                 translateX(-50%);
@@ -134,13 +143,12 @@
         }
 
 
-        .nav-link:hover:after {
+        .nav-link:hover::after {
             width: 100%;
         }
 
 
         .btn-primary {
-
             background-color:
                 var(--primary-color);
 
@@ -158,7 +166,6 @@
 
 
         .btn-primary:hover {
-
             background-color:
                 var(--primary-hover-color);
 
@@ -176,8 +183,8 @@
         .skill-section,
         footer,
         header,
-        #my-vibe-section {
-
+        #my-vibe-section,
+        #moodcraft {
             background-color:
                 var(--card-bg-color);
 
@@ -191,7 +198,6 @@
 
 
         .project-card {
-
             transition:
                 transform 0.3s,
                 box-shadow 0.3s;
@@ -199,7 +205,6 @@
 
 
         .project-card:hover {
-
             transform:
                 translateY(-8px);
 
@@ -209,7 +214,6 @@
 
 
         .skill-pill {
-
             background-color:
                 rgba(34, 211, 238, 0.1);
 
@@ -222,20 +226,18 @@
 
 
         .section-title {
-
-            border-bottom:
-                3px solid var(--primary-color);
+            display:
+                inline-block;
 
             padding-bottom:
                 0.5rem;
 
-            display:
-                inline-block;
+            border-bottom:
+                3px solid var(--primary-color);
         }
 
 
         .fade-in-section {
-
             opacity: 0;
 
             transform:
@@ -248,7 +250,6 @@
 
 
         .fade-in-section.is-visible {
-
             opacity: 1;
 
             transform:
@@ -257,7 +258,6 @@
 
 
         .user-bubble {
-
             background-color:
                 var(--primary-color);
 
@@ -270,7 +270,6 @@
 
 
         .ai-bubble {
-
             background-color:
                 var(--border-color);
 
@@ -283,7 +282,6 @@
 
 
         .typing-indicator {
-
             display: flex;
 
             align-items: center;
@@ -294,22 +292,20 @@
 
 
         .typing-indicator span {
-
-            height: 8px;
+            display:
+                inline-block;
 
             width: 8px;
+            height: 8px;
 
             margin:
                 0 2px;
 
-            background-color:
-                var(--primary-hover-color);
-
             border-radius:
                 50%;
 
-            display:
-                inline-block;
+            background-color:
+                var(--primary-hover-color);
 
             animation:
                 pulse 1.4s infinite ease-in-out both;
@@ -345,14 +341,12 @@
 
 
         .chat-modal {
-
             transition:
                 opacity 0.3s ease-in-out;
         }
 
 
         .chat-window-container {
-
             transition:
                 transform 0.3s ease-in-out,
                 opacity 0.3s ease-in-out;
@@ -360,7 +354,6 @@
 
 
         .anim-float {
-
             animation:
                 float 6s ease-in-out infinite;
         }
@@ -386,7 +379,6 @@
 
 
         .anim-flicker {
-
             animation:
                 flicker 1.5s infinite alternate;
         }
@@ -401,7 +393,6 @@
             53%,
             57%,
             100% {
-
                 text-shadow:
                     0 0 4px var(--primary-color),
                     0 0 11px var(--primary-color),
@@ -410,11 +401,9 @@
                     0 0 80px var(--primary-color);
             }
 
-
             20%,
             24%,
             55% {
-
                 text-shadow:
                     none;
             }
@@ -422,7 +411,6 @@
 
 
         .mic-listening {
-
             color:
                 #ef4444;
 
@@ -456,6 +444,12 @@
         }
 
 
+        .ai-thinking {
+            color:
+                #facc15;
+        }
+
+
         .ai-error {
             color:
                 #f87171;
@@ -463,12 +457,23 @@
 
 
         #chat-send-btn:disabled {
-
             opacity:
                 0.5;
 
             cursor:
                 not-allowed;
+        }
+
+
+        .moodcraft-status-success {
+            color:
+                #4ade80;
+        }
+
+
+        .moodcraft-status-error {
+            color:
+                #f87171;
         }
 
     </style>
@@ -555,6 +560,7 @@
             <button
                 id="menu-btn"
                 class="text-gray-300 focus:outline-none"
+                aria-label="Menu"
             >
 
                 <svg
@@ -592,14 +598,12 @@
             About
         </a>
 
-
         <a
             href="#projects"
             class="nav-link block py-2 px-4 text-sm hover:bg-gray-800"
         >
             Projects
         </a>
-
 
         <a
             href="#skills"
@@ -608,7 +612,6 @@
             Skills
         </a>
 
-
         <a
             href="#moodcraft"
             class="nav-link block py-2 px-4 text-sm hover:bg-gray-800"
@@ -616,14 +619,12 @@
             MoodCraft
         </a>
 
-
         <a
             href="#cv"
             class="nav-link block py-2 px-4 text-sm hover:bg-gray-800"
         >
             CV
         </a>
-
 
         <a
             href="#contact"
@@ -790,16 +791,12 @@
     >
 
 
-        <!-- NEP EDITS -->
-
         <div
             class="project-card rounded-lg border-2 border-cyan shadow-lg"
             style="box-shadow:0 0 30px var(--primary-color);"
         >
 
-            <div
-                class="p-6"
-            >
+            <div class="p-6">
 
                 <div
                     class="flex items-center justify-between mb-3"
@@ -832,11 +829,11 @@
                     class="mt-4 text-gray-400 leading-relaxed"
                 >
 
-                    Advanced photo editing platform built with AI image
+                    Advanced photo editing platform using AI image
                     processing technology.
 
-                    Create trending photo edits, apply professional filters,
-                    and transform images with AI-powered tools.
+                    Create trending photo edits, professional filters
+                    and AI-powered transformations.
 
                 </p>
 
@@ -862,20 +859,17 @@
                             Google Nano Banana
                         </span>
 
-
                         <span
                             class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
                         >
                             AI Image Processing
                         </span>
 
-
                         <span
                             class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
                         >
                             MoodCraft AI
                         </span>
-
 
                         <span
                             class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
@@ -901,8 +895,6 @@
         </div>
 
 
-
-        <!-- MOODCRAFT -->
 
         <div
             class="project-card rounded-lg border-2 border-cyan shadow-lg cursor-pointer"
@@ -945,9 +937,9 @@
                     class="mt-4 text-gray-400 leading-relaxed"
                 >
 
-                    A generative user interface system that dynamically
-                    transforms website colors, fonts, animations and
-                    visual atmosphere using natural-language instructions.
+                    AI-powered generative interface capable of changing
+                    website colors, fonts, animations and visual atmosphere
+                    from natural-language descriptions.
 
                 </p>
 
@@ -956,13 +948,6 @@
                     class="mt-4"
                 >
 
-                    <p
-                        class="text-xs text-gray-500 mb-2"
-                    >
-                        Technologies:
-                    </p>
-
-
                     <div
                         class="flex flex-wrap gap-2"
                     >
@@ -970,23 +955,20 @@
                         <span
                             class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
                         >
+                            Qwen3 30B
+                        </span>
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
+                            Ollama
+                        </span>
+
+                        <span
+                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                        >
                             JavaScript
                         </span>
-
-
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            Gemini AI
-                        </span>
-
-
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            Tone.js
-                        </span>
-
 
                         <span
                             class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
@@ -1003,8 +985,6 @@
         </div>
 
 
-
-        <!-- NEPMIND -->
 
         <div
             class="project-card rounded-lg"
@@ -1036,44 +1016,38 @@
                     designed for Nepal.
 
                     Features mood tracking, journaling, guided breathing
-                    exercises, and curated wellness content.
+                    exercises and curated wellness content.
 
                 </p>
 
 
                 <div
-                    class="mt-4"
+                    class="mt-4 flex flex-wrap gap-2"
                 >
 
-                    <div
-                        class="flex flex-wrap gap-2"
+                    <span
+                        class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
                     >
+                        Flutter
+                    </span>
 
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            Flutter
-                        </span>
+                    <span
+                        class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                    >
+                        Dart
+                    </span>
 
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            Dart
-                        </span>
+                    <span
+                        class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                    >
+                        SQLite
+                    </span>
 
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            SQLite
-                        </span>
-
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            Firebase
-                        </span>
-
-                    </div>
+                    <span
+                        class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                    >
+                        Firebase
+                    </span>
 
                 </div>
 
@@ -1097,8 +1071,6 @@
         </div>
 
 
-
-        <!-- MANNKO BOLI -->
 
         <div
             class="project-card rounded-lg"
@@ -1134,38 +1106,32 @@
 
 
                 <div
-                    class="mt-4"
+                    class="mt-4 flex flex-wrap gap-2"
                 >
 
-                    <div
-                        class="flex flex-wrap gap-2"
+                    <span
+                        class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
                     >
+                        HTML5
+                    </span>
 
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            HTML5
-                        </span>
+                    <span
+                        class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                    >
+                        CSS3
+                    </span>
 
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            CSS3
-                        </span>
+                    <span
+                        class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                    >
+                        JavaScript
+                    </span>
 
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            JavaScript
-                        </span>
-
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            Responsive Design
-                        </span>
-
-                    </div>
+                    <span
+                        class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                    >
+                        Responsive Design
+                    </span>
 
                 </div>
 
@@ -1183,8 +1149,6 @@
         </div>
 
 
-
-        <!-- AI -->
 
         <div
             class="project-card rounded-lg"
@@ -1212,46 +1176,40 @@
                     class="mt-4 text-gray-400 leading-relaxed"
                 >
 
-                    AI-powered conversational applications using modern
-                    language models, mobile interfaces, cloud services and
-                    self-hosted AI infrastructure.
+                    AI-powered conversational applications using
+                    self-hosted language models, mobile interfaces,
+                    cloud infrastructure and intelligent assistants.
 
                 </p>
 
 
                 <div
-                    class="mt-4"
+                    class="mt-4 flex flex-wrap gap-2"
                 >
 
-                    <div
-                        class="flex flex-wrap gap-2"
+                    <span
+                        class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
                     >
+                        Qwen3
+                    </span>
 
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            Ollama
-                        </span>
+                    <span
+                        class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                    >
+                        Ollama
+                    </span>
 
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            Qwen
-                        </span>
+                    <span
+                        class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                    >
+                        Flutter
+                    </span>
 
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            Flutter
-                        </span>
-
-                        <span
-                            class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
-                        >
-                            REST API
-                        </span>
-
-                    </div>
+                    <span
+                        class="text-xs bg-gray-800 text-cyan px-2 py-1 rounded"
+                    >
+                        REST API
+                    </span>
 
                 </div>
 
@@ -1353,39 +1311,27 @@
                 class="flex flex-wrap gap-3"
             >
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     Flutter
                 </span>
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     Dart
                 </span>
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     HTML
                 </span>
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     CSS
                 </span>
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     JavaScript
                 </span>
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     Responsive Design
                 </span>
 
@@ -1410,33 +1356,23 @@
                 class="flex flex-wrap gap-3"
             >
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     Firebase
                 </span>
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     Firestore
                 </span>
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     Authentication
                 </span>
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     Cloudflare
                 </span>
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     REST APIs
                 </span>
 
@@ -1461,33 +1397,23 @@
                 class="flex flex-wrap gap-3"
             >
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     Ollama
                 </span>
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     Qwen
                 </span>
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     Gemini
                 </span>
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     OpenAI
                 </span>
 
-                <span
-                    class="skill-pill py-2 px-4 rounded-full"
-                >
+                <span class="skill-pill py-2 px-4 rounded-full">
                     Claude
                 </span>
 
@@ -1502,7 +1428,7 @@
 
 
 <!-- =========================================================
-     MOODCRAFT
+     MOODCRAFT - NOW USING OLLAMA
 ========================================================= -->
 
 <section
@@ -1525,7 +1451,8 @@
             class="text-lg text-gray-400 max-w-3xl mx-auto"
         >
 
-            Describe a mood or theme and watch my portfolio transform.
+            Describe a mood or theme and AI Sathi will redesign
+            the appearance of this website.
 
         </p>
 
@@ -1533,7 +1460,7 @@
         <p
             class="text-xs text-gray-500 mt-2"
         >
-            Experimental feature.
+            Powered by the same self-hosted Qwen3 30B AI.
         </p>
 
     </div>
@@ -1590,7 +1517,7 @@
             <input
                 type="text"
                 id="moodcraft-input"
-                placeholder="Or type your own theme..."
+                placeholder="Example: peaceful Himalayan night..."
                 class="flex-grow w-full bg-[#0D1117] px-4 py-3 border border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan text-white"
             >
 
@@ -1623,8 +1550,15 @@
             id="moodcraft-loading"
             class="hidden mt-4 text-center text-cyan"
         >
-            Crafting your vibe...
+            <i class="fa-solid fa-spinner fa-spin mr-2"></i>
+            AI Sathi is crafting your theme...
         </div>
+
+
+        <div
+            id="moodcraft-status"
+            class="mt-3 text-center text-sm"
+        ></div>
 
     </div>
 
@@ -1730,25 +1664,11 @@
                         class="text-gray-400 space-y-1"
                     >
 
-                        <li>
-                            • Flutter Mobile Development
-                        </li>
-
-                        <li>
-                            • AI Integration
-                        </li>
-
-                        <li>
-                            • Firebase & Cloud Services
-                        </li>
-
-                        <li>
-                            • Generative UI Development
-                        </li>
-
-                        <li>
-                            • Self-hosted AI
-                        </li>
+                        <li>• Flutter Mobile Development</li>
+                        <li>• AI Integration</li>
+                        <li>• Firebase & Cloud Services</li>
+                        <li>• Generative UI Development</li>
+                        <li>• Self-hosted AI Infrastructure</li>
 
                     </ul>
 
@@ -1768,25 +1688,11 @@
                         class="text-gray-400 space-y-1"
                     >
 
-                        <li>
-                            • NEP-EDITS
-                        </li>
-
-                        <li>
-                            • MoodCraft AI
-                        </li>
-
-                        <li>
-                            • NepMind
-                        </li>
-
-                        <li>
-                            • AI Chat Applications
-                        </li>
-
-                        <li>
-                            • Mannko Boli
-                        </li>
+                        <li>• NEP-EDITS</li>
+                        <li>• MoodCraft AI</li>
+                        <li>• NepMind</li>
+                        <li>• AI Chat Applications</li>
+                        <li>• Mannko Boli</li>
 
                     </ul>
 
@@ -1850,13 +1756,11 @@
                         Freelance Projects
                     </span>
 
-
                     <span
                         class="bg-cyan/20 text-cyan px-3 py-1 rounded-full text-sm"
                     >
                         Full-time Roles
                     </span>
-
 
                     <span
                         class="bg-cyan/20 text-cyan px-3 py-1 rounded-full text-sm"
@@ -1895,10 +1799,8 @@
     <p
         class="text-lg text-gray-400 mb-8"
     >
-
         Ready to hire me? I'm available for freelance projects,
         full-time roles and partnership opportunities.
-
     </p>
 
 
@@ -2018,7 +1920,7 @@
                     id="ai-status"
                     class="text-xs text-gray-500"
                 >
-                    Connecting to AI...
+                    Connecting...
                 </p>
 
             </div>
@@ -2075,7 +1977,7 @@
                 >
 
                     <p>
-                        Hello! I'm AI Sathi. Ask me anything, or ask me about Samir.
+                        Hello! I'm AI Sathi. Ask me anything, or ask about Samir.
                     </p>
 
                 </div>
@@ -2100,7 +2002,7 @@
 
             <button
                 id="mic-btn"
-                title="Speak your question"
+                title="Speak"
                 class="bg-gray-600 text-white p-3 rounded-full hover:bg-gray-500 transition-all"
             >
 
@@ -2113,7 +2015,7 @@
 
             <button
                 id="chat-send-btn"
-                title="Send message"
+                title="Send"
                 class="bg-cyan text-black font-bold p-3 rounded-full hover:bg-cyan-300 transition-all"
             >
 
@@ -2164,7 +2066,7 @@ document.addEventListener(
 
 
         /* =====================================================
-           OLLAMA CONFIGURATION
+           OLLAMA CONFIG
         ===================================================== */
 
         const OLLAMA_BASE_URL =
@@ -2179,42 +2081,54 @@ document.addEventListener(
             `${OLLAMA_BASE_URL}/api/version`;
 
 
-        /*
-         * Your installed powerful general model.
-         */
-
         const OLLAMA_MODEL =
             "hf.co/unsloth/Qwen3-30B-A3B-Thinking-2507-GGUF:Q5_K_M";
 
 
 
         /* =====================================================
-           SYSTEM PROMPT
+           AI SYSTEM PROMPT
         ===================================================== */
 
         const AI_SYSTEM_PROMPT = `
-You are AI Sathi, a helpful general-purpose AI assistant running on Samir Puri's personal website.
+You are AI Sathi, a helpful general-purpose AI assistant running on Samir Puri's website.
 
-IDENTITY:
 Your name is AI Sathi.
-You are an AI assistant.
-You are NOT Samir Puri.
-Samir Puri is a separate human person.
-Never pretend to be Samir.
 
-GENERAL BEHAVIOR:
+You are NOT Samir Puri.
+
+Samir is a separate human person.
+
 Answer the user's actual question naturally.
-You are allowed to use your general knowledge.
-You can discuss programming, technology, Nepal, science, education, AI, coding, software, mobile apps, websites and normal everyday topics.
+
+You can use your general knowledge for:
+programming,
+technology,
+Nepal,
+science,
+education,
+AI,
+software,
+mobile development,
+web development,
+general knowledge,
+and casual conversation.
 
 Do not assume every question is about Samir.
+
 Do not repeatedly introduce yourself.
-Do not give canned responses.
-Do not repeat the same answer unnecessarily.
 
-SAMIR PURI INFORMATION:
+Do not output internal reasoning.
 
-Full name:
+Do not output chain-of-thought.
+
+Do not output <think> tags.
+
+Only give the final answer to the user.
+
+INFORMATION ABOUT SAMIR PURI:
+
+Name:
 Samir Puri
 
 Developer identity:
@@ -2270,7 +2184,7 @@ NEP-EDITS:
 AI-powered photo editing platform.
 
 MoodCraft AI:
-Generative user-interface system that can dynamically change website appearance from natural-language themes.
+AI-powered generative user-interface project.
 
 NepMind:
 Offline-first mental wellness application designed for Nepal.
@@ -2279,40 +2193,42 @@ Mannko Boli:
 Interactive web application.
 
 AI Chat Applications:
-AI-powered conversational applications and experiments.
+AI-powered conversational application projects.
 
-WHEN TALKING ABOUT SAMIR:
-Refer to Samir as "Samir", "he", "him" or "his".
-Never describe Samir's biography as if it is your biography.
-Never say "I am Samir".
+When discussing Samir:
+- call him Samir
+- use he/him/his
+- never pretend you are Samir
+- do not invent personal information
 
-If the user asks for a personal fact about Samir that is not provided here, say that you do not have that information.
+If a requested personal fact about Samir is not listed above,
+say that information is not available to you.
 
-Do not invent personal facts about Samir.
+Never claim access to:
+passwords,
+API keys,
+private messages,
+financial information,
+private accounts,
+or personal secrets.
 
-Never claim access to Samir's:
-- passwords
-- API keys
-- private messages
-- financial information
-- account credentials
-- private databases
-- personal secrets
-
-Answer naturally and directly.
+Return only the user-facing final answer.
 `.trim();
 
 
 
         /* =====================================================
-           CHAT HISTORY
+           CHAT MEMORY
         ===================================================== */
 
         const chatHistory = [
 
             {
-                role: "system",
-                content: AI_SYSTEM_PROMPT
+                role:
+                    "system",
+
+                content:
+                    AI_SYSTEM_PROMPT
             }
 
         ];
@@ -2320,7 +2236,7 @@ Answer naturally and directly.
 
 
         /* =====================================================
-           ELEMENT REFERENCES
+           ELEMENTS
         ===================================================== */
 
         const menuBtn =
@@ -2332,6 +2248,18 @@ Answer naturally and directly.
         const mobileMenu =
             document.getElementById(
                 "mobile-menu"
+            );
+
+
+        const typingElement =
+            document.getElementById(
+                "typing-effect"
+            );
+
+
+        const hireMeBtn =
+            document.getElementById(
+                "hire-me-btn"
             );
 
 
@@ -2395,15 +2323,9 @@ Answer naturally and directly.
             );
 
 
-        const typingElement =
+        const moodcraftInput =
             document.getElementById(
-                "typing-effect"
-            );
-
-
-        const hireMeBtn =
-            document.getElementById(
-                "hire-me-btn"
+                "moodcraft-input"
             );
 
 
@@ -2419,15 +2341,15 @@ Answer naturally and directly.
             );
 
 
-        const moodcraftInput =
-            document.getElementById(
-                "moodcraft-input"
-            );
-
-
         const moodcraftLoading =
             document.getElementById(
                 "moodcraft-loading"
+            );
+
+
+        const moodcraftStatus =
+            document.getElementById(
+                "moodcraft-status"
             );
 
 
@@ -2439,165 +2361,191 @@ Answer naturally and directly.
 
 
         /* =====================================================
-           COPYRIGHT
+           YEAR
         ===================================================== */
 
-        const yearElement =
-            document.getElementById(
-                "copyright-year"
-            );
-
-
-        if (yearElement) {
-
-            yearElement.textContent =
-                new Date()
-                    .getFullYear();
-
-        }
+        document.getElementById(
+            "copyright-year"
+        ).textContent =
+            new Date()
+                .getFullYear();
 
 
 
         /* =====================================================
-           AUDIO
+           REMOVE THINKING / INTERNAL REASONING
         ===================================================== */
 
-        let audioInitialized =
-            false;
+        function removeThinking(
+            text
+        ) {
 
-
-        let clickSound;
-
-        let openModalSound;
-
-        let ambiancePlayer;
-
-
-        function initializeAudio() {
-
-            if (
-                audioInitialized ||
-                typeof Tone === "undefined"
-            ) {
-
-                return;
-
+            if (!text) {
+                return "";
             }
 
 
-            try {
-
-                Tone.start();
-
-
-                clickSound =
-                    new Tone.Synth({
-
-                        oscillator: {
-                            type:
-                                "sine"
-                        },
-
-                        envelope: {
-
-                            attack:
-                                0.005,
-
-                            decay:
-                                0.1,
-
-                            sustain:
-                                0.3,
-
-                            release:
-                                1
-                        },
-
-                        volume:
-                            -20
-
-                    }).toDestination();
-
-
-                openModalSound =
-                    new Tone.PluckSynth({
-
-                        attackNoise:
-                            0.5,
-
-                        dampening:
-                            4000,
-
-                        resonance:
-                            0.9,
-
-                        volume:
-                            -15
-
-                    }).toDestination();
-
-
-                ambiancePlayer =
-                    new Tone.Player()
-                        .toDestination();
-
-
-                ambiancePlayer.loop =
-                    true;
-
-
-                ambiancePlayer.fadeOut =
-                    2;
-
-
-                audioInitialized =
-                    true;
-
-
-            } catch (error) {
-
-                console.warn(
-                    "Audio initialization error:",
-                    error
+            let cleaned =
+                String(
+                    text
                 );
 
-            }
+
+            /*
+             * Remove complete <think> blocks.
+             */
+
+            cleaned =
+                cleaned.replace(
+                    /<think>[\s\S]*?<\/think>/gi,
+                    ""
+                );
 
 
-            document.body.removeEventListener(
-                "click",
-                initializeAudio,
-                true
-            );
+            /*
+             * Remove unfinished <think> block if model
+             * forgot to send closing tag.
+             */
 
-        }
-
-
-        document.body.addEventListener(
-            "click",
-            initializeAudio,
-            true
-        );
+            const thinkStart =
+                cleaned
+                    .toLowerCase()
+                    .indexOf(
+                        "<think>"
+                    );
 
 
+            if (
+                thinkStart !== -1
+            ) {
 
-        /* =====================================================
-           MOBILE MENU
-        ===================================================== */
-
-        menuBtn?.addEventListener(
-            "click",
-            function () {
-
-                mobileMenu
-                    ?.classList
-                    .toggle(
-                        "hidden"
+                cleaned =
+                    cleaned.substring(
+                        0,
+                        thinkStart
                     );
 
             }
-        );
 
+
+            /*
+             * Remove accidental standalone tags.
+             */
+
+            cleaned =
+                cleaned.replace(
+                    /<\/?think>/gi,
+                    ""
+                );
+
+
+            return cleaned
+                .trim();
+
+        }
+
+
+
+        /* =====================================================
+           IDENTITY CLEANER
+        ===================================================== */
+
+        function sanitizeIdentity(
+            text
+        ) {
+
+            if (!text) {
+                return "";
+            }
+
+
+            return text
+
+                .replace(
+                    /\bI'm Samir Puri\b/gi,
+                    "I'm AI Sathi"
+                )
+
+                .replace(
+                    /\bI am Samir Puri\b/gi,
+                    "I am AI Sathi"
+                )
+
+                .replace(
+                    /\bI'm Samir\b/gi,
+                    "I'm AI Sathi"
+                )
+
+                .replace(
+                    /\bI am Samir\b/gi,
+                    "I am AI Sathi"
+                )
+
+                .replace(
+                    /\bMy name is Samir Puri\b/gi,
+                    "My name is AI Sathi"
+                )
+
+                .replace(
+                    /\bMy name is Samir\b/gi,
+                    "My name is AI Sathi"
+                );
+
+        }
+
+
+
+        /* =====================================================
+           FINAL AI OUTPUT CLEANER
+        ===================================================== */
+
+        function cleanAIResponse(
+            text
+        ) {
+
+            let cleaned =
+                removeThinking(
+                    text
+                );
+
+
+            cleaned =
+                sanitizeIdentity(
+                    cleaned
+                );
+
+
+            cleaned =
+                cleaned.replace(
+                    /^assistant\s*:\s*/i,
+                    ""
+                );
+
+
+            return cleaned
+                .trim();
+
+        }
+
+
+
+        /* =====================================================
+           MENU
+        ===================================================== */
+
+        menuBtn
+            ?.addEventListener(
+                "click",
+                function () {
+
+                    mobileMenu
+                        ?.classList
+                        .toggle(
+                            "hidden"
+                        );
+
+                }
+            );
 
 
         document
@@ -2605,13 +2553,18 @@ Answer naturally and directly.
                 "a.nav-link"
             )
             .forEach(
-                function (link) {
+                function (
+                    link
+                ) {
 
                     link.addEventListener(
                         "click",
-                        function (event) {
+                        function (
+                            event
+                        ) {
 
-                            event.preventDefault();
+                            event
+                                .preventDefault();
 
 
                             mobileMenu
@@ -2622,9 +2575,10 @@ Answer naturally and directly.
 
 
                             const target =
-                                link.getAttribute(
-                                    "href"
-                                );
+                                link
+                                    .getAttribute(
+                                        "href"
+                                    );
 
 
                             if (
@@ -2654,7 +2608,7 @@ Answer naturally and directly.
 
 
         /* =====================================================
-           HERO TYPING
+           HERO TYPEWRITER
         ===================================================== */
 
         const roles = [
@@ -2672,7 +2626,7 @@ Answer naturally and directly.
             0;
 
 
-        let charIndex =
+        let characterIndex =
             0;
 
 
@@ -2685,19 +2639,21 @@ Answer naturally and directly.
 
 
             if (
-                charIndex <
-                roles[roleIndex].length
+                characterIndex <
+                roles[
+                    roleIndex
+                ].length
             ) {
 
                 typingElement.textContent +=
                     roles[
                         roleIndex
                     ].charAt(
-                        charIndex
+                        characterIndex
                     );
 
 
-                charIndex++;
+                characterIndex++;
 
 
                 setTimeout(
@@ -2722,7 +2678,7 @@ Answer naturally and directly.
         function eraseRole() {
 
             if (
-                charIndex > 0
+                characterIndex > 0
             ) {
 
                 typingElement.textContent =
@@ -2730,11 +2686,11 @@ Answer naturally and directly.
                         roleIndex
                     ].substring(
                         0,
-                        charIndex - 1
+                        characterIndex - 1
                     );
 
 
-                charIndex--;
+                characterIndex--;
 
 
                 setTimeout(
@@ -2767,22 +2723,27 @@ Answer naturally and directly.
 
 
         /* =====================================================
-           SCROLL ANIMATIONS
+           FADE EFFECT
         ===================================================== */
 
-        const observer =
+        const sectionObserver =
             new IntersectionObserver(
 
-                function (entries) {
+                function (
+                    entries
+                ) {
 
                     entries.forEach(
-                        function (entry) {
+                        function (
+                            entry
+                        ) {
 
                             if (
                                 entry.isIntersecting
                             ) {
 
-                                entry.target
+                                entry
+                                    .target
                                     .classList
                                     .add(
                                         "is-visible"
@@ -2808,11 +2769,14 @@ Answer naturally and directly.
                 ".fade-in-section"
             )
             .forEach(
-                function (section) {
+                function (
+                    section
+                ) {
 
-                    observer.observe(
-                        section
-                    );
+                    sectionObserver
+                        .observe(
+                            section
+                        );
 
                 }
             );
@@ -2823,49 +2787,32 @@ Answer naturally and directly.
            HIRE BUTTON
         ===================================================== */
 
-        hireMeBtn?.addEventListener(
-            "click",
-            function () {
+        hireMeBtn
+            ?.addEventListener(
+                "click",
+                function () {
 
-                document
-                    .getElementById(
-                        "contact"
-                    )
-                    ?.scrollIntoView({
+                    document
+                        .getElementById(
+                            "contact"
+                        )
+                        ?.scrollIntoView({
 
-                        behavior:
-                            "smooth"
+                            behavior:
+                                "smooth"
 
-                    });
+                        });
 
-            }
-        );
+                }
+            );
 
 
 
         /* =====================================================
-           CHAT OPEN / CLOSE
+           CHAT MODAL
         ===================================================== */
 
         function openChat() {
-
-            if (
-                audioInitialized &&
-                openModalSound
-            ) {
-
-                try {
-
-                    openModalSound
-                        .triggerAttack(
-                            "C4",
-                            Tone.now()
-                        );
-
-                } catch (_) {}
-
-            }
-
 
             chatModal
                 ?.classList
@@ -2961,7 +2908,9 @@ Answer naturally and directly.
         chatModal
             ?.addEventListener(
                 "click",
-                function (event) {
+                function (
+                    event
+                ) {
 
                     if (
                         event.target ===
@@ -2989,9 +2938,6 @@ Answer naturally and directly.
                     await fetch(
                         OLLAMA_VERSION_URL,
                         {
-                            method:
-                                "GET",
-
                             cache:
                                 "no-store"
                         }
@@ -3001,52 +2947,41 @@ Answer naturally and directly.
                 if (!response.ok) {
 
                     throw new Error(
-                        `HTTP ${response.status}`
+                        "Ollama unavailable"
                     );
 
                 }
 
 
                 const data =
-                    await response.json();
+                    await response
+                        .json();
 
 
-                if (aiStatus) {
-
-                    aiStatus.textContent =
-                        `Online • Ollama ${data.version || ""}`;
+                aiStatus.textContent =
+                    `Online • Ollama ${data.version || ""}`;
 
 
-                    aiStatus.className =
-                        "text-xs ai-online";
-
-                }
+                aiStatus.className =
+                    "text-xs ai-online";
 
 
-            } catch (error) {
+            } catch (
+                error
+            ) {
 
                 console.warn(
-                    "Ollama health check failed:",
+                    "Status check failed:",
                     error
                 );
 
 
-                /*
-                 * Do not incorrectly claim that the server
-                 * is offline only because a browser health
-                 * check failed.
-                 */
-
-                if (aiStatus) {
-
-                    aiStatus.textContent =
-                        "AI Sathi";
+                aiStatus.textContent =
+                    "AI Sathi";
 
 
-                    aiStatus.className =
-                        "text-xs text-gray-500";
-
-                }
+                aiStatus.className =
+                    "text-xs text-gray-500";
 
             }
 
@@ -3058,7 +2993,7 @@ Answer naturally and directly.
 
 
         /* =====================================================
-           CHAT MESSAGE UI
+           MESSAGE UI
         ===================================================== */
 
         function appendMessage(
@@ -3095,7 +3030,9 @@ Answer naturally and directly.
                 }`;
 
 
-            if (text) {
+            if (
+                text
+            ) {
 
                 const paragraph =
                     document.createElement(
@@ -3114,19 +3051,21 @@ Answer naturally and directly.
             }
 
 
-            if (loading) {
+            if (
+                loading
+            ) {
 
-                const indicator =
+                const loader =
                     document.createElement(
                         "div"
                     );
 
 
-                indicator.className =
+                loader.className =
                     "typing-indicator";
 
 
-                indicator.innerHTML =
+                loader.innerHTML =
                     `
                     <span></span>
                     <span></span>
@@ -3135,7 +3074,7 @@ Answer naturally and directly.
 
 
                 bubble.appendChild(
-                    indicator
+                    loader
                 );
 
             }
@@ -3146,18 +3085,13 @@ Answer naturally and directly.
             );
 
 
-            chatWindow
-                ?.appendChild(
-                    wrapper
-                );
+            chatWindow.appendChild(
+                wrapper
+            );
 
 
-            if (chatWindow) {
-
-                chatWindow.scrollTop =
-                    chatWindow.scrollHeight;
-
-            }
+            chatWindow.scrollTop =
+                chatWindow.scrollHeight;
 
 
             return bubble;
@@ -3167,58 +3101,7 @@ Answer naturally and directly.
 
 
         /* =====================================================
-           IDENTITY FILTER
-        ===================================================== */
-
-        function sanitizeAIIdentity(
-            text
-        ) {
-
-            if (!text) {
-
-                return text;
-
-            }
-
-
-            return text
-
-                .replace(
-                    /\bI['’]?m Samir Puri\b/gi,
-                    "I'm AI Sathi"
-                )
-
-                .replace(
-                    /\bI am Samir Puri\b/gi,
-                    "I am AI Sathi"
-                )
-
-                .replace(
-                    /\bI['’]?m Samir\b/gi,
-                    "I'm AI Sathi"
-                )
-
-                .replace(
-                    /\bI am Samir\b/gi,
-                    "I am AI Sathi"
-                )
-
-                .replace(
-                    /\bMy name is Samir Puri\b/gi,
-                    "My name is AI Sathi"
-                )
-
-                .replace(
-                    /\bMy name is Samir\b/gi,
-                    "My name is AI Sathi"
-                );
-
-        }
-
-
-
-        /* =====================================================
-           REAL OLLAMA AI REQUEST
+           OLLAMA CHAT
         ===================================================== */
 
         async function callAI(
@@ -3236,11 +3119,6 @@ Answer naturally and directly.
             });
 
 
-            /*
-             * Keep the system prompt plus the most recent
-             * conversation turns.
-             */
-
             const messages = [
 
                 chatHistory[0],
@@ -3256,16 +3134,12 @@ Answer naturally and directly.
                 new AbortController();
 
 
-            /*
-             * 30B model can take longer to load
-             * if it was unloaded from GPU memory.
-             */
-
             const timeout =
                 setTimeout(
                     function () {
 
-                        controller.abort();
+                        controller
+                            .abort();
 
                     },
                     300000
@@ -3307,22 +3181,16 @@ Answer naturally and directly.
 
 
                                     /*
-                                     * Thinking model, but thinking
-                                     * disabled for faster website chat.
+                                     * IMPORTANT:
+                                     * Disable reasoning output.
                                      */
 
                                     think:
                                         false,
 
 
-                                    /*
-                                     * Keep the model loaded after
-                                     * each request to speed up the
-                                     * next visitor message.
-                                     */
-
                                     keep_alive:
-                                        "15m",
+                                        "20m",
 
 
                                     options: {
@@ -3340,7 +3208,7 @@ Answer naturally and directly.
                                             8192,
 
                                         num_predict:
-                                            1000,
+                                            1200,
 
                                         repeat_penalty:
                                             1.05
@@ -3362,60 +3230,75 @@ Answer naturally and directly.
                 );
 
 
-                if (!response.ok) {
+                if (
+                    !response.ok
+                ) {
 
-                    const errorText =
-                        await response.text();
+                    const body =
+                        await response
+                            .text();
 
 
                     console.error(
-                        "OLLAMA HTTP ERROR:",
+                        "Ollama HTTP error:",
                         response.status,
-                        errorText
+                        body
                     );
 
 
                     throw new Error(
-                        `Ollama returned HTTP ${response.status}`
+                        `Ollama HTTP ${response.status}`
                     );
 
                 }
 
 
                 const data =
-                    await response.json();
+                    await response
+                        .json();
 
 
                 console.log(
-                    "REAL OLLAMA RESPONSE:",
+                    "Ollama raw response:",
                     data
                 );
 
 
+                /*
+                 * DO NOT DISPLAY:
+                 *
+                 * data.message.thinking
+                 *
+                 * We ONLY read content.
+                 */
+
                 let answer =
-                    data?.message
-                        ?.content
-                        ?.trim();
-
-
-                if (!answer) {
-
-                    throw new Error(
-                        "Ollama returned an empty response."
-                    );
-
-                }
+                    data
+                        ?.message
+                        ?.content ||
+                    "";
 
 
                 /*
-                 * Only perform a small identity correction.
-                 * No mock answer replacements.
+                 * Extra protection if model puts
+                 * thinking tags inside content.
                  */
 
                 answer =
-                    sanitizeAIIdentity(
+                    cleanAIResponse(
                         answer
                     );
+
+
+                if (
+                    !answer
+                ) {
+
+                    throw new Error(
+                        "AI returned no final answer."
+                    );
+
+                }
 
 
                 chatHistory.push({
@@ -3432,16 +3315,14 @@ Answer naturally and directly.
                 return answer;
 
 
-            } catch (error) {
+            } catch (
+                error
+            ) {
 
                 clearTimeout(
                     timeout
                 );
 
-
-                /*
-                 * Remove failed message from history.
-                 */
 
                 const last =
                     chatHistory[
@@ -3451,8 +3332,7 @@ Answer naturally and directly.
 
                 if (
                     last &&
-                    last.role === "user" &&
-                    last.content === userMessage
+                    last.role === "user"
                 ) {
 
                     chatHistory.pop();
@@ -3481,7 +3361,7 @@ Answer naturally and directly.
 
 
         /* =====================================================
-           TYPE AI RESPONSE
+           TYPE AI ANSWER
         ===================================================== */
 
         let ttsEnabled =
@@ -3489,7 +3369,7 @@ Answer naturally and directly.
 
 
 
-        function typeAIResponse(
+        function displayAIResponse(
             bubble,
             text
         ) {
@@ -3517,7 +3397,7 @@ Answer naturally and directly.
                 0;
 
 
-            const interval =
+            const typing =
                 setInterval(
                     function () {
 
@@ -3535,18 +3415,14 @@ Answer naturally and directly.
                             index++;
 
 
-                            if (chatWindow) {
-
-                                chatWindow.scrollTop =
-                                    chatWindow.scrollHeight;
-
-                            }
+                            chatWindow.scrollTop =
+                                chatWindow.scrollHeight;
 
 
                         } else {
 
                             clearInterval(
-                                interval
+                                typing
                             );
 
 
@@ -3595,14 +3471,14 @@ Answer naturally and directly.
 
         async function sendChat() {
 
-            const userMessage =
+            const message =
                 chatInput
-                    ?.value
+                    .value
                     .trim();
 
 
             if (
-                !userMessage ||
+                !message ||
                 requestRunning
             ) {
 
@@ -3612,7 +3488,7 @@ Answer naturally and directly.
 
 
             if (
-                userMessage.length >
+                message.length >
                 8000
             ) {
 
@@ -3636,7 +3512,7 @@ Answer naturally and directly.
 
 
             appendMessage(
-                userMessage,
+                message,
                 "user"
             );
 
@@ -3653,48 +3529,42 @@ Answer naturally and directly.
                 );
 
 
-            if (aiStatus) {
-
-                aiStatus.textContent =
-                    "Thinking...";
+            aiStatus.textContent =
+                "Thinking...";
 
 
-                aiStatus.className =
-                    "text-xs text-yellow-400";
-
-            }
+            aiStatus.className =
+                "text-xs ai-thinking";
 
 
             try {
 
                 const answer =
                     await callAI(
-                        userMessage
+                        message
                     );
 
 
-                if (aiStatus) {
-
-                    aiStatus.textContent =
-                        "Online • Qwen3 30B";
+                aiStatus.textContent =
+                    "Online • Qwen3 30B";
 
 
-                    aiStatus.className =
-                        "text-xs ai-online";
-
-                }
+                aiStatus.className =
+                    "text-xs ai-online";
 
 
-                typeAIResponse(
+                displayAIResponse(
                     aiBubble,
                     answer
                 );
 
 
-            } catch (error) {
+            } catch (
+                error
+            ) {
 
                 console.error(
-                    "AI CHAT ERROR:",
+                    "AI chat error:",
                     error
                 );
 
@@ -3703,45 +3573,34 @@ Answer naturally and directly.
                     "";
 
 
-                const errorParagraph =
+                const paragraph =
                     document.createElement(
                         "p"
                     );
 
 
-                if (
-                    error.message.includes(
-                        "timed out"
-                    )
-                ) {
+                paragraph.textContent =
+                    error.message
+                        .includes(
+                            "timed out"
+                        )
 
-                    errorParagraph.textContent =
-                        "The AI took too long to respond. Please try again.";
+                    ? "The AI took too long to respond. Please try again."
 
-
-                } else {
-
-                    errorParagraph.textContent =
-                        "I couldn't get a response from the AI model. Please try again.";
-
-                }
+                    : "I couldn't get a response from the AI model. Please try again.";
 
 
                 aiBubble.appendChild(
-                    errorParagraph
+                    paragraph
                 );
 
 
-                if (aiStatus) {
-
-                    aiStatus.textContent =
-                        "Request failed";
+                aiStatus.textContent =
+                    "Request failed";
 
 
-                    aiStatus.className =
-                        "text-xs ai-error";
-
-                }
+                aiStatus.className =
+                    "text-xs ai-error";
 
 
             } finally {
@@ -3754,8 +3613,7 @@ Answer naturally and directly.
                     false;
 
 
-                chatInput
-                    ?.focus();
+                chatInput.focus();
 
             }
 
@@ -3773,15 +3631,18 @@ Answer naturally and directly.
         chatInput
             ?.addEventListener(
                 "keydown",
-                function (event) {
+                function (
+                    event
+                ) {
 
                     if (
-                        event.key ===
-                        "Enter" &&
+                        event.key === "Enter" &&
                         !event.shiftKey
                     ) {
 
-                        event.preventDefault();
+                        event
+                            .preventDefault();
+
 
                         sendChat();
 
@@ -3793,7 +3654,7 @@ Answer naturally and directly.
 
 
         /* =====================================================
-           TEXT TO SPEECH
+           TTS
         ===================================================== */
 
         ttsToggleBtn
@@ -3814,13 +3675,12 @@ Answer naturally and directly.
 
 
                     if (
-                        !ttsEnabled &&
-                        window.speechSynthesis
+                        !ttsEnabled
                     ) {
 
                         window
                             .speechSynthesis
-                            .cancel();
+                            ?.cancel();
 
                     }
 
@@ -3838,7 +3698,9 @@ Answer naturally and directly.
             window.webkitSpeechRecognition;
 
 
-        if (SpeechRecognition) {
+        if (
+            SpeechRecognition
+        ) {
 
             const recognition =
                 new SpeechRecognition();
@@ -3860,7 +3722,7 @@ Answer naturally and directly.
                 function () {
 
                     micBtn
-                        ?.classList
+                        .classList
                         .add(
                             "mic-listening"
                         );
@@ -3872,7 +3734,7 @@ Answer naturally and directly.
                 function () {
 
                     micBtn
-                        ?.classList
+                        .classList
                         .remove(
                             "mic-listening"
                         );
@@ -3880,26 +3742,10 @@ Answer naturally and directly.
                 };
 
 
-            recognition.onerror =
-                function (error) {
-
-                    console.warn(
-                        "Speech recognition error:",
-                        error
-                    );
-
-                };
-
-
             recognition.onresult =
-                function (event) {
-
-                    if (!chatInput) {
-
-                        return;
-
-                    }
-
+                function (
+                    event
+                ) {
 
                     chatInput.value =
                         event
@@ -3919,9 +3765,18 @@ Answer naturally and directly.
 
                         try {
 
-                            recognition.start();
+                            recognition
+                                .start();
 
-                        } catch (_) {}
+                        } catch (
+                            error
+                        ) {
+
+                            console.warn(
+                                error
+                            );
+
+                        }
 
                     }
                 );
@@ -3929,10 +3784,288 @@ Answer naturally and directly.
 
         } else {
 
-            if (micBtn) {
+            micBtn.style.display =
+                "none";
 
-                micBtn.style.display =
-                    "none";
+        }
+
+
+
+        /* =====================================================
+           MOODCRAFT USING SAME OLLAMA MODEL
+        ===================================================== */
+
+        async function generateMoodCraftTheme(
+            description
+        ) {
+
+            const themeSystemPrompt =
+                `
+You generate website themes.
+
+Return ONLY valid JSON.
+
+Do not return markdown.
+
+Do not return explanation.
+
+Do not return thinking.
+
+Do not return <think> tags.
+
+Required JSON structure:
+
+{
+  "colors": {
+    "--bg-color": "#000000",
+    "--card-bg-color": "#111111",
+    "--border-color": "#222222",
+    "--text-color": "#ffffff",
+    "--text-muted-color": "#aaaaaa",
+    "--primary-color": "#22d3ee",
+    "--primary-text-color": "#000000",
+    "--primary-hover-color": "#67e8f9"
+  },
+  "font": "Poppins",
+  "animation": "float",
+  "quote": "Short theme-related quote"
+}
+
+Rules:
+
+animation must be exactly one of:
+"float"
+"flicker"
+"none"
+
+All colors must be valid CSS hex colors.
+
+Use readable contrast.
+
+font should be a real Google Font.
+
+quote should be short.
+
+Return JSON only.
+                `.trim();
+
+
+            const controller =
+                new AbortController();
+
+
+            const timeout =
+                setTimeout(
+                    function () {
+
+                        controller
+                            .abort();
+
+                    },
+                    300000
+                );
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        OLLAMA_CHAT_URL,
+                        {
+
+                            method:
+                                "POST",
+
+
+                            headers: {
+
+                                "Content-Type":
+                                    "application/json"
+
+                            },
+
+
+                            body:
+                                JSON.stringify({
+
+                                    model:
+                                        OLLAMA_MODEL,
+
+
+                                    messages: [
+
+                                        {
+                                            role:
+                                                "system",
+
+                                            content:
+                                                themeSystemPrompt
+                                        },
+
+                                        {
+                                            role:
+                                                "user",
+
+                                            content:
+                                                `Create a website theme for: ${description}`
+                                        }
+
+                                    ],
+
+
+                                    stream:
+                                        false,
+
+
+                                    think:
+                                        false,
+
+
+                                    keep_alive:
+                                        "20m",
+
+
+                                    /*
+                                     * Ask Ollama for JSON.
+                                     */
+
+                                    format:
+                                        "json",
+
+
+                                    options: {
+
+                                        temperature:
+                                            0.7,
+
+                                        top_p:
+                                            0.9,
+
+                                        num_ctx:
+                                            4096,
+
+                                        num_predict:
+                                            600
+
+                                    }
+
+                                }),
+
+
+                            signal:
+                                controller.signal
+
+                        }
+                    );
+
+
+                clearTimeout(
+                    timeout
+                );
+
+
+                if (
+                    !response.ok
+                ) {
+
+                    const errorBody =
+                        await response
+                            .text();
+
+
+                    console.error(
+                        "MoodCraft Ollama error:",
+                        response.status,
+                        errorBody
+                    );
+
+
+                    throw new Error(
+                        `MoodCraft HTTP ${response.status}`
+                    );
+
+                }
+
+
+                const data =
+                    await response
+                        .json();
+
+
+                console.log(
+                    "MoodCraft raw response:",
+                    data
+                );
+
+
+                let content =
+                    data
+                        ?.message
+                        ?.content ||
+                    "";
+
+
+                content =
+                    removeThinking(
+                        content
+                    );
+
+
+                content =
+                    content
+                        .replace(
+                            /```json/gi,
+                            ""
+                        )
+                        .replace(
+                            /```/g,
+                            ""
+                        )
+                        .trim();
+
+
+                if (
+                    !content
+                ) {
+
+                    throw new Error(
+                        "MoodCraft AI returned an empty response."
+                    );
+
+                }
+
+
+                const theme =
+                    JSON.parse(
+                        content
+                    );
+
+
+                return theme;
+
+
+            } catch (
+                error
+            ) {
+
+                clearTimeout(
+                    timeout
+                );
+
+
+                if (
+                    error.name ===
+                    "AbortError"
+                ) {
+
+                    throw new Error(
+                        "MoodCraft AI timed out."
+                    );
+
+                }
+
+
+                throw error;
 
             }
 
@@ -3941,233 +4074,205 @@ Answer naturally and directly.
 
 
         /* =====================================================
-           MOODCRAFT API
-
-           MoodCraft still uses your existing Cloudflare Worker.
-           AI Sathi uses Ollama.
+           THEME VALIDATION
         ===================================================== */
 
-        async function callMoodCraftAPI(
-            payload
+        function validHexColor(
+            value
         ) {
 
-            const workerURL =
-                "https://samir-worker.samirpuri204.workers.dev";
-
-
-            const response =
-                await fetch(
-                    workerURL,
-                    {
-
-                        method:
-                            "POST",
-
-
-                        headers: {
-
-                            "Content-Type":
-                                "application/json"
-
-                        },
-
-
-                        body:
-                            JSON.stringify(
-                                payload
-                            )
-
-                    }
+            return /^#[0-9A-F]{6}$/i
+                .test(
+                    String(
+                        value
+                    )
                 );
-
-
-            if (!response.ok) {
-
-                const errorBody =
-                    await response.text();
-
-
-                console.error(
-                    "MoodCraft API error:",
-                    errorBody
-                );
-
-
-                throw new Error(
-                    `MoodCraft returned ${response.status}`
-                );
-
-            }
-
-
-            const data =
-                await response.json();
-
-
-            const text =
-                data
-                    ?.candidates?.[0]
-                    ?.content
-                    ?.parts?.[0]
-                    ?.text;
-
-
-            if (!text) {
-
-                throw new Error(
-                    "Invalid MoodCraft response."
-                );
-
-            }
-
-
-            return text;
 
         }
 
 
 
-        async function generateTheme(
-            description
-        ) {
-
-            const prompt =
-                `
-Create a JSON website theme based on this description:
-
-"${description}"
-
-Return ONLY valid JSON.
-
-Use this structure:
-
-{
-    "colors": {
-        "--bg-color": "",
-        "--card-bg-color": "",
-        "--border-color": "",
-        "--text-color": "",
-        "--text-muted-color": "",
-        "--primary-color": "",
-        "--primary-text-color": "",
-        "--primary-hover-color": ""
-    },
-
-    "font": "",
-
-    "animation": "float",
-
-    "icon": "",
-
-    "quote": ""
-}
-
-animation must be:
-"float"
-"flicker"
-or
-"none"
-
-font should be a Google Font name.
-
-icon should be a Font Awesome solid icon name.
-                `.trim();
-
-
-            const raw =
-                await callMoodCraftAPI({
-
-                    contents: [
-
-                        {
-
-                            parts: [
-
-                                {
-                                    text:
-                                        prompt
-                                }
-
-                            ]
-
-                        }
-
-                    ],
-
-
-                    generationConfig: {
-
-                        responseMimeType:
-                            "application/json"
-
-                    }
-
-                });
-
-
-            return JSON.parse(
-
-                raw
-                    .replace(
-                        /```json/g,
-                        ""
-                    )
-                    .replace(
-                        /```/g,
-                        ""
-                    )
-                    .trim()
-
-            );
-
-        }
-
-
-
-        function applyTheme(
-            data
+        function sanitizeTheme(
+            theme
         ) {
 
             if (
-                !data ||
-                typeof data !== "object"
+                !theme ||
+                typeof theme !== "object"
             ) {
 
-                return;
+                throw new Error(
+                    "Invalid theme."
+                );
 
             }
+
+
+            const defaultColors = {
+
+                "--bg-color":
+                    "#0D1117",
+
+                "--card-bg-color":
+                    "#161B22",
+
+                "--border-color":
+                    "#30363D",
+
+                "--text-color":
+                    "#C9D1D9",
+
+                "--text-muted-color":
+                    "#8B949E",
+
+                "--primary-color":
+                    "#22D3EE",
+
+                "--primary-text-color":
+                    "#0D1117",
+
+                "--primary-hover-color":
+                    "#67E8F9"
+
+            };
+
+
+            const colors =
+                {};
+
+
+            Object.keys(
+                defaultColors
+            ).forEach(
+                function (
+                    key
+                ) {
+
+                    const candidate =
+                        theme
+                            ?.colors?.[
+                                key
+                            ];
+
+
+                    colors[
+                        key
+                    ] =
+                        validHexColor(
+                            candidate
+                        )
+
+                        ? candidate
+
+                        : defaultColors[
+                            key
+                        ];
+
+                }
+            );
+
+
+            const allowedAnimations =
+                [
+                    "float",
+                    "flicker",
+                    "none"
+                ];
+
+
+            const animation =
+                allowedAnimations
+                    .includes(
+                        theme.animation
+                    )
+
+                ? theme.animation
+
+                : "none";
+
+
+            const font =
+                typeof theme.font ===
+                    "string" &&
+                theme.font.length <
+                    80
+
+                ? theme.font
+
+                : "Poppins";
+
+
+            const quote =
+                typeof theme.quote ===
+                    "string"
+
+                ? theme.quote
+                    .slice(
+                        0,
+                        180
+                    )
+
+                : "";
+
+
+            return {
+
+                colors:
+                    colors,
+
+                animation:
+                    animation,
+
+                font:
+                    font,
+
+                quote:
+                    quote
+
+            };
+
+        }
+
+
+
+        /* =====================================================
+           APPLY MOODCRAFT
+        ===================================================== */
+
+        function applyTheme(
+            rawTheme
+        ) {
+
+            const theme =
+                sanitizeTheme(
+                    rawTheme
+                );
 
 
             const root =
-                document.documentElement;
+                document
+                    .documentElement;
+
+
+            Object.entries(
+                theme.colors
+            ).forEach(
+                function (
+                    [key, value]
+                ) {
+
+                    root.style
+                        .setProperty(
+                            key,
+                            value
+                        );
+
+                }
+            );
 
 
             if (
-                data.colors &&
-                typeof data.colors === "object"
-            ) {
-
-                Object.entries(
-                    data.colors
-                ).forEach(
-                    function (
-                        [key, value]
-                    ) {
-
-                        root.style
-                            .setProperty(
-                                key,
-                                value
-                            );
-
-                    }
-                );
-
-            }
-
-
-            if (
-                data.font
+                theme.font
             ) {
 
                 const fontLink =
@@ -4182,11 +4287,9 @@ icon should be a Font Awesome solid icon name.
 
                 fontLink.href =
                     `https://fonts.googleapis.com/css2?family=${
-                        data.font
-                            .replace(
-                                / /g,
-                                "+"
-                            )
+                        encodeURIComponent(
+                            theme.font
+                        )
                     }:wght@400;500;600;700&display=swap`;
 
 
@@ -4197,7 +4300,7 @@ icon should be a Font Awesome solid icon name.
 
 
                 document.body.style.fontFamily =
-                    `'${data.font}', sans-serif`;
+                    `'${theme.font}', sans-serif`;
 
             }
 
@@ -4208,50 +4311,46 @@ icon should be a Font Awesome solid icon name.
                 );
 
 
-            hero
-                ?.classList
-                .remove(
-                    "anim-float",
+            hero.classList.remove(
+                "anim-float",
+                "anim-flicker"
+            );
+
+
+            if (
+                theme.animation ===
+                "float"
+            ) {
+
+                hero.classList.add(
+                    "anim-float"
+                );
+
+            }
+
+
+            if (
+                theme.animation ===
+                "flicker"
+            ) {
+
+                hero.classList.add(
                     "anim-flicker"
                 );
 
-
-            if (
-                data.animation === "float"
-            ) {
-
-                hero
-                    ?.classList
-                    .add(
-                        "anim-float"
-                    );
-
             }
 
 
             if (
-                data.animation === "flicker"
-            ) {
-
-                hero
-                    ?.classList
-                    .add(
-                        "anim-flicker"
-                    );
-
-            }
-
-
-            if (
-                data.quote
+                theme.quote
             ) {
 
                 aiQuoteBar.textContent =
-                    data.quote;
+                    theme.quote;
 
 
                 aiQuoteBar
-                    ?.classList
+                    .classList
                     .remove(
                         "opacity-0"
                     );
@@ -4262,28 +4361,52 @@ icon should be a Font Awesome solid icon name.
 
 
 
+        /* =====================================================
+           RUN MOODCRAFT
+        ===================================================== */
+
+        let moodCraftRunning =
+            false;
+
+
+
         async function runMoodCraft(
             description
         ) {
 
-            if (!description) {
+            if (
+                !description ||
+                moodCraftRunning
+            ) {
 
                 return;
 
             }
 
 
+            moodCraftRunning =
+                true;
+
+
+            moodcraftGenerateBtn.disabled =
+                true;
+
+
             moodcraftLoading
-                ?.classList
+                .classList
                 .remove(
                     "hidden"
                 );
 
 
+            moodcraftStatus.textContent =
+                "";
+
+
             try {
 
                 const theme =
-                    await generateTheme(
+                    await generateMoodCraftTheme(
                         description
                     );
 
@@ -4293,7 +4416,17 @@ icon should be a Font Awesome solid icon name.
                 );
 
 
-            } catch (error) {
+                moodcraftStatus.textContent =
+                    "Theme created by AI Sathi.";
+
+
+                moodcraftStatus.className =
+                    "mt-3 text-center text-sm moodcraft-status-success";
+
+
+            } catch (
+                error
+            ) {
 
                 console.error(
                     "MoodCraft error:",
@@ -4301,15 +4434,26 @@ icon should be a Font Awesome solid icon name.
                 );
 
 
-                alert(
-                    "Could not generate the theme. Please try again."
-                );
+                moodcraftStatus.textContent =
+                    "AI couldn't create the theme. Please try again.";
+
+
+                moodcraftStatus.className =
+                    "mt-3 text-center text-sm moodcraft-status-error";
 
 
             } finally {
 
+                moodCraftRunning =
+                    false;
+
+
+                moodcraftGenerateBtn.disabled =
+                    false;
+
+
                 moodcraftLoading
-                    ?.classList
+                    .classList
                     .add(
                         "hidden"
                     );
@@ -4327,7 +4471,7 @@ icon should be a Font Awesome solid icon name.
 
                     runMoodCraft(
                         moodcraftInput
-                            ?.value
+                            .value
                             .trim()
                     );
 
@@ -4335,22 +4479,58 @@ icon should be a Font Awesome solid icon name.
             );
 
 
+        moodcraftInput
+            ?.addEventListener(
+                "keydown",
+                function (
+                    event
+                ) {
+
+                    if (
+                        event.key ===
+                        "Enter"
+                    ) {
+
+                        event.preventDefault();
+
+
+                        runMoodCraft(
+                            moodcraftInput
+                                .value
+                                .trim()
+                        );
+
+                    }
+
+                }
+            );
+
 
         document
             .querySelectorAll(
                 ".vibe-btn"
             )
             .forEach(
-                function (button) {
+                function (
+                    button
+                ) {
 
                     button.addEventListener(
                         "click",
                         function () {
 
-                            runMoodCraft(
+                            const description =
                                 button
                                     .textContent
-                                    .trim()
+                                    .trim();
+
+
+                            moodcraftInput.value =
+                                description;
+
+
+                            runMoodCraft(
+                                description
                             );
 
                         }
@@ -4361,16 +4541,16 @@ icon should be a Font Awesome solid icon name.
 
 
 
+        /* =====================================================
+           RESET THEME
+        ===================================================== */
+
         moodcraftResetBtn
             ?.addEventListener(
                 "click",
                 function () {
 
-                    const root =
-                        document.documentElement;
-
-
-                    const defaultTheme = {
+                    const defaults = {
 
                         "--bg-color":
                             "#0D1117",
@@ -4379,34 +4559,36 @@ icon should be a Font Awesome solid icon name.
                             "#C9D1D9",
 
                         "--text-muted-color":
-                            "#8b949e",
+                            "#8B949E",
 
                         "--card-bg-color":
                             "#161B22",
 
                         "--border-color":
-                            "#30363d",
+                            "#30363D",
 
                         "--primary-color":
-                            "#22d3ee",
+                            "#22D3EE",
 
                         "--primary-text-color":
                             "#0D1117",
 
                         "--primary-hover-color":
-                            "#67e8f9"
+                            "#67E8F9"
 
                     };
 
 
                     Object.entries(
-                        defaultTheme
+                        defaults
                     ).forEach(
                         function (
                             [key, value]
                         ) {
 
-                            root.style
+                            document
+                                .documentElement
+                                .style
                                 .setProperty(
                                     key,
                                     value
@@ -4424,7 +4606,7 @@ icon should be a Font Awesome solid icon name.
                         .getElementById(
                             "hero"
                         )
-                        ?.classList
+                        .classList
                         .remove(
                             "anim-float",
                             "anim-flicker"
@@ -4432,10 +4614,18 @@ icon should be a Font Awesome solid icon name.
 
 
                     aiQuoteBar
-                        ?.classList
+                        .classList
                         .add(
                             "opacity-0"
                         );
+
+
+                    moodcraftStatus.textContent =
+                        "Theme reset.";
+
+
+                    moodcraftStatus.className =
+                        "mt-3 text-center text-sm text-gray-400";
 
                 }
             );
